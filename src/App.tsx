@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SimpleExchanger from './components/SimpleExchanger';
 
 function App() {
   return (
-    <div>
-      Hello world
+    <div className='container'>
+      <SimpleExchanger></SimpleExchanger>
     </div>
   );
 }
