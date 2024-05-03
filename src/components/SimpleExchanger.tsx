@@ -25,52 +25,50 @@ const currencies = [
 const SimpleExchanger: React.FC = () => { 
     return (
         <Card sx={{ maxWidth: 345 }}>
-            {/* <CardContent> */}
-                <div>
-            <TextField
-                id="standard-error"
-                label="Error"
-                defaultValue="Hello World"
-                variant="standard"
-            />
-            <TextField
-                id="standard-select-currency"
-                select
-                label="Select"
-                defaultValue="EUR"
-                helperText="Please select your currency"
-                variant="standard"
-            >
-                {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                    </MenuItem>
-                ))}
-            </TextField>
+            <div>
+                <TextField
+                    id="standard-error"
+                    label="Error"
+                    defaultValue="Hello World"
+                    variant="standard"
+                />
+                <TextField
+                    id="standard-select-currency"
+                    select
+                    label="Select"
+                    defaultValue="EUR"
+                    helperText="Please select your currency"
+                    variant="standard"
+                >
+                    {currencies.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                        </MenuItem>
+                    ))}
+                </TextField>
             </div>
             <div>
-            <TextField
-                id="standard-error"
-                label="Error"
-                defaultValue="Hello World"
-                variant="standard"
-            />
-            <TextField
-                id="standard-select-currency"
-                select
-                label="Select"
-                defaultValue="EUR"
-                helperText="Please select your currency"
-                variant="standard"
-            >
-                {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                    </MenuItem>
-                ))}
-            </TextField>
+                <TextField
+                    id="standard-error"
+                    label="Error"
+                    defaultValue="Hello World"
+                    variant="standard"
+                />
+                <TextField
+                    id="standard-select-currency"
+                    select
+                    label="Select"
+                    defaultValue="EUR"
+                    helperText="Please select your currency"
+                    variant="standard"
+                >
+                    {currencies.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                        </MenuItem>
+                    ))}
+                </TextField>
             </div>
-            {/* </CardContent> */}
         </Card>
     );
 }
