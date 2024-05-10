@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
@@ -11,7 +12,7 @@ interface IConvert {
     amount: number | string;
 }
 
-const SimpleExchanger: React.FC = () => { 
+const SimpleExchanger: React.FC = (props) => { 
     const currencyToConvertMock: IConvert = {
         id: "bitcoin",
         name: "Bitcoin",
@@ -38,30 +39,30 @@ const SimpleExchanger: React.FC = () => {
         if (!isLoading) {
             return;
         }
-        if (currencyToConvert && convertedCurrency) {
-            fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
-                .then(response => response.json())
-                .then((coinsInfo: any) => {
-                    const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
-                    const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
+        // if (currencyToConvert && convertedCurrency) {
+        //     fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
+        //         .then(response => response.json())
+        //         .then((coinsInfo: any) => {
+        //             const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
+        //             const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
 
-                    if (currencyToConvertInfo) {
-                        setCurrencyToConvert(prevState => ({
-                            ...prevState,
-                            price: currencyToConvertInfo.price
-                        }));
-                    }
+        //             if (currencyToConvertInfo) {
+        //                 setCurrencyToConvert(prevState => ({
+        //                     ...prevState,
+        //                     price: currencyToConvertInfo.price
+        //                 }));
+        //             }
 
-                    if (convertedCurrencyInfo) {
-                        setConvertedCurrency(prevState => ({
-                            ...prevState,
-                            price: convertedCurrencyInfo.price
-                        }));
-                    }
+        //             if (convertedCurrencyInfo) {
+        //                 setConvertedCurrency(prevState => ({
+        //                     ...prevState,
+        //                     price: convertedCurrencyInfo.price
+        //                 }));
+        //             }
                     
-                    setIsLoading(false);
-                })
-        }
+        //             setIsLoading(false);
+        //         })
+        // }
 
     }, [currencyToConvert, convertedCurrency, amount, isLoading]);
 
@@ -126,6 +127,9 @@ const SimpleExchanger: React.FC = () => {
                         {convertedCurrency.name}
                     </MenuItem>
                 </TextField>
+            </div>
+            <div>
+                <Button variant="contained">Echange</Button>
             </div>
         </Card>
     );
