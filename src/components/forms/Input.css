@@ -1,0 +1,30 @@
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg1);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding-inline: 10px;
+}
+
+.input-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--onsurface);
+    margin-bottom: 9px;
+    opacity: 0.6;
+}
+
+.input-element {
+    outline: none;
+    width: 40%;
+    background: var(--bg1);
+    border: none;
+    padding: 0;
+    color: var(--onsurface);
+    font-weight: 700;
+    font-size: 18px;
+    text-align: right;
+}

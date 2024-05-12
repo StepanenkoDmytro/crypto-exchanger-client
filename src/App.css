@@ -1,10 +1,30 @@
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
+:root {
+  --primary: #3772ff;
+  --bg: #141416;
+  --bg1: #222630;
+  --onsurface: #fff;
+  --surface: #18191d;
+  --line: #23262f;
+  --text: #b1b5c3;
 }
 
-.main {
-  display: flex;
+body {
+  background-color: var(--bg);
+}
 
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px; 
+  background: var(--surface);
+  padding: 30px 32px;
+  border-radius: 20px;
+}
+
+.box__input {
+  background-color: var(--bg1);
+}
+
+.box__input input {
+  color: var(--onsurface);
 }

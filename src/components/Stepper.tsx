@@ -1,5 +1,6 @@
 
 import { useState, useEffect, ReactNode } from 'react';
+import './Stepper.css';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
 	<div className={`step ${isActive ? 'active' : ''}`}>
@@ -40,7 +41,6 @@ const Stepper = (props: any) => {
 						className={`step-header ${activeStep === step.order ? 'active' : ''}`}
 						onClick={() => handleGoToStep(step.order)}
 					>
-						<span className="step-number">{step.order}</span>
 						<span className="step-title">{step.title}</span>
 					</div>
 				))}

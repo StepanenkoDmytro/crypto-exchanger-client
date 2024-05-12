@@ -12,9 +12,9 @@ function App() {
 	const [activeStep, setActiveStep] = useState(1);
 
 	const steps = [
-		{order: 1, content: <SimpleExchanger  />},
-		{order: 2, content: <SecondStep />},
-		{order: 3, content: <ThirdStep />},
+		{order: 1, title: 'Select currency', content: <SimpleExchanger  />},
+		{order: 2, title: 'Important Notes', content: <SecondStep />},
+		{order: 3, title: 'Payment Details', content: <ThirdStep />},
 	];
 
 	// const handleConfirm = async () => {
@@ -36,9 +36,9 @@ function App() {
 		setFormValue({...formValue, ...data});
 	}
   return (
-    <div className='container'>
+    // <div className='container'>
       <Stepper steps={steps} activeStep={activeStep}/>
-    </div>
+    // </div>
   );
 }
 

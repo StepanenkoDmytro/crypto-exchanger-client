@@ -1,8 +1,10 @@
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
+import './SimpleExchanger.css';
 import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
 import { useState, useEffect, ChangeEvent } from 'react';
+import Input from "./forms/Input";
+import echangeIcon from '../assets/echange.svg';
 
 interface IConvert {
     id: string;
@@ -82,56 +84,43 @@ const SimpleExchanger: React.FC = (props) => {
     
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <div>
-                <TextField
-                    id="standard-basic"
-                    label="Amount to send"
-                    value={amount}
-                    onChange={handleAmountChange}
-                    variant="standard"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <TextField
-                    id="standard-select-currency"
-                    select
-                    label="Select"
-                    value={currencyToConvert.symbol}
-                    helperText="Please select your currency"
-                    variant="standard"
-                >
-                    <MenuItem key={currencyToConvert.id} value={currencyToConvert.symbol}>
-                        {currencyToConvert.name}
-                    </MenuItem>
-                </TextField>
+        <div className="box">
+            <div className="currency-wrapper">
+                
+                <Input type={'number'}
+						label={'Amount to send'}
+						value={amount}
+						onInput={handleAmountChange}/>
+
+                <div className="currency-wrapper__selected">
+                    <div className="currency-wrapper__icon">
+                        <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
+                    </div>
+                    <span>{currencyToConvert.symbol}</span>
+                    <div className="arrow"></div>
+                </div>
             </div>
-            <div>
-                <TextField
-                    id="standard-error"
-                    label="Amount to receive"
-                    value={convertedAmount}
-                    variant="standard"
-                    disabled
-                />
-                <TextField
-                    id="standard-select-currency"
-                    select
-                    label="Select"
-                    defaultValue={convertedCurrency.symbol}
-                    helperText="Please select your currency"
-                    variant="standard"
-                >
-                    <MenuItem key={convertedCurrency.id} value={convertedCurrency.symbol}>
-                        {convertedCurrency.name}
-                    </MenuItem>
-                </TextField>
+            <div className="currency-wrapper__btn-convert">
+            <img src={echangeIcon} alt="svg" />
             </div>
-            <div>
-                <Button variant="contained">Echange</Button>
-            </div>
-        </Card>
+            <div className="currency-wrapper">
+                 <Input type={'number'}
+						label={'Amount to receive'}
+						value={convertedAmount}
+						readonly/>
+               
+                <div className="currency-wrapper__selected">
+                        <div className="currency-wrapper__icon">
+                        <img alt="eth" src="https://static.simpleswap.io/images/currencies-logo/eth.svg"/>
+                        </div>
+                        <span>{convertedCurrency.symbol}</span>
+                        <div className="arrow"></div>
+                    </div>
+                </div>
+            {/* <div> */}
+                <button className="currency-wrapper__btn">Echange</button>
+            {/* </div> */}
+        </div>
     );
 }
 
