@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
 import Stepper from './components/stepper/Stepper';
 import SecondStep from './components/stepper/components/SecondStep';
 import SimpleExchangerStep from './components/stepper/components/SimpleExchangerStep';
 import SuccessExchangeStep from './components/stepper/components/SuccessExchangeStep';
+import Header from './components/ui/Header';
+import Footer from './components/ui/Footer';
+import Partners from './components/ui/Partners';
 
 function App() {
   const [formValue, setFormValue] = useState({});
@@ -37,8 +39,12 @@ function App() {
 	}
   return (
     <>
-		<Header></Header>
-    	<Stepper steps={steps} activeStep={activeStep}/>
+		<Header/>
+		<main>
+    		<Stepper steps={steps} activeStep={activeStep}/>
+			<Partners />
+		</main>
+		<Footer/>
     </>
   );
 }
