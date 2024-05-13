@@ -14,9 +14,7 @@ body {
 }
 
 .box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 60px; 
+  width: 60%;
   background: var(--surface);
   padding: 30px 32px;
   border-radius: 20px;

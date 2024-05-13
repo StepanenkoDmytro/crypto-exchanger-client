@@ -1,12 +1,15 @@
+.stepper {
+    width: 60%;
+}
+
 .stepper-header {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
 }
 
 .stepper-container {
     font-family: Arial, sans-serif;
-    margin: 30px 0;
+    margin-top: 30px;
 }
 
 .stepper-content {
@@ -41,6 +44,14 @@
     border: 1.4px solid var(--success);
 }
 
+.done-circle {
+    background: #58bd7d;
+    border-color: #58bd7d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .active-circle::before {
     content: "";
     position: absolute;
@@ -68,7 +79,7 @@
 .step-title {
     font-weight: bold;
     margin-right: 10px;
-    color: #626262;
+    color: var(--gray);
 }
 
 .step-header.active .step-number {
@@ -76,15 +87,32 @@
 }
 
 .step-header.active .step-title {
-    color: black;
+    color: var(--success);
 }
 
 .step-content {
-    margin: 20px 0;
+    /* margin: 20px 0; */
 }
 
 .step-actions {
-    margin: 30px 0;
+    /* margin: 30px 0; */
     display: flex;
     justify-content: center;
+}
+
+.btn {
+    border-radius: 90px;
+    margin-left: auto;
+    margin-top: 27px;
+    margin-right: 4px;
+    padding: 11px 71px;
+    border: none;
+    font-size: 16px;
+    background: var(--bg1);
+    color: var(--onsurface);
+}
+
+.btn-next {
+    background: var(--primary);
+    color: var(--onsurface);
 }

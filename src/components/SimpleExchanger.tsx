@@ -1,7 +1,4 @@
-import Button from "@mui/material/Button";
 import './SimpleExchanger.css';
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 import { useState, useEffect, ChangeEvent } from 'react';
 import Input from "./forms/Input";
 import echangeIcon from '../assets/echange.svg';
@@ -84,7 +81,7 @@ const SimpleExchanger: React.FC = (props) => {
     
 
     return (
-        <div className="box">
+        <div className="currency-box">
             <div className="currency-wrapper">
                 
                 <Input type={'number'}
@@ -119,7 +116,7 @@ const SimpleExchanger: React.FC = (props) => {
                         <div className="arrow"></div>
                     </div>
                 </div>
-            <button className="currency-wrapper__btn">Echange</button>
+            {/* <button className="currency-wrapper__btn">Echange</button> */}
         </div>
     );
 }
