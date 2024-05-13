@@ -1,5 +1,5 @@
 import { useState, useEffect, ReactNode } from 'react';
-import successIcon from '../assets/success.svg';
+import successIcon from '../../assets/success.svg';
 import './Stepper.css';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
@@ -41,10 +41,12 @@ const Stepper = (props: any) => {
 						className={`step-header ${activeStep === step.order ? 'active' : ''}`}
 						onClick={() => handleGoToStep(step.order)}
 					>
-						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''} ${activeStep > step.order ? 'done-circle' : ''}`}>
+						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''} 
+										${activeStep > step.order ? 'done-circle' : ''}`}>
 
-							{activeStep > step.order ? <img src={successIcon} alt="svg" /> : <></>}
-							{/* <img src={successIcon} alt="svg" /> */}
+							{activeStep > step.order 
+								? <img src={successIcon} alt="svg" /> 
+								: <></>}
 						</span>
 						<span className="step-title">{step.title}</span>
 					</div>

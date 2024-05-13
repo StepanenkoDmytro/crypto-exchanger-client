@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import SimpleExchanger from './components/SimpleExchanger';
-import Stepper from './components/Stepper';
-import SecondStep from './components/SecondStep';
-import ThirdStep from './components/ThirdStep';
+import Header from './components/Header';
+import Stepper from './components/stepper/Stepper';
+import SecondStep from './components/stepper/components/SecondStep';
+import SimpleExchangerStep from './components/stepper/components/SimpleExchangerStep';
+import SuccessExchangeStep from './components/stepper/components/SuccessExchangeStep';
 
 function App() {
   const [formValue, setFormValue] = useState({});
@@ -12,9 +12,9 @@ function App() {
 	const [activeStep, setActiveStep] = useState(1);
 
 	const steps = [
-		{order: 1, title: 'Select currency', content: <SimpleExchanger  />},
+		{order: 1, title: 'Select currency', content: <SimpleExchangerStep  />},
 		{order: 2, title: 'Important Notes', content: <SecondStep />},
-		{order: 3, title: 'Payment Details', content: <ThirdStep />},
+		{order: 3, title: 'Payment Details', content: <SuccessExchangeStep />},
 	];
 
 	// const handleConfirm = async () => {
@@ -36,9 +36,10 @@ function App() {
 		setFormValue({...formValue, ...data});
 	}
   return (
-    // <div className='container'>
-      <Stepper steps={steps} activeStep={activeStep}/>
-    // </div>
+    <>
+		<Header></Header>
+    	<Stepper steps={steps} activeStep={activeStep}/>
+    </>
   );
 }
 

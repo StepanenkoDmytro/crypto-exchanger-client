@@ -1,7 +1,7 @@
-import './SimpleExchanger.css';
+import './SimpleExchangerStep.css';
 import { useState, useEffect, ChangeEvent } from 'react';
-import Input from "./forms/Input";
-import echangeIcon from '../assets/echange.svg';
+import echangeIcon from '../../../assets/echange.svg';
+import Input from '../../forms/Input';
 
 interface IConvert {
     id: string;
@@ -11,7 +11,7 @@ interface IConvert {
     amount: number | string;
 }
 
-const SimpleExchanger: React.FC = (props) => { 
+const SimpleExchangerStep: React.FC = (props) => { 
     const currencyToConvertMock: IConvert = {
         id: "bitcoin",
         name: "Bitcoin",
@@ -121,4 +121,4 @@ const SimpleExchanger: React.FC = (props) => {
     );
 }
 
-export default SimpleExchanger;
+export default SimpleExchangerStep;
