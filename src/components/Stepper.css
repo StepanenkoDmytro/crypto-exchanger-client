@@ -28,6 +28,31 @@
     cursor: pointer;
 }
 
+.step-header__circle {
+    position: relative;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.4px solid var(--gray);
+}
+
+.active-circle {
+    border: 1.4px solid var(--success);
+}
+
+.active-circle::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .step-number {
     background-color: #626262;
     color: white;

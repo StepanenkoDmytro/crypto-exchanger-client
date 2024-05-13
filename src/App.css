@@ -5,7 +5,8 @@
   --onsurface: #fff;
   --surface: #18191d;
   --line: #23262f;
-  --text: #b1b5c3;
+  --success: #58bd7d;
+  --gray: #b1b5c3;
 }
 
 body {

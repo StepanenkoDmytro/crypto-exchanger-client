@@ -100,9 +100,11 @@ const SimpleExchanger: React.FC = (props) => {
                     <div className="arrow"></div>
                 </div>
             </div>
+
             <div className="currency-wrapper__btn-convert">
-            <img src={echangeIcon} alt="svg" />
+                <img src={echangeIcon} alt="svg" />
             </div>
+
             <div className="currency-wrapper">
                  <Input type={'number'}
 						label={'Amount to receive'}
@@ -117,9 +119,7 @@ const SimpleExchanger: React.FC = (props) => {
                         <div className="arrow"></div>
                     </div>
                 </div>
-            {/* <div> */}
-                <button className="currency-wrapper__btn">Echange</button>
-            {/* </div> */}
+            <button className="currency-wrapper__btn">Echange</button>
         </div>
     );
 }

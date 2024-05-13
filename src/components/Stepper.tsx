@@ -41,6 +41,7 @@ const Stepper = (props: any) => {
 						className={`step-header ${activeStep === step.order ? 'active' : ''}`}
 						onClick={() => handleGoToStep(step.order)}
 					>
+						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''}`}></span>
 						<span className="step-title">{step.title}</span>
 					</div>
 				))}
