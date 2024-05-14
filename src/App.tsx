@@ -1,22 +1,24 @@
 import { useState } from 'react';
 import './App.css';
 import Stepper from './components/stepper/Stepper';
-import SecondStep from './components/stepper/components/SecondStep';
+import ExchangeDetailsStep from './components/stepper/components/ExchangeDetailsStep';
 import SimpleExchangerStep from './components/stepper/components/SimpleExchangerStep';
 import SuccessExchangeStep from './components/stepper/components/SuccessExchangeStep';
 import Header from './components/ui/Header';
 import Footer from './components/ui/Footer';
 import Partners from './components/ui/Partners';
+import PaymentStep from './components/stepper/components/PaymentStep';
 
 function App() {
-  const [formValue, setFormValue] = useState({});
+	const [formValue, setFormValue] = useState({});
 	const [isError, setIsError] = useState(false);
 	const [activeStep, setActiveStep] = useState(1);
 
 	const steps = [
 		{order: 1, title: 'Select currency', content: <SimpleExchangerStep  />},
-		{order: 2, title: 'Important Notes', content: <SecondStep />},
-		{order: 3, title: 'Payment Details', content: <SuccessExchangeStep />},
+		{order: 2, title: 'Payment Details', content: <ExchangeDetailsStep />},
+		{order: 3, title: 'Confirm Payment', content: <PaymentStep />},
+		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep />},
 	];
 
 	// const handleConfirm = async () => {
@@ -37,16 +39,16 @@ function App() {
 	const updateForm = (data: any) => {
 		setFormValue({...formValue, ...data});
 	}
-  return (
-    <>
-		<Header/>
-		<main>
-    		<Stepper steps={steps} activeStep={activeStep}/>
-			<Partners />
-		</main>
-		<Footer/>
-    </>
-  );
+	return (
+		<>
+			<Header/>
+			<main>
+				<Stepper steps={steps} activeStep={activeStep}/>
+				<Partners />
+			</main>
+			<Footer/>
+		</>
+	);
 }
 
 export default App;

@@ -84,10 +84,10 @@ const SimpleExchangerStep: React.FC = (props) => {
         <div className="currency-box">
             <div className="currency-wrapper">
                 
-                <Input type={'number'}
-						label={'Amount to send'}
-						value={amount}
-						onInput={handleAmountChange}/>
+                <Input type={'text'}
+					   label={'Amount to send'}
+					   value={amount}
+					   onInput={handleAmountChange}/>
 
                 <div className="currency-wrapper__selected">
                     <div className="currency-wrapper__icon">
@@ -110,13 +110,12 @@ const SimpleExchangerStep: React.FC = (props) => {
                
                 <div className="currency-wrapper__selected">
                         <div className="currency-wrapper__icon">
-                        <img alt="eth" src="https://static.simpleswap.io/images/currencies-logo/eth.svg"/>
+                            <img alt="eth" src="https://static.simpleswap.io/images/currencies-logo/eth.svg"/>
                         </div>
                         <span>{convertedCurrency.symbol}</span>
                         <div className="arrow"></div>
                     </div>
                 </div>
-            {/* <button className="currency-wrapper__btn">Echange</button> */}
         </div>
     );
 }
