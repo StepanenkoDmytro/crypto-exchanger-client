@@ -37,9 +37,7 @@ function App() {
 	}
 
 	const updateForm = (data: any) => {
-		console.log(data);
 		setFormValue({...formValue, ...data});
-		console.log('formValue',formValue);
 	}
 	return (
 		<>

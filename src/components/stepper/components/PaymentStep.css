@@ -1,0 +1,25 @@
+.payment {
+    width: 100%;
+    color: var(--onsurface);
+}
+
+.payment__info {
+    display: flex;
+}
+
+.payment__info--currency {
+    display: flex;
+}
+
+.payment__details {
+    display: flex;
+}
+
+.payment__details--recipient {
+    width: 100%;
+    display: flex;
+    background-color: var(--bg1);
+    border-radius: 10px;
+    padding: 14px 14px 10px;
+    color: var(--surface);
+}

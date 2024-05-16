@@ -54,10 +54,12 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                     </div>
                 </li>
             </ul>
-            <Input type={'text'}
-                   label={'Enter the wallet address'}
-                   value={recipientAddress}
-                   onInput={handleRecipientAddress}/>
+            <div className='exchange-details__input'>
+                <Input type={'text'}
+                    label={'Enter the wallet address'}
+                    value={recipientAddress}
+                    onInput={handleRecipientAddress}/>
+            </div>
         </div>
     );
 }

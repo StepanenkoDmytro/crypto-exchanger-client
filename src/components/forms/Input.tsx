@@ -5,7 +5,7 @@ type InputProps = {
     type?: string;
     label?: string;
     placeholder?: string;
-    id?: string;
+    width?: string;
     onInput?: (value: any) => void;
     readonly?: boolean;
   };
@@ -15,7 +15,7 @@ type InputProps = {
     type = 'text',
     label,
     placeholder,
-    id,
+    width,
     onInput,
     readonly = false,
   }: InputProps) {
@@ -25,8 +25,8 @@ type InputProps = {
         <div className="input-wrapper">
           {label && <div className="input-label">{label}</div>}
           <input
-            id={id}
             className="input-element"
+            style={{ width: width }}
             type={type}
             value={value}
             placeholder={placeholder}

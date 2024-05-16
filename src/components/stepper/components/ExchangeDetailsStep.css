@@ -1,8 +1,10 @@
 .exchange-details {
+    width: 100%;
     color: var(--onsurface);
 }
 
 .exchange-details__primary-text {
+    margin-bottom: 15px;
     font-size: 26px;
     font-weight: 700;
 }
@@ -15,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0;
+    padding: 15px 0;
 }
 
 .exchange-details__presentation li {
@@ -49,4 +51,9 @@
 
 .exchange-details__content-value {
     color: var(--onsurface)!important;
+}
+
+.exchange-details__input input {
+    width: 65%;
+    font-size: 16px;
 }
