@@ -1,7 +1,7 @@
 import successIcon from '../../../assets/success.svg';
 import './SuccessExchangeStep.css';
 
-const SuccessExchangeStep: React.FC = () => { 
+const SuccessExchangeStep: React.FC<any> = () => { 
     return (
     <div className="heading">
         <h4>Success</h4>

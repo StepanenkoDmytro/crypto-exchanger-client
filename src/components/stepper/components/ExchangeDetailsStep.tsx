@@ -2,8 +2,25 @@ import './ExchangeDetailsStep.css';
 import forIcon from '../../../assets/for.svg';
 import walletIcon from '../../../assets/wallet.svg';
 import Input from '../../forms/Input';
+import { useEffect, useState } from 'react';
 
-const ExchangeDetailsStep: React.FC = () => { 
+const ExchangeDetailsStep: React.FC<any> = (props) => { 
+    const [recipientAddress, setRecipientAddress] = useState<string>('');
+
+    useEffect(() => {
+        updateFormData();
+    }, [recipientAddress]);
+
+    const updateFormData = () => {
+        props.onDetailsChange({
+            recipientAddress: recipientAddress
+        })
+    };
+
+    const handleRecipientAddress = (event : string) => {
+        setRecipientAddress(event);
+    };
+
     return (
         <div className="exchange-details">
             <p className="exchange-details__primary-text">Confirm Information</p>
@@ -38,8 +55,9 @@ const ExchangeDetailsStep: React.FC = () => {
                 </li>
             </ul>
             <Input type={'text'}
-					   label={'Enter the wallet address'}
-					   value=""/>
+                   label={'Enter the wallet address'}
+                   value={recipientAddress}
+                   onInput={handleRecipientAddress}/>
         </div>
     );
 }

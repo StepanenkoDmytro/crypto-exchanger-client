@@ -1,6 +1,6 @@
 import './PaymentStep.css';
 
-const PaymentStep: React.FC = () => { 
+const PaymentStep: React.FC<any> = () => { 
     return (
         <>
             <p className="">Confirm Information</p>

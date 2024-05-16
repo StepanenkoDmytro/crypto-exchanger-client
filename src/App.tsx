@@ -15,10 +15,10 @@ function App() {
 	const [activeStep, setActiveStep] = useState(1);
 
 	const steps = [
-		{order: 1, title: 'Select currency', content: <SimpleExchangerStep  />},
-		{order: 2, title: 'Payment Details', content: <ExchangeDetailsStep />},
-		{order: 3, title: 'Confirm Payment', content: <PaymentStep />},
-		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep />},
+		{order: 1, title: 'Select currency', content: <SimpleExchangerStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} />},
+		{order: 2, title: 'Payment Details', content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
+		{order: 3, title: 'Confirm Payment', content: <PaymentStep  form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
+		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep  form={formValue}/>},
 	];
 
 	// const handleConfirm = async () => {
@@ -37,7 +37,9 @@ function App() {
 	}
 
 	const updateForm = (data: any) => {
+		console.log(data);
 		setFormValue({...formValue, ...data});
+		console.log('formValue',formValue);
 	}
 	return (
 		<>

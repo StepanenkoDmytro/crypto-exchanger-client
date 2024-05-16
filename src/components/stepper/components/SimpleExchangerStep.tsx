@@ -11,7 +11,7 @@ interface IConvert {
     amount: number | string;
 }
 
-const SimpleExchangerStep: React.FC = (props) => { 
+const SimpleExchangerStep: React.FC<any> = (props) => { 
     const currencyToConvertMock: IConvert = {
         id: "bitcoin",
         name: "Bitcoin",
@@ -31,39 +31,50 @@ const SimpleExchangerStep: React.FC = (props) => {
     const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertMock);
     const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyMock);
     const [amount, setAmount] = useState<number | string>(currencyToConvert.amount);
-    const [convertedAmount, setConvertedAmount] = useState<number | null>(0);
+    const [convertedAmount, setConvertedAmount] = useState<number | string>(0);
 
     useEffect(() => {
+        updateFormData();
         convertCurrency();
         if (!isLoading) {
             return;
         }
-        // if (currencyToConvert && convertedCurrency) {
-        //     fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
-        //         .then(response => response.json())
-        //         .then((coinsInfo: any) => {
-        //             const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
-        //             const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
+        if (currencyToConvert && convertedCurrency) {
+            fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
+                .then(response => response.json())
+                .then((coinsInfo: any) => {
+                    const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
+                    const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
 
-        //             if (currencyToConvertInfo) {
-        //                 setCurrencyToConvert(prevState => ({
-        //                     ...prevState,
-        //                     price: currencyToConvertInfo.price
-        //                 }));
-        //             }
+                    if (currencyToConvertInfo) {
+                        setCurrencyToConvert(prevState => ({
+                            ...prevState,
+                            price: currencyToConvertInfo.price
+                        }));
+                    }
 
-        //             if (convertedCurrencyInfo) {
-        //                 setConvertedCurrency(prevState => ({
-        //                     ...prevState,
-        //                     price: convertedCurrencyInfo.price
-        //                 }));
-        //             }
+                    if (convertedCurrencyInfo) {
+                        setConvertedCurrency(prevState => ({
+                            ...prevState,
+                            price: convertedCurrencyInfo.price
+                        }));
+                    }
                     
-        //             setIsLoading(false);
-        //         })
-        // }
+                    setIsLoading(false);
+                })
+        }
 
     }, [currencyToConvert, convertedCurrency, amount, isLoading]);
+
+    const updateFormData = () => {
+        currencyToConvert.amount = amount;
+        convertedCurrency.amount = convertedAmount;
+
+        props.onCoinsChanged({
+            currencyToConvert: currencyToConvert,
+            convertedCurrency: convertedCurrency,
+        });
+    };
 
     const convertCurrency = () => {
         const parseAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
@@ -73,10 +84,8 @@ const SimpleExchangerStep: React.FC = (props) => {
         }
     };
 
-    const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const inputValue = event.target.value;
-        
-        setAmount(inputValue);
+    const handleAmountChange = (event: string | number) => {
+        setAmount(event);
     };  
     
 
