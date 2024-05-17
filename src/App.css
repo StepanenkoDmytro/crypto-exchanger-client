@@ -21,8 +21,15 @@ ul {
   list-style-type: none;
 }
 
+button {
+  background: initial;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .box {
-  width: 60%;
+  width: 70%;
   background: var(--surface);
   padding: 30px 32px;
   border-radius: 20px;

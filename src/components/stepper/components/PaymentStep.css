@@ -3,12 +3,32 @@
     color: var(--onsurface);
 }
 
+.payment__title {
+    text-align: center;
+    margin: 7px 0;
+}
+
 .payment__info {
     display: flex;
+    min-height: 45px;
+    margin-bottom: 25px;
+}
+
+.payment__info--text {
+    color: var(--gray);
+    font-weight: 600;
+    width: 150px;
 }
 
 .payment__info--currency {
     display: flex;
+    align-items: flex-start;
+}
+
+.payment__info--currency p {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .payment__details {
@@ -16,10 +36,24 @@
 }
 
 .payment__details--recipient {
-    width: 100%;
     display: flex;
     background-color: var(--bg1);
     border-radius: 10px;
     padding: 14px 14px 10px;
     color: var(--surface);
+}
+
+.payment__details--address {
+    cursor: pointer;
+    padding-inline: 10px;
+}
+
+.payment__details--address p {
+    word-break: break-all;
+    
+}
+
+.payment__details--copy-btn {
+    cursor: pointer;
+    align-self: flex-start;
 }

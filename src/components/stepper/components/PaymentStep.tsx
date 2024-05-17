@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './PaymentStep.css';
+import copySvg from '../../../assets/copy.svg';
 
 declare global {
     interface Window {
@@ -45,23 +46,27 @@ const PaymentStep: React.FC<any> = (props) => {
 
     return (
         <div className='payment'>
-            <h3 className="">Await your deposit</h3>
+            <h1 className="payment__title">Await your deposit</h1>
             <div className='payment__info'>
-                <p>Send deposit</p>
+                <div className='payment__info--text'>Send deposit:</div>
                 <div className='payment__info--currency'>
                     <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
                     <p>
-                        <span>{props.form.currencyToConvert.amount}</span>
-                        <span>{props.form.currencyToConvert.name}</span>
+                        {props.form.currencyToConvert.amount}
+                        {props.form.currencyToConvert.name}
                     </p>
                 </div>
             </div>
             <div className='payment__details'>
-                <p>Deposit adress </p>
+                <div className='payment__info--text'>Deposit address:</div>
                 <div className='payment__details--recipient'>
                     <div id="qr-code"></div>
-                    <p>{qrRecipient}</p>
-                    <button onClick={copyToClipboard}></button>
+                    <div className='payment__details--address'>
+                        <p>{qrRecipient}</p>
+                    </div>
+                    <button className='payment__details--copy-btn' onClick={copyToClipboard}>
+                        <img src={copySvg} alt="svg"/>
+                    </button>
                 </div>
             </div>
         </div>
