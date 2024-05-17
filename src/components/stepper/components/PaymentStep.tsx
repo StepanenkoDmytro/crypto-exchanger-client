@@ -9,7 +9,7 @@ declare global {
 }
 
 const PaymentStep: React.FC<any> = (props) => {
-    const [qrRecipient, setQrRecipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
+    const [recipient, setRecipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
    
     useEffect(() => {
         const qrCodeElement = document.getElementById('qr-code');
@@ -21,7 +21,7 @@ const PaymentStep: React.FC<any> = (props) => {
             const colorLight = computedStyles.getPropertyValue('--bg1');
             
             new window.QRCode(document.getElementById('qr-code'), {
-                text: qrRecipient,
+                text: recipient,
                 width: 88,
                 height: 88,
                 colorDark: colorDark,
@@ -32,16 +32,8 @@ const PaymentStep: React.FC<any> = (props) => {
         }
    }, []);
 
-//    const CopyToClipboardButton = () => {
     const copyToClipboard = () => {
-      navigator.clipboard.writeText(qrRecipient)
-        // .then(() => {
-        //   console.log('Text copied to clipboard:', text);
-        //   // Додаткові дії після копіювання в буфер обміну, якщо потрібно
-        // })
-        // .catch((error) => {
-        //   console.error('Failed to copy text to clipboard:', error);
-        // });
+      navigator.clipboard.writeText(recipient);
     };
 
     return (
@@ -62,7 +54,7 @@ const PaymentStep: React.FC<any> = (props) => {
                 <div className='payment__details--recipient'>
                     <div id="qr-code"></div>
                     <div className='payment__details--address'>
-                        <p>{qrRecipient}</p>
+                        <p>{recipient}</p>
                     </div>
                     <button className='payment__details--copy-btn' onClick={copyToClipboard}>
                         <img src={copySvg} alt="svg"/>
