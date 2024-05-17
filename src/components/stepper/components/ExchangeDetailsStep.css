@@ -1,0 +1,59 @@
+.exchange-details {
+    width: 100%;
+    color: var(--onsurface);
+}
+
+.exchange-details__primary-text {
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.exchange-details__text {
+    color: var(--gray);
+}
+
+.exchange-details__presentation  {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.exchange-details__presentation li {
+    display: flex;
+    margin-right: 10px;
+}
+
+.exchange-details__presentation li:nth-child(2) .exchange-details__icon {
+    background: var(--success);
+}
+
+.exchange-details__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.exchange-details__content {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.exchange-details__content p {
+    color: var(--gray);
+}
+
+.exchange-details__content-value {
+    color: var(--onsurface)!important;
+}
+
+.exchange-details__input input {
+    width: 65%;
+    font-size: 16px;
+}

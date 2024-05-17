@@ -14,7 +14,7 @@ const Stepper = (props: any) => {
 		setActiveStep(props.activeStep);
 	}, [props.activeStep])
 
-	const totalSteps = 3;
+	const totalSteps = 4;
 
 	const goNext = () => {
 		if (activeStep < totalSteps) {
