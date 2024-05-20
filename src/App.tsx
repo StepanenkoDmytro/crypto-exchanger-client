@@ -8,6 +8,7 @@ import Header from './components/ui/Header';
 import Footer from './components/ui/Footer';
 import Partners from './components/ui/Partners';
 import PaymentStep from './components/stepper/components/PaymentStep';
+import ApiService from './services/ApiService';
 
 function App() {
 	const [formValue, setFormValue] = useState({});
@@ -21,15 +22,16 @@ function App() {
 		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep  form={formValue}/>},
 	];
 
-	// const handleConfirm = async () => {
-	// 	try {
-	// 		const result = await apiService.generateSession(formValue);
-	// 		props.onSessionCreated(result);
-	// 	} catch (e) {
-	// 		console.error("Error while upload info: ", e);
-	// 		setIsError(true);
-	// 	}
-	// }
+	const handleConfirm = async () => {
+		const apiService = new ApiService();
+		try {
+			await apiService.successExchange(formValue);
+			// props.onSessionCreated(result);
+		} catch (e) {
+			console.error("Error while upload info: ", e);
+			// setIsError(true);
+		}
+	}
 
 	const handleOnRetry = () => {
 		setActiveStep(1);
@@ -43,7 +45,7 @@ function App() {
 		<>
 			<Header/>
 			<main>
-				<Stepper steps={steps} activeStep={activeStep}/>
+				<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
 				<Partners />
 			</main>
 			<Footer/>
