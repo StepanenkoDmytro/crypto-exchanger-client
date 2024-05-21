@@ -9,7 +9,6 @@ import { convertedCurrencyStart, currencyToConvertStart } from '../../../constan
 
 const SimpleExchangerStep: React.FC<any> = (props) => { 
 
-    const [isLoading, setIsLoading] = useState(true);
     const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertStart);
     const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyStart);
     const [amount, setAmount] = useState<number | string>(currencyToConvert.amount);
@@ -19,13 +18,9 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
         updateFormData();
         convertCurrency();
 
-        if (!isLoading) {
-            return;
-        }
-
         fetchPrices();
 
-    }, [currencyToConvert, convertedCurrency, amount, isLoading]);
+    }, [currencyToConvert, convertedCurrency, amount, props.retryTrigger]);
 
     const updateFormData = () => {
         currencyToConvert.amount = amount;
@@ -65,9 +60,10 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
                 }));
             }
 
-            setIsLoading(false);
+            // setIsLoading(false);
         } catch (error) {
             console.error('Failed to fetch crypto prices:', error);
+            props.onError();
         }
     };
 
