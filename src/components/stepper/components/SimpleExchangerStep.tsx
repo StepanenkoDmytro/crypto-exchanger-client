@@ -2,67 +2,28 @@ import './SimpleExchangerStep.css';
 import { useState, useEffect, ChangeEvent } from 'react';
 import echangeIcon from '../../../assets/echange.svg';
 import Input from '../../forms/Input';
+import ApiService from '../../../services/ApiService';
+import { IConvert } from '../../../constants/models';
+import { convertedCurrencyStart, currencyToConvertStart } from '../../../constants/init';
 
-interface IConvert {
-    id: string;
-    name: string;
-    price: number | null;
-    symbol: string;
-    amount: number | string;
-}
 
 const SimpleExchangerStep: React.FC<any> = (props) => { 
-    const currencyToConvertMock: IConvert = {
-        id: "bitcoin",
-        name: "Bitcoin",
-        price: null,
-        symbol: "BTC",
-        amount: 0.1
-    }
 
-    const convertedCurrencyMock: IConvert = {
-        id: "ethereum",
-        name: "Ethereum",
-        price: null,
-        symbol: "ETH",
-        amount: 0
-    }
     const [isLoading, setIsLoading] = useState(true);
-    const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertMock);
-    const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyMock);
+    const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertStart);
+    const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyStart);
     const [amount, setAmount] = useState<number | string>(currencyToConvert.amount);
     const [convertedAmount, setConvertedAmount] = useState<number | string>(0);
 
     useEffect(() => {
         updateFormData();
         convertCurrency();
+
         if (!isLoading) {
             return;
         }
-        if (currencyToConvert && convertedCurrency) {
-            fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
-                .then(response => response.json())
-                .then((coinsInfo: any) => {
-                    const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
-                    const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
 
-                    if (currencyToConvertInfo) {
-                        setCurrencyToConvert(prevState => ({
-                            ...prevState,
-                            price: currencyToConvertInfo.price
-                        }));
-                    }
-
-                    if (convertedCurrencyInfo) {
-                        setConvertedCurrency(prevState => ({
-                            ...prevState,
-                            price: convertedCurrencyInfo.price
-                        }));
-                    }
-                    
-                    setIsLoading(false);
-                })
-        }
+        fetchPrices();
 
     }, [currencyToConvert, convertedCurrency, amount, isLoading]);
 
@@ -84,11 +45,36 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
         }
     };
 
+    const fetchPrices = async () => {
+        const apiService = new ApiService();
+        try {
+            const currencyToConvertInfo = await apiService.getCoinPrice(currencyToConvert.id);
+            const convertedCurrencyInfo = await apiService.getCoinPrice(convertedCurrency.id);
+
+            if (currencyToConvertInfo) {
+                setCurrencyToConvert(prevState => ({
+                    ...prevState,
+                    price: currencyToConvertInfo.price
+                }));
+            }
+
+            if (convertedCurrencyInfo) {
+                setConvertedCurrency(prevState => ({
+                    ...prevState,
+                    price: convertedCurrencyInfo.price
+                }));
+            }
+
+            setIsLoading(false);
+        } catch (error) {
+            console.error('Failed to fetch crypto prices:', error);
+        }
+    };
+
     const handleAmountChange = (event: string | number) => {
         setAmount(event);
     };  
     
-
     return (
         <div className="currency-box">
             <div className="currency-wrapper">

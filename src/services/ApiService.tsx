@@ -4,15 +4,8 @@ class ApiService {
 	API_BASE_URL = `${this.DOMAIN}:${this.PORT}`;
 
     async successExchange(data: any) {
-		const apiEndpoint = `/api/v1/exchange/submit`;
+		const apiEndpoint = '/api/v1/exchange/submit';
 		const url = this.API_BASE_URL + apiEndpoint;
-
-        console.log(data);
-        
-        // const formData = new FormData();
-		// Object.entries(data).forEach(([key, value]) => {
-		// 	formData.append(key, value);
-		// })
 
 		return fetch(url, {
 			method: 'POST',
@@ -22,6 +15,17 @@ class ApiService {
 			body: JSON.stringify(data),
 		}).then( response => response.json() );
 	}
+
+    async getCoinPrice(coinId: string) {
+        const apiEndpoint = `/api/v1/crypto/by-id?ticker=${coinId}`;
+        const url = this.API_BASE_URL + apiEndpoint;
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch crypto prices');
+        }
+        return response.json();
+    }
 }
 
 export default ApiService;
