@@ -2,69 +2,26 @@ import './SimpleExchangerStep.css';
 import { useState, useEffect, ChangeEvent } from 'react';
 import echangeIcon from '../../../assets/echange.svg';
 import Input from '../../forms/Input';
+import ApiService from '../../../services/ApiService';
+import { IConvert } from '../../../constants/models';
+import { ApprovedCurrenciesList, convertedCurrencyStart, currencyToConvertStart } from '../../../constants/init';
+import SelectCurrency from '../../forms/SelectCurrency';
 
-interface IConvert {
-    id: string;
-    name: string;
-    price: number | null;
-    symbol: string;
-    amount: number | string;
-}
 
 const SimpleExchangerStep: React.FC<any> = (props) => { 
-    const currencyToConvertMock: IConvert = {
-        id: "bitcoin",
-        name: "Bitcoin",
-        price: null,
-        symbol: "BTC",
-        amount: 0.1
-    }
 
-    const convertedCurrencyMock: IConvert = {
-        id: "ethereum",
-        name: "Ethereum",
-        price: null,
-        symbol: "ETH",
-        amount: 0
-    }
-    const [isLoading, setIsLoading] = useState(true);
-    const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertMock);
-    const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyMock);
-    const [amount, setAmount] = useState<number | string>(currencyToConvert.amount);
+    const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertStart);
+    const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyStart);
+    const [amount, setAmount] = useState<number | string>(0.1);
     const [convertedAmount, setConvertedAmount] = useState<number | string>(0);
 
     useEffect(() => {
         updateFormData();
         convertCurrency();
-        if (!isLoading) {
-            return;
-        }
-        if (currencyToConvert && convertedCurrency) {
-            fetch(`http://localhost:8080/api/v1/crypto/list?tickers=${currencyToConvert.id}&tickers=${convertedCurrency.id}`)
-                .then(response => response.json())
-                .then((coinsInfo: any) => {
-                    const currencyToConvertInfo = coinsInfo.find((coin: any) => coin.id === currencyToConvert.id);
-                    const convertedCurrencyInfo = coinsInfo.find((coin: any) => coin.id === convertedCurrency.id);
 
-                    if (currencyToConvertInfo) {
-                        setCurrencyToConvert(prevState => ({
-                            ...prevState,
-                            price: currencyToConvertInfo.price
-                        }));
-                    }
+        fetchPrices();
 
-                    if (convertedCurrencyInfo) {
-                        setConvertedCurrency(prevState => ({
-                            ...prevState,
-                            price: convertedCurrencyInfo.price
-                        }));
-                    }
-                    
-                    setIsLoading(false);
-                })
-        }
-
-    }, [currencyToConvert, convertedCurrency, amount, isLoading]);
+    }, [currencyToConvert, convertedCurrency, amount, props.retryTrigger]);
 
     const updateFormData = () => {
         currencyToConvert.amount = amount;
@@ -84,11 +41,44 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
         }
     };
 
+    const fetchPrices = async () => {
+        const apiService = new ApiService();
+        try {
+            const currencyToConvertInfo = await apiService.getCoinPrice(currencyToConvert.id);
+            const convertedCurrencyInfo = await apiService.getCoinPrice(convertedCurrency.id);
+
+            if (currencyToConvertInfo) {
+                setCurrencyToConvert(prevState => ({
+                    ...prevState,
+                    price: currencyToConvertInfo.price,
+                }));
+            }
+
+            if (convertedCurrencyInfo) {
+                setConvertedCurrency(prevState => ({
+                    ...prevState,
+                    price: convertedCurrencyInfo.price,
+                }));
+            }
+
+        } catch (error) {
+            console.error('Failed to fetch crypto prices:', error);
+            props.onError();
+        }
+    };
+
     const handleAmountChange = (event: string | number) => {
         setAmount(event);
     };  
-    
 
+    const handleChangeCurrencyToConvert = (currency: IConvert) => {
+        setCurrencyToConvert(currency);
+    }
+
+    const handleChangeConvertedCurrency = (currency: IConvert) => {
+        setConvertedCurrency(currency);
+    }
+    
     return (
         <div className="currency-box">
             <div className="currency-wrapper">
@@ -98,13 +88,7 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
 					   value={amount}
 					   onInput={handleAmountChange}/>
 
-                <div className="currency-wrapper__selected">
-                    <div className="currency-wrapper__icon">
-                        <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
-                    </div>
-                    <span>{currencyToConvert.symbol}</span>
-                    <div className="arrow"></div>
-                </div>
+                <SelectCurrency activeCurrency={currencyToConvert} onChange={handleChangeCurrencyToConvert}/>
             </div>
 
             <div className="currency-wrapper__btn-convert">
@@ -112,19 +96,13 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
             </div>
 
             <div className="currency-wrapper">
-                 <Input type={'number'}
-						label={'Amount to receive'}
-						value={convertedAmount}
-						readonly/>
-               
-                <div className="currency-wrapper__selected">
-                        <div className="currency-wrapper__icon">
-                            <img alt="eth" src="https://static.simpleswap.io/images/currencies-logo/eth.svg"/>
-                        </div>
-                        <span>{convertedCurrency.symbol}</span>
-                        <div className="arrow"></div>
-                    </div>
-                </div>
+                <Input type={'number'}
+                    label={'Amount to receive'}
+                    value={convertedAmount}
+                    readonly/>
+                    
+                <SelectCurrency activeCurrency={convertedCurrency} onChange={handleChangeConvertedCurrency}/>
+            </div>
         </div>
     );
 }

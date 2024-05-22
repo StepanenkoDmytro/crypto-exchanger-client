@@ -1,0 +1,76 @@
+.select {
+    position: relative;
+    width: 60%;
+}
+
+.select-wrapper {
+    padding: 15px 8px 14px;
+    background: var(--bg1);
+    color: var(--onsurface);
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.select-wrapper__icon {
+    margin-right: 4px;
+    margin-bottom: -2px;
+}
+
+.select-wrapper__icon img,
+.select__options img {
+    max-width: 24px;
+    height: 24px;
+}
+
+.select-wrapper__arrow {
+    margin-left: auto;
+    background-image: url(../../assets/arrow.svg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    width: 25px;
+    height: 25px;
+}
+
+.select__options {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 15px;
+    width: 200px;
+    max-height: 400px;
+    overflow-y: scroll;
+    background-color: var(--gray);
+    z-index: 1;
+}
+
+.select__options__icon {
+    display: flex;
+    width: 30px;
+}
+
+.select__options__icon img {
+    width: 20px;
+}
+
+.select__options ul {
+    padding: 0;
+}
+
+.select__options li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.visible {
+    display: block;
+}
