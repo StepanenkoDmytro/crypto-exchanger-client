@@ -11,6 +11,7 @@
 }
 
 .currency-wrapper__selected {
+    position: relative;
     padding: 13px 8px 10px;
     background: var(--bg1);
     color: var(--onsurface);
@@ -29,6 +30,11 @@
 .currency-wrapper__icon {
     margin-right: 4px;
     margin-bottom: -2px;
+}
+
+.currency-wrapper__icon img {
+    max-width: 24px;
+    height: 24px;
 }
 
 .currency-wrapper__btn-convert {
@@ -56,4 +62,14 @@
     border: none;
     font-size: 16px;
     color: var(--onsurface);
+}
+
+.arrow {
+    background-image: url(../../../assets/arrow.svg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    width: 25px;
+    height: 25px;
 }

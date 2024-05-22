@@ -4,4 +4,5 @@
     price: number | null;
     symbol: string;
     amount: number | string;
+    icon: string | null;
 }

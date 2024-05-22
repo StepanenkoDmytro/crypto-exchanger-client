@@ -4,14 +4,15 @@ import echangeIcon from '../../../assets/echange.svg';
 import Input from '../../forms/Input';
 import ApiService from '../../../services/ApiService';
 import { IConvert } from '../../../constants/models';
-import { convertedCurrencyStart, currencyToConvertStart } from '../../../constants/init';
+import { ApprovedCurrenciesList, convertedCurrencyStart, currencyToConvertStart } from '../../../constants/init';
+import SelectCurrency from '../../forms/SelectCurrency';
 
 
 const SimpleExchangerStep: React.FC<any> = (props) => { 
 
     const [currencyToConvert, setCurrencyToConvert] = useState<IConvert>(currencyToConvertStart);
     const [convertedCurrency, setConvertedCurrency] = useState<IConvert>(convertedCurrencyStart);
-    const [amount, setAmount] = useState<number | string>(currencyToConvert.amount);
+    const [amount, setAmount] = useState<number | string>(0.1);
     const [convertedAmount, setConvertedAmount] = useState<number | string>(0);
 
     useEffect(() => {
@@ -49,18 +50,19 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
             if (currencyToConvertInfo) {
                 setCurrencyToConvert(prevState => ({
                     ...prevState,
-                    price: currencyToConvertInfo.price
+                    price: currencyToConvertInfo.price,
+                    icon: `https://cryptologos.cc/logos/thumbs/${currencyToConvert.id}.png`
                 }));
             }
 
             if (convertedCurrencyInfo) {
                 setConvertedCurrency(prevState => ({
                     ...prevState,
-                    price: convertedCurrencyInfo.price
+                    price: convertedCurrencyInfo.price,
+                    icon: `https://cryptologos.cc/logos/thumbs/${convertedCurrency.id}.png`
                 }));
             }
 
-            // setIsLoading(false);
         } catch (error) {
             console.error('Failed to fetch crypto prices:', error);
             props.onError();
@@ -82,10 +84,14 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
 
                 <div className="currency-wrapper__selected">
                     <div className="currency-wrapper__icon">
-                        <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
+                        {currencyToConvert.icon 
+                            ? <img alt="btc" src={currencyToConvert.icon}/>
+                            : <></>
+                        }
                     </div>
                     <span>{currencyToConvert.symbol}</span>
                     <div className="arrow"></div>
+                    {/* <SelectCurrency /> */}
                 </div>
             </div>
 
@@ -100,13 +106,18 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
 						readonly/>
                
                 <div className="currency-wrapper__selected">
-                        <div className="currency-wrapper__icon">
-                            <img alt="eth" src="https://static.simpleswap.io/images/currencies-logo/eth.svg"/>
-                        </div>
-                        <span>{convertedCurrency.symbol}</span>
-                        <div className="arrow"></div>
+                    <div className="currency-wrapper__icon">
+                        {convertedCurrency.icon 
+                            ? <img alt="btc" src={convertedCurrency.icon}/>
+                            : <></>
+                        }
                     </div>
+                    <span>{convertedCurrency.symbol}</span>
+                    <div className="arrow"></div>
+                    
+                    <SelectCurrency activeCurrency={convertedCurrency.id}/>
                 </div>
+            </div>
         </div>
     );
 }
