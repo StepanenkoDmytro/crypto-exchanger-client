@@ -51,7 +51,6 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
                 setCurrencyToConvert(prevState => ({
                     ...prevState,
                     price: currencyToConvertInfo.price,
-                    icon: `https://cryptologos.cc/logos/thumbs/${currencyToConvert.id}.png`
                 }));
             }
 
@@ -59,7 +58,6 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
                 setConvertedCurrency(prevState => ({
                     ...prevState,
                     price: convertedCurrencyInfo.price,
-                    icon: `https://cryptologos.cc/logos/thumbs/${convertedCurrency.id}.png`
                 }));
             }
 
@@ -72,6 +70,14 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
     const handleAmountChange = (event: string | number) => {
         setAmount(event);
     };  
+
+    const handleChangeCurrencyToConvert = (currency: IConvert) => {
+        setCurrencyToConvert(currency);
+    }
+
+    const handleChangeConvertedCurrency = (currency: IConvert) => {
+        setConvertedCurrency(currency);
+    }
     
     return (
         <div className="currency-box">
@@ -82,17 +88,7 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
 					   value={amount}
 					   onInput={handleAmountChange}/>
 
-                <div className="currency-wrapper__selected">
-                    <div className="currency-wrapper__icon">
-                        {currencyToConvert.icon 
-                            ? <img alt="btc" src={currencyToConvert.icon}/>
-                            : <></>
-                        }
-                    </div>
-                    <span>{currencyToConvert.symbol}</span>
-                    <div className="arrow"></div>
-                    {/* <SelectCurrency /> */}
-                </div>
+                <SelectCurrency activeCurrency={currencyToConvert} onChange={handleChangeCurrencyToConvert}/>
             </div>
 
             <div className="currency-wrapper__btn-convert">
@@ -100,23 +96,12 @@ const SimpleExchangerStep: React.FC<any> = (props) => {
             </div>
 
             <div className="currency-wrapper">
-                 <Input type={'number'}
-						label={'Amount to receive'}
-						value={convertedAmount}
-						readonly/>
-               
-                <div className="currency-wrapper__selected">
-                    <div className="currency-wrapper__icon">
-                        {convertedCurrency.icon 
-                            ? <img alt="btc" src={convertedCurrency.icon}/>
-                            : <></>
-                        }
-                    </div>
-                    <span>{convertedCurrency.symbol}</span>
-                    <div className="arrow"></div>
+                <Input type={'number'}
+                    label={'Amount to receive'}
+                    value={convertedAmount}
+                    readonly/>
                     
-                    <SelectCurrency activeCurrency={convertedCurrency.id}/>
-                </div>
+                <SelectCurrency activeCurrency={convertedCurrency} onChange={handleChangeConvertedCurrency}/>
             </div>
         </div>
     );

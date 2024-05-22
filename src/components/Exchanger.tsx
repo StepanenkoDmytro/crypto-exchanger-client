@@ -47,10 +47,10 @@ const Exchanger: React.FC<any> = () => {
     return (
 		<>
 			<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
-			{isError
+			{/* {isError
 				? <Error onRetry={handleOnRetry} />
 				: <></>
-			}
+			} */}
 		</>
     );
 }
