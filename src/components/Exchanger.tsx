@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Stepper from "./stepper/Stepper";
 import ExchangeDetailsStep from "./stepper/components/ExchangeDetailsStep";
 import PaymentStep from "./stepper/components/PaymentStep";
-import SimpleExchangerStep from "./stepper/components/SimpleExchangerStep";
+import CurrencySelectorStep from "./stepper/components/CurrencySelectorStep";
 import SuccessExchangeStep from "./stepper/components/SuccessExchangeStep";
-import Error from './error/Error';
+import Error from './ui/error/Error';
 import ApiService from '../services/ApiService';
 
 const Exchanger: React.FC<any> = () => {
@@ -16,7 +16,7 @@ const Exchanger: React.FC<any> = () => {
     const handleConfirm = async () => {
 		const apiService = new ApiService();
 		try {
-			await apiService.successExchange(formValue);
+			await apiService.submitExchangeData(formValue);
 			setIsError(true);
 		} catch (e) {
 			console.error("Error while upload info: ", e);
@@ -28,6 +28,7 @@ const Exchanger: React.FC<any> = () => {
 		setIsError(false);
 		setActiveStep(1);
 
+		//to rerender CurrencySelectorStep
 		setRetryTrigger(prevCount => prevCount + 1); 
 	}
 
@@ -36,7 +37,7 @@ const Exchanger: React.FC<any> = () => {
 	}
 
     const steps = [
-		{order: 1, title: 'Select currency', content: <SimpleExchangerStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
+		{order: 1, title: 'Select currency', content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
 		{order: 2, title: 'Payment Details', content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
 		{order: 3, title: 'Confirm Payment', content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
 		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep form={formValue}/>},

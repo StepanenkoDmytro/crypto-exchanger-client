@@ -30,10 +30,10 @@ const Stepper = (props: any) => {
 	};
 
 	const handleConfirm = async () => {
-        const success = await props.onConfirm();
-        if (success) {
+        props.onConfirm();
+        // if (success) {
             goNext();
-        }
+        // }
     }
 
 	return (

@@ -1,7 +1,7 @@
 import './ExchangeDetailsStep.css';
 import forIcon from '../../../assets/for.svg';
 import walletIcon from '../../../assets/wallet.svg';
-import Input from '../../forms/Input';
+import Input from '../../ui/form-controls/Input';
 import { useEffect, useState } from 'react';
 
 const ExchangeDetailsStep: React.FC<any> = (props) => { 
@@ -17,7 +17,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
         })
     };
 
-    const handleRecipientAddress = (event : string) => {
+    const handleRecipientAddressChange = (event : string) => {
         setRecipientAddress(event);
     };
 
@@ -58,7 +58,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                 <Input type={'text'}
                     label={'Enter the wallet address'}
                     value={recipientAddress}
-                    onInput={handleRecipientAddress}/>
+                    onInput={handleRecipientAddressChange}/>
             </div>
         </div>
     );

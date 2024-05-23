@@ -1,35 +1,34 @@
 import { useEffect, useRef, useState } from "react";
-import { ApprovedCurrenciesList } from "../../constants/init";
-import { IConvert } from "../../constants/models";
-import successIcon from '../../assets/success.svg';
-import './SelectCurrency.css';
+import { ApprovedCurrenciesList, IConvert } from "../../../domain/models";
+import successIcon from '../../../assets/success.svg';
+import './CurrencySelector.css';
 
-type SelectCurrencyProps = {
+type CurrencySelectorProps = {
     activeCurrency: IConvert;
     onChange?: (value: any) => void
   };
 
-export default function SelectCurrency({activeCurrency, onChange}: SelectCurrencyProps) {
-    const [optionsVisible, setOptionsVisible] = useState<boolean>(false);
+export default function CurrencySelector({activeCurrency, onChange}: CurrencySelectorProps) {
+    const [isDropdownExpanded, setIsDropdownExpanded] = useState<boolean>(false);
     const selectRef = useRef<HTMLDivElement>(null);
 
     const handleClick = () => {
-        setOptionsVisible(prevState => !prevState);
+        setIsDropdownExpanded(prevState => !prevState);
     }
 
     const handleOptionClick = (currency: IConvert) => {
         onChange && onChange(currency);
-        setOptionsVisible(false);
+        setIsDropdownExpanded(false);
     };
 
     const handleClickOutside = (event: MouseEvent) => {
         if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
-            setOptionsVisible(false);
+            setIsDropdownExpanded(false);
         }
     };
 
     useEffect(() => {
-        if (optionsVisible) {
+        if (isDropdownExpanded) {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -38,7 +37,7 @@ export default function SelectCurrency({activeCurrency, onChange}: SelectCurrenc
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [optionsVisible]);
+    }, [isDropdownExpanded]);
 
     return (
         <div className="select" ref={selectRef}>
@@ -50,7 +49,7 @@ export default function SelectCurrency({activeCurrency, onChange}: SelectCurrenc
                 <div className="select-wrapper__arrow"></div>
             </div>
 
-            <div className={`select__options ${optionsVisible ? 'visible' : ''}`}>
+            <div className={`select__options ${isDropdownExpanded ? 'visible' : ''}`}>
                 <ul>
                     {ApprovedCurrenciesList.map((currency) => (
                         <li key={currency.id} onClick={() => handleOptionClick(currency)}>

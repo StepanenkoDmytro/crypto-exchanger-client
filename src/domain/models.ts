@@ -1,6 +1,13 @@
-import { IConvert } from "./models"
+ export interface IConvert {
+    id: string;
+    name: string;
+    price: number | null;
+    symbol: string;
+    amount: number | string;
+    icon: string | null;
+}
 
-export const currencyToConvertStart: IConvert = {
+export const defaultCurrencyFrom: IConvert = {
     id: "bitcoin",
     name: "Bitcoin",
     price: null,
@@ -9,7 +16,7 @@ export const currencyToConvertStart: IConvert = {
     icon: null
 }
 
-export const convertedCurrencyStart: IConvert = {
+export const defaultCurrencyTo: IConvert = {
     id: "ethereum",
     name: "Ethereum",
     price: null,
