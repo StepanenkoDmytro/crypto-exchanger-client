@@ -14,11 +14,10 @@ const PaymentStep: React.FC<any> = (props) => {
     useEffect(() => {
         const qrCodeElement = document.getElementById('qr-code');
         
-
         if (window.QRCode && qrCodeElement && !qrCodeElement.innerHTML) {
             const computedStyles = getComputedStyle(document.documentElement);
             const colorDark = computedStyles.getPropertyValue('--surface');
-            const colorLight = computedStyles.getPropertyValue('--bg1');
+            const colorLight = computedStyles.getPropertyValue('--gray');
             
             new window.QRCode(document.getElementById('qr-code'), {
                 text: recipient,
@@ -28,7 +27,6 @@ const PaymentStep: React.FC<any> = (props) => {
                 colorLight: colorLight,
                 correctLevel: window.QRCode.CorrectLevel.H
             });
-
         }
    }, []);
 

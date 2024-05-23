@@ -3,16 +3,16 @@ class ApiService {
 	PORT = '8080'
 	API_BASE_URL = `${this.DOMAIN}:${this.PORT}`;
 
-    async successExchange(data: any) {
+    async submitExchangeData(form: any) {
 		const apiEndpoint = '/api/v1/exchange/submit';
 		const url = this.API_BASE_URL + apiEndpoint;
-
+        
 		return fetch(url, {
 			method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-              },
-			body: JSON.stringify(data),
+            },
+			body: JSON.stringify(form),
 		}).then( response => response.json() );
 	}
 

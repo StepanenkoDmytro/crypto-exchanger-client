@@ -37,7 +37,7 @@
 
 .payment__details--recipient {
     display: flex;
-    background-color: var(--bg1);
+    background-color: var(--gray);
     border-radius: 10px;
     padding: 14px 14px 10px;
     color: var(--surface);

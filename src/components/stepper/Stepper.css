@@ -28,7 +28,6 @@
 .step-header {
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .step-header__circle {
@@ -90,9 +89,7 @@
     color: var(--success);
 }
 
-.step-content {
-    /* margin: 20px 0; */
-}
+.step-content { }
 
 .step-actions {
     /* margin: 30px 0; */
