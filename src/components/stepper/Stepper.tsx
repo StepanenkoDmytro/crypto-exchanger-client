@@ -10,6 +10,7 @@ const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }
 
 const Stepper = (props: any) => {
 	const [activeStep, setActiveStep] = useState(props.activeStep);
+
 	useEffect(() => {
 		setActiveStep(props.activeStep);
 	}, [props.activeStep])
@@ -28,10 +29,12 @@ const Stepper = (props: any) => {
 		}
 	};
 
-	const handleGoToStep = (step: any) => {
-		setActiveStep(step);
-	}
-
+	const handleConfirm = async () => {
+        const success = await props.onConfirm();
+        if (success) {
+            goNext();
+        }
+    }
 
 	return (
 		<div className='box'>
@@ -39,7 +42,6 @@ const Stepper = (props: any) => {
 				{props.steps.map((step: any) => (
 					<div
 						className={`step-header ${activeStep === step.order ? 'active' : ''}`}
-						onClick={() => handleGoToStep(step.order)}
 					>
 						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''} 
 										${activeStep > step.order ? 'done-circle' : ''}`}>
@@ -60,11 +62,14 @@ const Stepper = (props: any) => {
 							{step.content}
 						</section>
 
-						<div className="step-actions">
-							{step.order > 1 && <button className="btn btn-danger" onClick={goBack}>Prev</button>}
-							{(step.order < props.steps.length) && <button className="btn btn-next ms-2" onClick={goNext}>Next</button>}
-							{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={props.onConfirm}>Exchange</button>}
-						</div>
+						{step.order < props.steps.length &&
+							<div className="step-actions">
+								{step.order > 1 && <button className="btn btn-danger" onClick={goBack}>Prev</button>}
+								{(step.order < props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={goNext}>Next</button>}
+								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>Exchange</button>}
+						
+							</div>
+						}
 					</Step>
 				))}
 			</div>
