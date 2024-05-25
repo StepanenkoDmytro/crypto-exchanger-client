@@ -3,7 +3,19 @@ import './Header.css';
 const Header: React.FC = () => { 
     return (
         <header className="header">
-            <h3>Some icon</h3>
+            <div className='header__logo'>
+
+            </div>
+            <div className='header__wrapper'>
+                <nav>
+                    <ul className='header__wrapper--list'>
+                        <li>Exchanger</li>
+                        <li>How it works</li>
+                        <li>Partners</li>
+                        <li>Contacts</li>
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 }
