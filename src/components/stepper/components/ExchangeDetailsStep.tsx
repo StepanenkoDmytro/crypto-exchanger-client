@@ -1,8 +1,8 @@
 import './ExchangeDetailsStep.css';
 import forIcon from '../../../assets/for.svg';
 import walletIcon from '../../../assets/wallet.svg';
-import Input from '../../ui/form-controls/Input';
 import { useEffect, useState } from 'react';
+import Input from '../../ui/form-controls/Input';
 
 const ExchangeDetailsStep: React.FC<any> = (props) => { 
     const [recipientAddress, setRecipientAddress] = useState<string>('');

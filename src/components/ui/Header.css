@@ -4,4 +4,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+.header__wrapper {
+    margin-right: auto;
+}
+
+.header__wrapper--list {
+    margin-left: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header__wrapper--list li {
+    color: var(--onsurface);
+    padding: 13px 11px;
+}
+
+.header__wrapper--list li:hover {
+    background-color: var(--primary);
 }

@@ -28,7 +28,13 @@ button {
   padding: 0;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .box {
+  align-self: center;
   width: 70%;
   background: var(--surface);
   padding: 30px 32px;
