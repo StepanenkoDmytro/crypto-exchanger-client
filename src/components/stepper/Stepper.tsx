@@ -43,8 +43,7 @@ const Stepper = (props: any) => {
 					<div
 						className={`step-header ${activeStep === step.order ? 'active' : ''}`}
 					>
-						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''} 
-										${activeStep > step.order ? 'done-circle' : ''}`}>
+						<span className={`step-header__circle ${activeStep === step.order ? 'active-circle' : ''} ${activeStep > step.order ? 'done-circle' : ''}`}>
 
 							{activeStep > step.order 
 								? <img src={successIcon} alt="svg" /> 

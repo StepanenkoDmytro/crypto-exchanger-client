@@ -52,14 +52,17 @@ export default function CurrencySelector({activeCurrency, onChange}: CurrencySel
             <div className={`select__options ${isDropdownExpanded ? 'visible' : ''}`}>
                 <ul>
                     {ApprovedCurrenciesList.map((currency) => (
-                        <li key={currency.id} onClick={() => handleOptionClick(currency)}>
-                            <div className="select__options__icon">
-                                {activeCurrency && activeCurrency.id === currency.id ? <img src={successIcon} alt="icon"/> : <></>}
-                            </div>
-                            <div className="select__options__icon">
+                        <li className={`${activeCurrency && activeCurrency.id === currency.id ? 'selected-cur' : ''}`} key={currency.id} onClick={() => handleOptionClick(currency)}>
+                            
+                            <div className='select__options__icon'>
                                 <img src={`https://cryptologos.cc/logos/thumbs/${currency.id}.png`} alt="icon" />
                             </div>
                             <span>{currency.name}</span>
+                            {activeCurrency.id === currency.id  &&
+                                <div className="selected-cur--active">
+                                    <div className="selected-cur--dot"></div>
+                                </div>
+                            }
                         </li>
                     ))}
                 </ul>

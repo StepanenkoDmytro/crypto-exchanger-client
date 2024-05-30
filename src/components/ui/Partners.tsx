@@ -10,25 +10,28 @@ const Partners: React.FC = () => {
     //Kucoin
     //ByBit
     return (
-        <section className="partners">
-            <div className='partners--logo'>
-                <img src={binanceIcon} alt='partners-logo'/>
-            </div>
-
-            <div className='partners--logo'>
-                <img src={okxIcon} alt='partners-logo'/>
-            </div>
-
-            <div className='partners--logo'>
-                <img className='kucoin' src={kucoinIcon} alt='partners-logo'/>
+        <div className='container'>
+            <section className="partners">
                 
-            </div>
+                <div className='partners--logo'>
+                    <img src={binanceIcon} alt='partners-logo'/>
+                </div>
 
-            <div className='partners--logo'>
-                <img src={bybitIcon} alt='partners-logo'/>
-            </div>
-        
-        </section>
+                <div className='partners--logo'>
+                    <img src={okxIcon} alt='partners-logo'/>
+                </div>
+
+                <div className='partners--logo'>
+                    <img className='kucoin' src={kucoinIcon} alt='partners-logo'/>
+                    
+                </div>
+
+                <div className='partners--logo'>
+                    <img src={bybitIcon} alt='partners-logo'/>
+                </div>
+                
+            </section>
+        </div>
     );
 }
 

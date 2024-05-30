@@ -3,13 +3,10 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    border-top: 1px solid var(--line);
-    padding: 20px;
 }
 
 .partners--logo {
     padding: 20px;
-    /* border: 1px solid var(--gray); */
     border-radius: 10px;
     background-color: var(--bg1);
 }

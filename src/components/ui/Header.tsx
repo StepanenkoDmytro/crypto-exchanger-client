@@ -12,7 +12,6 @@ const Header: React.FC = () => {
                         <li>Exchanger</li>
                         <li>How it works</li>
                         <li>Partners</li>
-                        <li>Contacts</li>
                     </ul>
                 </nav>
             </div>

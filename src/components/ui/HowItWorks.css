@@ -1,13 +1,9 @@
 .how-it-works {
-    /* border: 1px solid var(--line); */
-    /* border-radius: 10px; */
-    /* margin: 20px;/ */
-    padding: 20px;
     color: var(--onsurface);
-    border-top: 1px solid var(--line);
 }
 
 .how-it-works--title {
+    margin-bottom: 45px;
     font-size: 30px;
     font-weight: 700;
 }
@@ -15,7 +11,6 @@
 .how-it-works--box {
     display: flex;
     gap: 30px;
-    padding: 20px;
 }
 
 .how-it-works--step {
