@@ -48,3 +48,10 @@ button {
 .box__input input {
   color: var(--onsurface);
 }
+
+.desc {
+  margin: 20px;
+  /* padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px; */
+}

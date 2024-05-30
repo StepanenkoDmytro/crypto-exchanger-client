@@ -19,6 +19,8 @@
 }
 
 .header__wrapper--list li {
+    font-size: 14px;
+    font-weight: 700;
     color: var(--onsurface);
     padding: 13px 11px;
 }
