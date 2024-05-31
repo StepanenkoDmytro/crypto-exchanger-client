@@ -19,7 +19,7 @@
 }
 
 .select-wrapper__icon {
-    margin-right: 4px;
+    margin-inline: 15px;
     margin-bottom: -2px;
 }
 
@@ -43,34 +43,69 @@
 .select__options {
     display: none;
     position: absolute;
-    top: 55px;
+    top: 0px;
     left: 15px;
-    width: 200px;
+    width: calc(100% - 15px);
     max-height: 400px;
     overflow-y: scroll;
-    background-color: var(--gray);
+    overflow-x: hidden;
+    border-radius: 10px;
+    background-color: var(--bg1);
     z-index: 1;
 }
 
 .select__options__icon {
     display: flex;
-    width: 30px;
+    margin-right: 15px;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 .select__options__icon img {
-    width: 20px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
 }
 
 .select__options ul {
     padding: 0;
+    margin: 0;
 }
 
 .select__options li {
+    color: var(--onsurface);
+    font-weight: 700;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--surface);
+}
+
+.select__options li:hover {
+    background-color: var(--gray);
 }
 
 .visible {
     display: block;
+}
+
+.selected-cur {
+    background-color: var(--success);
+}
+
+.selected-cur--active {
+    align-self: center;
+    margin-left: auto;
+    margin-right: 0;
+    border: 1px solid var(--onsurface);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.selected-cur--dot {
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
 }

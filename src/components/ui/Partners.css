@@ -1,0 +1,21 @@
+.partners {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.partners--logo {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg1);
+}
+
+.partners--logo img {
+    width: 240px;
+    height: 100px;
+}
+
+.kucoin {
+    transform: scale(2.3);
+}

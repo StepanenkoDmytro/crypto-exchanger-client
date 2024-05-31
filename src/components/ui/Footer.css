@@ -1,0 +1,9 @@
+.footer {
+    display: block;
+    text-align: center;
+    color: var(--gray);
+    font-weight: 400;
+    font-size: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+}
