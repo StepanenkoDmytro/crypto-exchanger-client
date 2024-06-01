@@ -38,14 +38,14 @@ const HowItWorks: React.FC = () => {
                             </div>
                             <div className='how-it-works--step__dots'></div>
                         </div>
-                        <p className='how-it-works--step__title'>That’s all!</p>
+                        <p className='how-it-works--step__title'>Send and receive coins</p>
                         <p className='how-it-works--step__desc'>To continue, send the indicated amount of coins to the deposit address.</p>
                     </div>
                     <div className='how-it-works--step'>
                         <div className='how-it-works--step__icon'>
                             <img src={successIcon} alt="svg"/>
                         </div>
-                        <p className='how-it-works--step__title'>Choose a currency pair</p>
+                        <p className='how-it-works--step__title'>That’s all!</p>
                         <p className='how-it-works--step__desc'>The exchange status “Finished” means that the swap process is over.</p>
                     </div>
                 </div>

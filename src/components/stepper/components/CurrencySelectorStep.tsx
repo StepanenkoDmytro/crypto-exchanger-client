@@ -13,8 +13,6 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     const [currencyTo, setCurrencyTo] = useState<IConvert>(defaultCurrencyTo);
     const [amountFrom, setAmountFrom] = useState<number | string>(0.1);
     const [amonutTo, setAmonutTo] = useState<number | string>(0);
-    
-    const [isFirst, setIsFirst] = useState<boolean>(true);
 
     useEffect(() => {
         handleSetCurrencyFrom(defaultCurrencyFrom);
@@ -24,15 +22,6 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     useEffect(() => {
         updateFormData();
         convertCurrency();
-
-        // if(isFirst) {
-        //     handleSetCurrencyFrom(defaultCurrencyFrom);
-        //     handleSetCurrencyTo(defaultCurrencyTo);
-
-        //     setIsFirst(false);
-        // }
-        // fetchPrices();
-
     }, [currencyFrom, currencyTo, amountFrom, props.retryTrigger]);
 
     const updateFormData = () => {
