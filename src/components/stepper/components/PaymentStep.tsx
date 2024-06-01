@@ -13,7 +13,7 @@ const PaymentStep: React.FC<any> = (props) => {
    
     useEffect(() => {
         const qrCodeElement = document.getElementById('qr-code');
-        
+        console.log(props);
         if (window.QRCode && qrCodeElement && !qrCodeElement.innerHTML) {
             const computedStyles = getComputedStyle(document.documentElement);
             const colorDark = computedStyles.getPropertyValue('--surface');
@@ -42,8 +42,8 @@ const PaymentStep: React.FC<any> = (props) => {
                 <div className='payment__info--currency'>
                     <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
                     <p>
-                        {props.form.currencyToConvert.amount}
-                        {props.form.currencyToConvert.name}
+                        {props.form.currencyTo.amount}
+                        {props.form.currencyTo.name}
                     </p>
                 </div>
             </div>

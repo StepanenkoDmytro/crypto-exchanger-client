@@ -36,6 +36,7 @@
     padding: 10px;
     border-radius: 10px;
     background-color: var(--primary);
+    display: flex;
 }
 
 .how-it-works--step__icon img {
@@ -51,4 +52,5 @@
 
 .how-it-works--step__desc {
     margin-top: 8px;
+    color: var(--gray);
 }

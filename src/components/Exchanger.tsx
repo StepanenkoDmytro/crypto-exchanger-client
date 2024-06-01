@@ -17,7 +17,7 @@ const Exchanger: React.FC<any> = () => {
 		const apiService = new ApiService();
 		try {
 			await apiService.submitExchangeData(formValue);
-			setIsError(true);
+			// setIsError(true);
 		} catch (e) {
 			console.error("Error while upload info: ", e);
 			setIsError(true);
@@ -33,6 +33,7 @@ const Exchanger: React.FC<any> = () => {
 	}
 
 	const updateForm = (data: any) => {
+		console.log(formValue);
 		setFormValue({...formValue, ...data});
 	}
 

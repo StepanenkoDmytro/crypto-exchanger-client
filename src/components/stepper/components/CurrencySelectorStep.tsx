@@ -15,14 +15,17 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     const [amonutTo, setAmonutTo] = useState<number | string>(0);
 
     useEffect(() => {
+        handleSetCurrencyFrom(defaultCurrencyFrom);
+        handleSetCurrencyTo(defaultCurrencyTo);
+    }, []);
+
+    useEffect(() => {
         updateFormData();
         convertCurrency();
-
-        fetchPrices();
-
     }, [currencyFrom, currencyTo, amountFrom, props.retryTrigger]);
 
     const updateFormData = () => {
+        console.log('first')
         currencyFrom.amount = amountFrom;
         currencyTo.amount = amonutTo;
 
@@ -30,7 +33,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             currencyFrom: currencyFrom,
             currencyTo: currencyTo,
         });
-    };
+    }
 
     const convertCurrency = () => {
         const parseAmount = typeof amountFrom === 'string' ? parseFloat(amountFrom) : amountFrom;
@@ -38,10 +41,45 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             const result = (parseAmount * currencyFrom.price / currencyTo.price).toFixed(6);
             setAmonutTo(parseFloat(result));
         }
+    }
+
+    const handleSetCurrencyFrom = async (currency: IConvert) => {
+        try {
+            const currencyFromInfo = await apiService.getCoinPrice(currency.id);
+            if (!currencyFromInfo) {
+                props.onError();
+                return;
+            }
+
+            setCurrencyFrom(prevState => ({
+                ...currency,
+                price: currencyFromInfo.price,
+            }));
+        } catch (error) {
+            console.error('Failed to fetch crypto price for currencyFrom:', error);
+            props.onError();
+        }
+    };
+
+    const handleSetCurrencyTo = async (currency: IConvert) => {
+        try {
+            const currencyToInfo = await apiService.getCoinPrice(currency.id);
+            if (!currencyToInfo) {
+                props.onError();
+                return;
+            }
+
+            setCurrencyTo(prevState => ({
+                ...currency,
+                price: currencyToInfo.price,
+            }));
+        } catch (error) {
+            console.error('Failed to fetch crypto price for currencyTo:', error);
+            props.onError();
+        }
     };
 
     const fetchPrices = async () => {
-        
         try {
             const currencyFromInfo = await apiService.getCoinPrice(currencyFrom.id);
             const currencyToInfo = await apiService.getCoinPrice(currencyTo.id);
@@ -65,18 +103,18 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             console.error('Failed to fetch crypto prices:', error);
             props.onError();
         }
-    };
+    }
 
     const handleAmountChange = (event: string | number) => {
         setAmountFrom(event);
-    };  
+    }
 
     const handleChangeCurrencyFrom = (currency: IConvert) => {
-        setCurrencyFrom(currency);
+        handleSetCurrencyFrom(currency);
     }
 
     const handleChangeCurrencyTo = (currency: IConvert) => {
-        setCurrencyTo(currency);
+        handleSetCurrencyTo(currency);
     }
     
     return (
