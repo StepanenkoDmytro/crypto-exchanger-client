@@ -5,12 +5,8 @@ import kucoinIcon from '../../assets/partners/kucoin3.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
 
 const Partners: React.FC = () => { 
-    //Binance
-    //Okx
-    //Kucoin
-    //ByBit
     return (
-        <div className='container'>
+        <div className='container border'>
             <section className="partners">
                 
                 <div className='partners--logo'>
