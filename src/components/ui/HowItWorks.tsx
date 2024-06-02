@@ -6,8 +6,9 @@ import successIcon from '../../assets/circle-success.svg';
 
 const HowItWorks: React.FC = () => { 
     return (
+        <div className='container border'>
         <section className='how-it-works'>
-            <div className='container'>
+            
                 <div className='how-it-works--title'>How It Works</div>
                 <div className='how-it-works--box'>
                     <div className='how-it-works--step'>
@@ -49,8 +50,9 @@ const HowItWorks: React.FC = () => {
                         <p className='how-it-works--step__desc'>The exchange status “Finished” means that the swap process is over.</p>
                     </div>
                 </div>
-            </div>
+            
         </section>
+        </div>
     );
 }
 

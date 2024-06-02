@@ -5,10 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid var(--line);
 }
 
 .header__wrapper {
     margin-right: auto;
+}
+
+.header__logo {
+    cursor: pointer;
 }
 
 .header__wrapper--list {
