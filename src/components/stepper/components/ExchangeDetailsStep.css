@@ -13,6 +13,11 @@
     color: var(--gray);
 }
 
+.exchange-details__text-primary {
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .exchange-details__presentation  {
     display: flex;
     justify-content: space-between;

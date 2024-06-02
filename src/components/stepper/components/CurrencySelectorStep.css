@@ -25,6 +25,10 @@
     margin-left: auto;
 }
 
+.currency-wrapper__btn-convert:hover {
+    opacity: 0.9;
+}
+
 .currency-wrapper__btn {
     background: var(--primary);
     border-radius: 90px;

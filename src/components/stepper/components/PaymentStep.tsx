@@ -42,8 +42,8 @@ const PaymentStep: React.FC<any> = (props) => {
                 <div className='payment__info--currency'>
                     <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
                     <p>
-                        {props.form.currencyTo.amount}
-                        {props.form.currencyTo.name}
+                        {props.form.currencyFrom.amount}
+                        {props.form.currencyFrom.name}
                     </p>
                 </div>
             </div>
