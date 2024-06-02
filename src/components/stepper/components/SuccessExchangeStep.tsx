@@ -24,8 +24,8 @@ const SuccessExchangeStep: React.FC<any> = (props) => {
                     Send deposit:
                 </p>
                 <p className='success__info--text'>
-                    {props.form.currencyTo.amount}
-                    {props.form.currencyTo.symbol}
+                    {props.form.currencyFrom.amount}
+                    {props.form.currencyFrom.symbol}
                 </p>
             </li>
             <li>
@@ -33,8 +33,8 @@ const SuccessExchangeStep: React.FC<any> = (props) => {
                     You get:
                 </p>
                 <p className='success__info--text'>
-                    {props.form.currencyFrom.amount}
-                    {props.form.currencyFrom.symbol}
+                    {props.form.currencyTo.amount}
+                    {props.form.currencyTo.symbol}
                 </p>
             </li>
             <li>

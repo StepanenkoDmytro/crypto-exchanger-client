@@ -24,7 +24,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
     return (
         <div className="exchange-details">
             <p className="exchange-details__primary-text">Confirm Information</p>
-            <p className="exchange-details__text">You Are About To Receive 1.356 BTC For Bitcloud Bank</p>
+            <p className="exchange-details__text">You Are About To Receive <span className='exchange-details__text-primary'>{props.form.currencyFrom.amount} {props.form.currencyFrom.name}</span> For Bitcloud Bank</p>
             <ul className="exchange-details__presentation">
                 <li>
                     <div className="exchange-details__icon">
@@ -32,7 +32,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                     </div>
                     <div className="exchange-details__content">
                         <p>Pay</p>
-                        <p className="exchange-details__content-value">3.000.000 VND</p>
+                        <p className="exchange-details__content-value">{props.form.currencyFrom.amount} {props.form.currencyFrom.symbol}</p>
                     </div>
                 </li>
                 <li>
@@ -41,7 +41,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                     </div>
                     <div className="exchange-details__content">
                         <p>Get</p>
-                        <p className="exchange-details__content-value">0.00207026 BTC</p>
+                        <p className="exchange-details__content-value">{props.form.currencyTo.amount} {props.form.currencyTo.symbol}</p>
                     </div>
                 </li>
                 <li>
