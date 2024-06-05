@@ -30,13 +30,13 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
 
     const handlePrevClick = () => {
         setDirection('left');
-        setActiveStep(prevStep => prevStep === 0 ? steps.length : prevStep - 1);
+        setActiveStep(prevStep => prevStep === 0 ? steps.length - 1 : prevStep - 1);
         
     };
 
     const handleNextClick = () => {
         setDirection('right');
-        setActiveStep(prevStep => prevStep === steps.length ? 0 : prevStep + 1);
+        setActiveStep(prevStep => prevStep === steps.length - 1 ? 0 : prevStep + 1);
         
     };
 
