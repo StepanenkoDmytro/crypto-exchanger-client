@@ -50,7 +50,7 @@ const Exchanger: React.FC<any> = () => {
     return (
 		<>
 			<div className="container">
-				<StepAnimation />
+				<StepAnimation activeStep={activeStep} />
 				<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
 			</div>
 			{/* {isError

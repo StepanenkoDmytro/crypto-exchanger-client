@@ -2,11 +2,12 @@ import '../StepAnimation.css';
 import cloudPNG from '../../../../assets/step-animation/Cloud.png';
 import connectLinePNG from '../../../../assets/step-animation/connect-line.png';
 
-const FirstStep: React.FC = () => { 
+const SecondStep: React.FC = () => { 
 
     return (
         <div className='step-box'>
             <div className='step-item'>
+            <div className='step-item__line prev-line'><img src={connectLinePNG} alt="step-line-png"/></div>
                 <div><img src={cloudPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 1</p>
@@ -29,4 +30,4 @@ const FirstStep: React.FC = () => {
     );
 }
 
-export default FirstStep;
+export default SecondStep;
