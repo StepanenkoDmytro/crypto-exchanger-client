@@ -17,16 +17,18 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     useEffect(() => {
         handleSetCurrencyFrom(defaultCurrencyFrom);
         handleSetCurrencyTo(defaultCurrencyTo);
+        convertCurrency();
     }, []);
 
     useEffect(() => {
         updateFormData();
         convertCurrency();
-    }, [currencyFrom, currencyTo, amountFrom, props.retryTrigger]);
+    }, [currencyFrom, currencyTo, amountFrom, amonutTo, props.retryTrigger]);
 
     const updateFormData = () => {
-        console.log('first')
+        
         currencyFrom.amount = amountFrom;
+        console.log('currencyTo.amount', amonutTo)
         currencyTo.amount = amonutTo;
 
         props.onCoinsChanged({
@@ -39,6 +41,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
         const parseAmount = typeof amountFrom === 'string' ? parseFloat(amountFrom) : amountFrom;
         if (parseAmount && currencyFrom.price && currencyTo.price) {
             const result = (parseAmount * currencyFrom.price / currencyTo.price).toFixed(6);
+            console.log(result)
             setAmonutTo(parseFloat(result));
         }
     }

@@ -1,5 +1,5 @@
 class ApiService {
-    DOMAIN = 'http://localhost';
+    DOMAIN = 'http://45.77.60.247';
 	PORT = '8080'
 	API_BASE_URL = `${this.DOMAIN}:${this.PORT}`;
 
