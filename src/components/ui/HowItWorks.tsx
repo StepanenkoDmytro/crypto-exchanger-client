@@ -7,7 +7,7 @@ import successIcon from '../../assets/circle-success.svg';
 
 const HowItWorks: React.FC = () => { 
     return (
-        <div className='container border'>
+        <div className='container'>
             <div className='card-container'>
                 <div className='card-item'>
                     <div className='card-item__content'>

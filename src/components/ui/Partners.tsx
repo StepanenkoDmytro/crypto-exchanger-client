@@ -6,7 +6,7 @@ import bybitIcon from '../../assets/partners/bybit.svg';
 
 const Partners: React.FC = () => { 
     return (
-        <div className='container border'>
+        <div className='container'>
             <section className="partners">
                 
                 <div className='partners--logo'>
