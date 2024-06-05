@@ -1,0 +1,52 @@
+.step-box {
+    align-self: center;
+    display: flex;
+    gap: 20px;
+    width: 60%;
+}
+
+.step-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 20%;
+    height: 100%;
+    background: var(--bg);
+    z-index: 1;
+}
+
+.step-item {
+    position: relative;
+    text-align: center;
+}
+
+.step-item__line {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+}
+
+.step-item__content-number {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+.step-item__content-title {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--onsurface);
+}
+
+.step-item__content-desc {
+    letter-spacing: -.1px;
+    padding: 0 50px;
+    text-transform: capitalize;
+    color: var(--gray);
+}

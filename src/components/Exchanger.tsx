@@ -6,6 +6,7 @@ import CurrencySelectorStep from "./stepper/components/CurrencySelectorStep";
 import SuccessExchangeStep from "./stepper/components/SuccessExchangeStep";
 import Error from './ui/error/Error';
 import ApiService from '../services/ApiService';
+import StepAnimation from "./ui/step-animation/StepAnimation";
 
 const Exchanger: React.FC<any> = () => {
     const [formValue, setFormValue] = useState({});
@@ -49,7 +50,8 @@ const Exchanger: React.FC<any> = () => {
     return (
 		<>
 			<div className="container">
-			<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
+				<StepAnimation />
+				<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
 			</div>
 			{/* {isError
 				? <Error onRetry={handleOnRetry} />
