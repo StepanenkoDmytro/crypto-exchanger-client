@@ -7,7 +7,9 @@ import successIcon from '../../assets/circle-success.svg';
 
 const HowItWorks: React.FC = () => { 
     return (
-        <div className='container'>
+        <div className='container border'>
+            <h1 className='container__title'>We Are The Most Trusted Cryptocurrency Platform.</h1>
+            <p className='container__desc'>We believe Cryptolly is here to stay — and that a future worth building is one which opens its doors and invites everyone in.</p>
             <div className='card-container'>
                 <div className='card-item'>
                     <div className='card-item__content'>
