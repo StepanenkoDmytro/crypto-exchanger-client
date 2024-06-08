@@ -42,25 +42,19 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
 
     return (
         <div className='stepper-animation'>
-            <i className='steper-click left' onClick={handlePrevClick}>click left</i>
-            <div className='stepper-container'>
-                <TransitionGroup>
-                <CSSTransition
-                        key={activeStep}
-                        timeout={500}
-                        classNames={{
-                            enter: `step-content-enter-${direction}`,
-                            enterActive: `step-content-enter-active-${direction}`,
-                            exit: `step-content-exit-${direction}`,
-                            exitActive: `step-content-exit-active-${direction}`
-                        }}>
-                            <div className="step-content">
-                                {steps[activeStep].content}
-                            </div>
-                    </CSSTransition>
-                </TransitionGroup>
+            <div className='arrow-container left' onClick={handlePrevClick}>
+                <div className='arrow-up'></div>
+                <div className='arrow-down'></div>
             </div>
-            <i className='steper-click' onClick={handleNextClick}>click right</i>
+            <div className='stepper-container'>
+                <div className="step-content">
+                    {steps[activeStep].content}
+                </div>
+            </div>
+            <div className='arrow-container' onClick={handleNextClick}>
+                <div className='arrow-up'></div>
+                <div className='arrow-down'></div>
+            </div>
         </div>
     );
 }

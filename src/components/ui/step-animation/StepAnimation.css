@@ -20,57 +20,6 @@
     display: flex;
 }
 
-/* click left */
-.step-content-enter-left {
-    opacity: 0;
-    transform: translateX(-100%);
-}
-
-.step-content-enter-active-left {
-    opacity: 1;
-    transform: translateX(0%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.step-content-exit-right {
-    opacity: 0;
-    transform: translateX(0%);
-}
-
-.step-content-enter-active-right {
-    opacity: 1;
-    transform: translateX(0%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* * */
-
-
-
-/* click right */
-.step-content-enter-right {
-    opacity: 1;
-    transform: translateX(100%);
-}
-
-.step-content-exit-active-right {
-    opacity: 0;
-    transform: translateX(0%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.step-content-exit-left { 
-    opacity: 0;
-    transform: translateX(0%);
-}
-
-.step-content-exit-active-left { 
-    opacity: 1;
-    transform: translateX(0%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-/* * */
-
 .steper-click {
     cursor: pointer;
     user-select: none;
@@ -82,28 +31,6 @@
     gap: 20px;
     width: 100%;
 }
-
-/* .step-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 5%;
-    width: 20%;
-    height: 100%;
-    background: var(--bg);
-    z-index: 1;
-}
-
-.step-box::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 80%;
-    width: 20%;
-    height: 100%;
-    background: var(--bg);
-    z-index: 1;
-} */
 
 .step-item {
     position: relative;
@@ -154,9 +81,26 @@
 }
 
 .left {
-    left: 20%;
+    transform: rotate(180deg);
 }
 
 .prev-line {
     left: -13px;
+}
+
+.arrow-container {
+    width: 30px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.arrow-up {
+    border: 1px solid var(--line);
+    transform: rotate(35deg);
+}
+
+.arrow-down {
+    margin-top: 15px;
+    border: 1px solid var(--line);
+    transform: rotate(325deg);
 }
