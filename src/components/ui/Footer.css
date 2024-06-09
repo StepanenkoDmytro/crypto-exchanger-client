@@ -7,3 +7,26 @@
     padding: 16px 0;
     border-top: 1px solid var(--line);
 }
+
+.footer-links-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.footer-links__title {
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.footer-links__item {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer-privacy {
+    font-size: 12px;
+    text-align: left;
+    margin-left: 50px;
+}

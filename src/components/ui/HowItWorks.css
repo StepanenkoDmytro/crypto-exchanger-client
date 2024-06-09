@@ -1,56 +1,83 @@
-.how-it-works {
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 0 30px;
+    flex-flow: wrap;
+}
+
+.card-item {
+    width: 315px;
+    height: 100%;
+    border-radius: 30px;
+    background-color: var(--surface);
+    position: relative;
+}
+
+.card-item:nth-child(2n) {
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+.card-item:nth-child(2n+1) {
+    margin-top: -35px;
+    margin-bottom: 60px;
+}
+
+.card-item__content {
+    padding: 50px;
+}
+
+.card-item__title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+.card-item__text {
+    letter-spacing: -.1px;
+    /* padding: 0 50px; */
+    text-transform: capitalize;
+    color: var(--gray);
+}
+
+.card-item__icon {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    border-radius: 25%;
+}
+
+.card-item__icon img {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.card-item__primary {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-size: 20px;
     color: var(--onsurface);
 }
 
-.how-it-works--title {
-    margin-bottom: 45px;
-    font-size: 30px;
-    font-weight: 700;
+.security {
+    /* border: 1px solid var(--success); */
+    background-color: #588c6b6b;
 }
 
-.how-it-works--box {
-    display: flex;
-    gap: 30px;
+.community {
+    /* border: 1px solid var(--primary); */
+    background-color: #3772ff36;
 }
 
-.how-it-works--step {
-    width: max-content;
-    font-size: 16px;
+.clarity {
+    /* border: 1px solid var(--red); */
+    background-color: #d335352e;
 }
 
-.how-it-works--step__item {
-    display: flex;
-}
-
-.how-it-works--step__dots {
-    margin-left: 10px;
-    align-self: center;
-    display: inline-block;
-    border-bottom: 1px dashed var(--primary);
-    width: 100%;
-    height: 1px;
-}
-
-.how-it-works--step__icon {
-    width: max-content;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--primary);
-    display: flex;
-}
-
-.how-it-works--step__icon img {
-    width: 25px;
-    
-}
-
-.how-it-works--step__title {
-    margin-top: 16px;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.how-it-works--step__desc {
-    margin-top: 8px;
-    color: var(--gray);
+.chart {
+    /* border: 1px solid var(--gray); */
+    background-color: #b1b5c32b;
 }

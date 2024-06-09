@@ -9,23 +9,19 @@ const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }
 );
 
 const Stepper = (props: any) => {
-	const [activeStep, setActiveStep] = useState(props.activeStep);
-
-	useEffect(() => {
-		setActiveStep(props.activeStep);
-	}, [props.activeStep])
+	const { activeStep, onActiveStepChange } = props;
 
 	const totalSteps = 4;
 
 	const goNext = () => {
 		if (activeStep < totalSteps) {
-			setActiveStep(activeStep + 1);
+			onActiveStepChange(activeStep + 1);
 		}
 	};
 
 	const goBack = () => {
 		if (activeStep > 1) {
-			setActiveStep(activeStep - 1);
+			onActiveStepChange(activeStep - 1);
 		}
 	};
 

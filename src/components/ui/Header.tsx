@@ -14,8 +14,9 @@ const Header: React.FC = () => {
                 <nav>
                     <ul className='header__wrapper--list'>
                         <li>Exchanger</li>
-                        <li>How it works</li>
+                        <li>Advantages</li>
                         <li>Partners</li>
+                        <li>Contacts</li>
                     </ul>
                 </nav>
             </div>

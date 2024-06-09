@@ -7,6 +7,7 @@
   --line: #23262f;
   --success: #58bd7d;
   --gray: #b1b5c3;
+  --red: #d33535;
 }
 
 body {
@@ -61,14 +62,23 @@ button {
 
 .container {
   padding: 45px;
-  /* border-top: 1px solid var(--line); */
-
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
 }
 
-/* .container:first-child {
-  border-top: none;
-} */
+.container__title {
+  font-size: 42px;
+  text-align: left;
+  color: var(--onsurface);
+  margin-bottom: 10px;
+}
+
+.container__desc {
+  font-size: 20px;
+  color: var(--gray);
+  margin-bottom: 60px;
+}
 
 .border {
   border-top: 1px solid var(--line);
