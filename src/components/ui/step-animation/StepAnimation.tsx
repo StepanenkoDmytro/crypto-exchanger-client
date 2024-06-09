@@ -3,7 +3,6 @@ import './StepAnimation.css';
 import FirstStep from './components/FirstStep';
 import SecondStep from './components/SecondStep';
 import ThirdStep from './components/ThirdStep';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 
 interface StepAnimationProps {
@@ -18,26 +17,23 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
 	];
     
     const [activeStep, setActiveStep] = useState<number>(propActiveStep);
-    const [direction, setDirection] = useState<'left' | 'right'>('right');
+    const [prevActiveStep, setprevActiveStep] = useState<number>(0);
 
     useEffect(() => {
-        const currentStep = steps.find(step => step.order === activeStep);
-        if (currentStep) {
-            setDirection('right');
-        }
+        if(propActiveStep !== prevActiveStep) {
+            setActiveStep(propActiveStep);
+            setprevActiveStep(propActiveStep);
+        } 
         
     }, [propActiveStep, activeStep]);
 
     const handlePrevClick = () => {
-        setDirection('left');
-        setActiveStep(prevStep => prevStep === 0 ? steps.length - 1 : prevStep - 1);
+        setActiveStep(prevStep => prevStep === 1 ? steps.length : prevStep - 1);
         
     };
 
     const handleNextClick = () => {
-        setDirection('right');
-        setActiveStep(prevStep => prevStep === steps.length - 1 ? 0 : prevStep + 1);
-        
+        setActiveStep(prevStep => prevStep === steps.length ? 1 : prevStep + 1);
     };
 
     return (
@@ -48,7 +44,7 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
             </div>
             <div className='stepper-container'>
                 <div className="step-content">
-                    {steps[activeStep].content}
+                    {steps.find(step => step.order === activeStep)?.content}
                 </div>
             </div>
             <div className='arrow-container' onClick={handleNextClick}>

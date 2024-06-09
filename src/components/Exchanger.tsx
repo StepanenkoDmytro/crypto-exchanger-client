@@ -29,14 +29,16 @@ const Exchanger: React.FC<any> = () => {
 		setIsError(false);
 		setActiveStep(1);
 
-		//to rerender CurrencySelectorStep
 		setRetryTrigger(prevCount => prevCount + 1); 
 	}
 
 	const updateForm = (data: any) => {
-		console.log(formValue);
 		setFormValue({...formValue, ...data});
 	}
+
+	const handleActiveStepChange = (stepOrder: number) => {
+		setActiveStep(stepOrder);
+	};
 
     const steps = [
 		{order: 1, title: 'Select currency', content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
@@ -51,7 +53,7 @@ const Exchanger: React.FC<any> = () => {
 		<>
 			<div className="container">
 				<StepAnimation activeStep={activeStep} />
-				<Stepper steps={steps} activeStep={activeStep} onConfirm={handleConfirm}/>
+				<Stepper steps={steps} activeStep={activeStep} onActiveStepChange={handleActiveStepChange} onConfirm={handleConfirm}/>
 			</div>
 			{/* {isError
 				? <Error onRetry={handleOnRetry} />
