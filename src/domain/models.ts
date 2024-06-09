@@ -4,7 +4,7 @@
     price: number | null;
     symbol: string;
     amount: number | string;
-    icon: string | null;
+    icon: string;
 }
 
 export const defaultCurrencyFrom: IConvert = {
@@ -13,7 +13,7 @@ export const defaultCurrencyFrom: IConvert = {
     price: null,
     symbol: "BTC",
     amount: 0,
-    icon: null
+    icon: ''
 }
 
 export const defaultCurrencyTo: IConvert = {
@@ -22,7 +22,7 @@ export const defaultCurrencyTo: IConvert = {
     price: null,
     symbol: "ETH",
     amount: 0,
-    icon: null
+    icon: ''
 }
 
 export const ApprovedCurrenciesList: IConvert[] = [
@@ -32,7 +32,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BTC",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "ethereum",
@@ -40,7 +40,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ETH",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "binance-coin",
@@ -48,7 +48,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BNB",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "xrp",
@@ -56,7 +56,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XRP",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "cardano",
@@ -64,7 +64,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ADA",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "solana",
@@ -72,7 +72,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "SOL",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "monero",
@@ -80,7 +80,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XMR",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "bitcoin-cash",
@@ -88,7 +88,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BCH",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "ethereum-classic",
@@ -96,7 +96,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ETC",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "shiba-inu",
@@ -104,7 +104,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "SHIB",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "dogecoin",
@@ -112,7 +112,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "DOGE",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "polkadot",
@@ -120,7 +120,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "DOT",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "litecoin",
@@ -128,7 +128,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "LTC",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "cosmos",
@@ -136,7 +136,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ATOM",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "avalanche",
@@ -144,7 +144,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "AVAX",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "eos",
@@ -152,7 +152,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "EOS",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "stellar",
@@ -160,7 +160,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XLM",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "chainlink",
@@ -168,7 +168,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "LINK",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "vechain",
@@ -176,6 +176,12 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "VET",
         amount: 0,
-        icon: null
+        icon: ''
     },
 ];
+
+ApprovedCurrenciesList.map(coin => {
+    const icon = coin.id === 'polkadot' ? `https://cryptologos.cc/logos/thumbs/${coin.id}-new.png` : `https://cryptologos.cc/logos/thumbs/${coin.id}.png`;
+    coin.icon = icon;
+    return coin;
+})

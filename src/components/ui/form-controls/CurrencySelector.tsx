@@ -55,7 +55,7 @@ export default function CurrencySelector({activeCurrency, onChange}: CurrencySel
                         <li className={`${activeCurrency && activeCurrency.id === currency.id ? 'selected-cur' : ''}`} key={currency.id} onClick={() => handleOptionClick(currency)}>
                             
                             <div className='select__options__icon'>
-                                <img src={`https://cryptologos.cc/logos/thumbs/${currency.id}.png`} alt="icon" />
+                                <img src={currency.icon} alt="icon" />
                             </div>
                             <span>{currency.name}</span>
                             {activeCurrency.id === currency.id  &&

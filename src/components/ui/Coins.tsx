@@ -12,7 +12,7 @@ const Coins: React.FC = () => {
         {/* {ApprovedCurrenciesList} */}
         {ApprovedCurrenciesList.map((coin, index) => (
         <div key={index} className="coin-card">
-          <img src={`https://cryptologos.cc/logos/thumbs/${coin.id}.png`} alt={coin.name} className="coin-image" />
+          <img src={coin.icon} alt={coin.name} className="coin-image" />
           <div className="coin-details">
             <p>{coin.name}</p>
             {/* <p>{coin.symbol}</p> */}

@@ -11,17 +11,29 @@
     border-radius: 30px;
     background-color: var(--surface);
     position: relative;
+    /* transition: transform .05s ease;
+    transform: rotate3d(1, 1, 1, 360deg); */
 }
 
-.card-item:nth-child(2n) {
+.card-item:nth-child(even) {
     margin-top: 0px;
     margin-bottom: 25px;
 }
 
-.card-item:nth-child(2n+1) {
+.card-item:nth-child(odd) {
     margin-top: -35px;
     margin-bottom: 60px;
 }
+
+
+
+/* .card-item:nth-child(even):hover {
+    transform: rotate3d(0, 4, 1, 15deg);
+}
+
+.card-item:nth-child(odd):hover {
+    transform: rotate3d(0, 4, 1, 345deg);
+} */
 
 .card-item__content {
     padding: 50px;
