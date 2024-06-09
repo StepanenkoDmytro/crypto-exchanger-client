@@ -27,10 +27,50 @@ export const defaultCurrencyTo: IConvert = {
 
 export const ApprovedCurrenciesList: IConvert[] = [
     {
+        id: "bitcoin",
+        name: "Bitcoin",
+        price: null,
+        symbol: "BTC",
+        amount: 0,
+        icon: null
+    },
+    {
+        id: "ethereum",
+        name: "Ethereum",
+        price: null,
+        symbol: "ETH",
+        amount: 0,
+        icon: null
+    },
+    {
+        id: "binance-coin",
+        name: "BNB",
+        price: null,
+        symbol: "BNB",
+        amount: 0,
+        icon: null
+    },
+    {
         id: "xrp",
         name: "XRP",
         price: null,
         symbol: "XRP",
+        amount: 0,
+        icon: null
+    },
+    {
+        id: "cardano",
+        name: "Cardano",
+        price: null,
+        symbol: "ADA",
+        amount: 0,
+        icon: null
+    },
+    {
+        id: "solana",
+        name: "Solana",
+        price: null,
+        symbol: "SOL",
         amount: 0,
         icon: null
     },
@@ -51,26 +91,10 @@ export const ApprovedCurrenciesList: IConvert[] = [
         icon: null
     },
     {
-        id: "ethereum",
-        name: "Ethereum",
-        price: null,
-        symbol: "ETH",
-        amount: 0,
-        icon: null
-    },
-    {
         id: "ethereum-classic",
         name: "Ethereum Classic",
         price: null,
         symbol: "ETC",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "cardano",
-        name: "Cardano",
-        price: null,
-        symbol: "ADA",
         amount: 0,
         icon: null
     },
@@ -115,22 +139,6 @@ export const ApprovedCurrenciesList: IConvert[] = [
         icon: null
     },
     {
-        id: "solana",
-        name: "Solana",
-        price: null,
-        symbol: "SOL",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "binance-coin",
-        name: "BNB",
-        price: null,
-        symbol: "BNB",
-        amount: 0,
-        icon: null
-    },
-    {
         id: "avalanche",
         name: "Avalanche",
         price: null,
@@ -151,14 +159,6 @@ export const ApprovedCurrenciesList: IConvert[] = [
         name: "Stellar",
         price: null,
         symbol: "XLM",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "bitcoin",
-        name: "Bitcoin",
-        price: null,
-        symbol: "BTC",
         amount: 0,
         icon: null
     },

@@ -4,6 +4,7 @@ import Footer from './components/ui/Footer';
 import Partners from './components/ui/Partners';
 import Exchanger from './components/Exchanger';
 import HowItWorks from './components/ui/HowItWorks';
+import Coins from './components/ui/Coins';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 				<Exchanger />
 				<section className='desc'>
 					<HowItWorks />
+					<Coins />
 					<Partners />
 				</section>
 			</main>
