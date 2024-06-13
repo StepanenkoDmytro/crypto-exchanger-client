@@ -25,15 +25,9 @@
     margin-bottom: 60px;
 }
 
-
-
-/* .card-item:nth-child(even):hover {
-    transform: rotate3d(0, 4, 1, 15deg);
+.card-item:hover {
+    transform: scale(1.02);
 }
-
-.card-item:nth-child(odd):hover {
-    transform: rotate3d(0, 4, 1, 345deg);
-} */
 
 .card-item__content {
     padding: 50px;

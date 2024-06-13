@@ -26,6 +26,7 @@
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: float 3s ease-in-out infinite;
+    transform: translateZ(1px);
   }
 
   .coin-card:nth-child(2n) {
@@ -45,7 +46,7 @@
   
   .coin-details {
     text-align: center;
-    color: var(--line);
+    color: var(--gray);
     margin-top: 10px;
     font-size: 14px;
     font-weight: 700;

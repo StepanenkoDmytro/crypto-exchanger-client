@@ -1,6 +1,7 @@
 .partners {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    /* TODO: last on center */
     gap: 20px;
     flex-wrap: wrap;
 }
