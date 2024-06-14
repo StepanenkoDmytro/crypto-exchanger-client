@@ -24,14 +24,14 @@
     opacity: 0.8;
 }
 
-.arrow-container {
+.scroll-arrow-container {
     width: 20px;
     height: 20px;
     padding: 3px 0;
     cursor: pointer;
 }
 
-.arrow-up {
+.scroll-arrow-up {
     border: 1px solid var(--onsurface);
     transform: rotate(50deg);
     position: relative;
@@ -39,7 +39,7 @@
     top: 8px;
 }
 
-.arrow-down {
+.scroll-arrow-down {
     border: 1px solid var(--onsurface);
     transform: rotate(310deg);
     position: relative;

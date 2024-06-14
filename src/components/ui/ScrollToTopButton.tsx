@@ -30,9 +30,9 @@ const ScrollToTopButton: React.FC = () => {
         <button 
             className={`scroll-to-top ${isVisible ? 'show' : ''}`} 
             onClick={scrollToTop}>
-            <div className='arrow-container'>
-                <div className='arrow-up'></div>
-                <div className='arrow-down'></div>
+            <div className='scroll-arrow-container'>
+                <div className='scroll-arrow-up'></div>
+                <div className='scroll-arrow-down'></div>
             </div>
         </button>
     );
