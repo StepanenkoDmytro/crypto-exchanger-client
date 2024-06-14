@@ -6,7 +6,7 @@ const Coins: React.FC = () => {
     return (
         <section className='container border'>
         <h1 className='container__title'>Supported Coins</h1>
-        <p className='container__desc'>We support 19 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Cryptolly to discover and invest in your preferred coins</p>
+        <p className='container__desc'>We support 21 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Cryptolly to discover and invest in your preferred coins</p>
         
         <div className='coin-grid'>
         {/* {ApprovedCurrenciesList} */}

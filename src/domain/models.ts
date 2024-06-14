@@ -83,6 +83,22 @@ export const ApprovedCurrenciesList: IConvert[] = [
         icon: ''
     },
     {
+        id: "tether",
+        name: "Tether",
+        price: null,
+        symbol: "USDT",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "usd-coin",
+        name: "USD Coin",
+        price: null,
+        symbol: "USDC",
+        amount: 0,
+        icon: ''
+    },
+    {
         id: "bitcoin-cash",
         name: "Bitcoin Cash",
         price: null,
