@@ -1,0 +1,48 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: var(--primary);
+    color: var(--onsurface);
+    border: none;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0.4s;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.8;
+}
+
+.arrow-container {
+    width: 20px;
+    height: 20px;
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+.arrow-up {
+    border: 1px solid var(--onsurface);
+    transform: rotate(50deg);
+    position: relative;
+    left: 7px;
+    top: 8px;
+}
+
+.arrow-down {
+    border: 1px solid var(--onsurface);
+    transform: rotate(310deg);
+    position: relative;
+    left: -6px;
+    top: -8px;
+}

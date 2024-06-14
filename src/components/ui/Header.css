@@ -33,3 +33,15 @@
 .header__wrapper--list li:hover {
     background-color: var(--primary);
 }
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.header__contacts img {
+    margin-right: 5px;
+    width: 30px;
+}

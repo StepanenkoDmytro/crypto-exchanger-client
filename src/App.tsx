@@ -5,6 +5,7 @@ import Partners from './components/ui/Partners';
 import Exchanger from './components/Exchanger';
 import HowItWorks from './components/ui/HowItWorks';
 import Coins from './components/ui/Coins';
+import ScrollToTopButton from './components/ui/ScrollToTopButton';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 				</section>
 			</main>
 			<Footer/>
+			<ScrollToTopButton />
 		</>
 	);
 }
