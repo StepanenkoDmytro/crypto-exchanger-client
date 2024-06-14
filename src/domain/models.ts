@@ -4,7 +4,7 @@
     price: number | null;
     symbol: string;
     amount: number | string;
-    icon: string | null;
+    icon: string;
 }
 
 export const defaultCurrencyFrom: IConvert = {
@@ -13,7 +13,7 @@ export const defaultCurrencyFrom: IConvert = {
     price: null,
     symbol: "BTC",
     amount: 0,
-    icon: null
+    icon: ''
 }
 
 export const defaultCurrencyTo: IConvert = {
@@ -22,33 +22,17 @@ export const defaultCurrencyTo: IConvert = {
     price: null,
     symbol: "ETH",
     amount: 0,
-    icon: null
+    icon: ''
 }
 
 export const ApprovedCurrenciesList: IConvert[] = [
     {
-        id: "xrp",
-        name: "XRP",
+        id: "bitcoin",
+        name: "Bitcoin",
         price: null,
-        symbol: "XRP",
+        symbol: "BTC",
         amount: 0,
-        icon: null
-    },
-    {
-        id: "monero",
-        name: "Monero",
-        price: null,
-        symbol: "XMR",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "bitcoin-cash",
-        name: "Bitcoin Cash",
-        price: null,
-        symbol: "BCH",
-        amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "ethereum",
@@ -56,71 +40,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ETH",
         amount: 0,
-        icon: null
-    },
-    {
-        id: "ethereum-classic",
-        name: "Ethereum Classic",
-        price: null,
-        symbol: "ETC",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "cardano",
-        name: "Cardano",
-        price: null,
-        symbol: "ADA",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "shiba-inu",
-        name: "Shiba Inu",
-        price: null,
-        symbol: "SHIB",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "dogecoin",
-        name: "Dogecoin",
-        price: null,
-        symbol: "DOGE",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "polkadot",
-        name: "Polkadot",
-        price: null,
-        symbol: "DOT",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "litecoin",
-        name: "Litecoin",
-        price: null,
-        symbol: "LTC",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "cosmos",
-        name: "Cosmos",
-        price: null,
-        symbol: "ATOM",
-        amount: 0,
-        icon: null
-    },
-    {
-        id: "solana",
-        name: "Solana",
-        price: null,
-        symbol: "SOL",
-        amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "binance-coin",
@@ -128,7 +48,111 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BNB",
         amount: 0,
-        icon: null
+        icon: ''
+    },
+    {
+        id: "xrp",
+        name: "XRP",
+        price: null,
+        symbol: "XRP",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "cardano",
+        name: "Cardano",
+        price: null,
+        symbol: "ADA",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "solana",
+        name: "Solana",
+        price: null,
+        symbol: "SOL",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "monero",
+        name: "Monero",
+        price: null,
+        symbol: "XMR",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "tether",
+        name: "Tether",
+        price: null,
+        symbol: "USDT",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "usd-coin",
+        name: "USD Coin",
+        price: null,
+        symbol: "USDC",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "bitcoin-cash",
+        name: "Bitcoin Cash",
+        price: null,
+        symbol: "BCH",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "ethereum-classic",
+        name: "Ethereum Classic",
+        price: null,
+        symbol: "ETC",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "shiba-inu",
+        name: "Shiba Inu",
+        price: null,
+        symbol: "SHIB",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "dogecoin",
+        name: "Dogecoin",
+        price: null,
+        symbol: "DOGE",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "polkadot",
+        name: "Polkadot",
+        price: null,
+        symbol: "DOT",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "litecoin",
+        name: "Litecoin",
+        price: null,
+        symbol: "LTC",
+        amount: 0,
+        icon: ''
+    },
+    {
+        id: "cosmos",
+        name: "Cosmos",
+        price: null,
+        symbol: "ATOM",
+        amount: 0,
+        icon: ''
     },
     {
         id: "avalanche",
@@ -136,7 +160,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "AVAX",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "eos",
@@ -144,7 +168,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "EOS",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "stellar",
@@ -152,15 +176,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XLM",
         amount: 0,
-        icon: null
-    },
-    {
-        id: "bitcoin",
-        name: "Bitcoin",
-        price: null,
-        symbol: "BTC",
-        amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "chainlink",
@@ -168,7 +184,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "LINK",
         amount: 0,
-        icon: null
+        icon: ''
     },
     {
         id: "vechain",
@@ -176,6 +192,12 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "VET",
         amount: 0,
-        icon: null
+        icon: ''
     },
 ];
+
+ApprovedCurrenciesList.map(coin => {
+    const icon = coin.id === 'polkadot' ? `https://cryptologos.cc/logos/thumbs/${coin.id}-new.png` : `https://cryptologos.cc/logos/thumbs/${coin.id}.png`;
+    coin.icon = icon;
+    return coin;
+})
