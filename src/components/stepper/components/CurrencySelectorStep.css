@@ -40,3 +40,9 @@
     font-size: 16px;
     color: var(--onsurface);
 }
+
+@media (max-width: 400px) {
+    .currency-wrapper {
+        flex-direction: column;
+    }
+}

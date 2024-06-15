@@ -92,7 +92,6 @@
 .step-content { }
 
 .step-actions {
-    /* margin: 30px 0; */
     display: flex;
     justify-content: center;
 }
@@ -116,4 +115,22 @@
 .btn-next {
     background: var(--primary);
     color: var(--onsurface);
+}
+
+@media (max-width: 400px) {
+    .stepper-header {
+        justify-content: center;
+    }
+
+    .step-header {
+        display: none;
+    }
+
+    .step-header.active {
+        display: flex;
+    }
+
+    .btn {
+        margin-right: 20px;
+    }
 }

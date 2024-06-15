@@ -31,18 +31,20 @@
     cursor: pointer;
 }
 
-.scroll-arrow-up {
-    border: 1px solid var(--onsurface);
-    transform: rotate(50deg);
+.scroll-arrow-up,
+.scroll-arrow-down {
     position: relative;
+    border: 1px solid var(--onsurface);
+}
+
+.scroll-arrow-up {
+    transform: rotate(50deg);
     left: 7px;
     top: 8px;
 }
 
 .scroll-arrow-down {
-    border: 1px solid var(--onsurface);
     transform: rotate(310deg);
-    position: relative;
-    left: -6px;
-    top: -8px;
+    left: -5px;
+    top: 6px;
 }

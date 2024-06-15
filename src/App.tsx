@@ -3,7 +3,7 @@ import Header from './components/ui/Header';
 import Footer from './components/ui/Footer';
 import Partners from './components/ui/Partners';
 import Exchanger from './components/Exchanger';
-import HowItWorks from './components/ui/HowItWorks';
+import Trusty from './components/ui/Trusty';
 import Coins from './components/ui/Coins';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 
@@ -16,7 +16,7 @@ function App() {
 			<main className='main'>
 				<Exchanger />
 				<section className='desc'>
-					<HowItWorks />
+					<Trusty />
 					<Coins />
 					<Partners />
 				</section>

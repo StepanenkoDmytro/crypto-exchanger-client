@@ -42,7 +42,6 @@ button {
   margin-top: 25px;
   margin-bottom: 15px;
   align-self: center;
-  /* width: 70%; */
   background: var(--surface);
   padding: 30px 32px;
   border-radius: 20px;
@@ -86,10 +85,31 @@ button {
 
 @media (max-width: 1500px) {
   .container{
-    max-width: 1000px;
+    width: 1000px;
   }
 }
 
-/* .dm-sans {
+@media (max-width: 800px) {
+  .container{
+    width: 600px;
+  }
+}
 
-} */
+@media (max-width: 400px) {
+  .container{
+    width: 300px;
+  }
+
+  .box {
+    padding-inline: 0;
+  }
+
+  .container__title {
+    font-size: 24px;
+  }
+
+  .container__desc {
+    font-size: 14px;
+  }
+}
+

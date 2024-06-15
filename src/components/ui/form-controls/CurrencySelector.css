@@ -109,3 +109,14 @@
     background: #fff;
     border-radius: 50%;
 }
+
+@media (max-width: 400px) {
+    .select-wrapper {
+        margin: 0;
+    }
+
+    .select {
+        margin-top: 20px;
+        width: 100%;
+    }
+}

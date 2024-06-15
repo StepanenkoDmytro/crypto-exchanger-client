@@ -1,11 +1,11 @@
-import './HowItWorks.css';
+import './Trusty.css';
 import sucurityIcon from '../../assets/desc/security.svg';
 import communityIcon from '../../assets/desc/community.svg';
 import clarityPng from '../../assets/desc/clarity.svg';
 import chartIcon from '../../assets/desc/chart.svg';
 import successIcon from '../../assets/circle-success.svg';
 
-const HowItWorks: React.FC = () => { 
+const Trusty: React.FC = () => { 
     return (
         <section className='container border'>
             <h1 className='container__title'>We Are The Most Trusted Cryptocurrency Platform.</h1>
@@ -61,4 +61,4 @@ const HowItWorks: React.FC = () => {
     );
 }
 
-export default HowItWorks;
+export default Trusty;

@@ -87,3 +87,24 @@
     /* border: 1px solid var(--gray); */
     background-color: #b1b5c32b;
 }
+
+@media (max-width: 400px) {
+    .card-item__icon img {
+        width: 30px;
+        height: 30px;
+    } 
+
+    .card-item__primary {
+        margin-top: 50px;
+    }
+
+    .card-item__icon {
+        left: 75%;
+    }
+
+    .card-item:nth-child(odd),
+    .card-item:nth-child(even) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
