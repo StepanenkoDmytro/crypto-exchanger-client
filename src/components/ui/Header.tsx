@@ -20,6 +20,7 @@ const Header: React.FC = () => {
 
     return (
         <header className="header">
+            
             <div className='header__logo' onClick={handleLogoClick}>
                 <img src="/logo/logo-dark.png" alt="logo"/>
             </div>
@@ -40,6 +41,7 @@ const Header: React.FC = () => {
             <button className='header__menu'>
                 <img src={burgerIcon} alt="burger"/>
             </button>
+            
         </header>
     );
 }

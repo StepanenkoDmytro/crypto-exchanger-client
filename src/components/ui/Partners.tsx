@@ -1,7 +1,7 @@
 import './Partners.css';
 import binanceIcon from '../../assets/partners/binance.svg';
 import okxIcon from '../../assets/partners/okx.svg';
-import kucoinIcon from '../../assets/partners/kucoin3.svg';
+// import kucoinIcon from '../../assets/partners/kucoin3.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
 
 const Partners: React.FC = () => { 
@@ -20,7 +20,7 @@ const Partners: React.FC = () => {
                 </div>
 
                 <div className='partners--logo'>
-                    <img className='kucoin' src={kucoinIcon} alt='partners-logo'/>
+                    <img src='https://assets.staticimg.com/g-biz/externals/2022-06-01/9bfcd9feaf2b8bed.svg' alt='partners-logo'/>
                     
                 </div>
 

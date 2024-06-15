@@ -124,7 +124,7 @@
 
     .stepper-header {
         position: absolute;
-        width: 100%;
+        width: 90%;
         padding-left: 20px;
         padding-bottom: 20px;
         overflow-x: scroll;

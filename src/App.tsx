@@ -15,11 +15,9 @@ function App() {
 			<Header/>
 			<main className='main'>
 				<Exchanger />
-				<section className='desc'>
 					<Trusty />
 					<Coins />
 					<Partners />
-				</section>
 			</main>
 			<Footer/>
 			<ScrollToTopButton />
