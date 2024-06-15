@@ -11,6 +11,7 @@
 }
 
 .currency-wrapper__btn-convert {
+    align-self: flex-end;
     outline: none;
     min-width: 40px;
     width: 40px;
@@ -22,7 +23,6 @@
     justify-content: center;
     border: none;
     margin: 10px 10px;
-    margin-left: auto;
 }
 
 .currency-wrapper__btn-convert:hover {
@@ -44,5 +44,9 @@
 @media (max-width: 400px) {
     .currency-wrapper {
         flex-direction: column;
+    }
+
+    .currency-wrapper__btn-convert {
+        align-self: center;
     }
 }

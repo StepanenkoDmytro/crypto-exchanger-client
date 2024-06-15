@@ -63,7 +63,7 @@ button {
   padding: 45px;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  width: 1200px;
 }
 
 .container__title {
@@ -98,6 +98,7 @@ button {
 @media (max-width: 400px) {
   .container{
     width: 300px;
+    padding: 0;
   }
 
   .box {
