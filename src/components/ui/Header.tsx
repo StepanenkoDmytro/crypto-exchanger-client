@@ -1,6 +1,7 @@
 import './Header.css';
 import telegramIcon from '../../assets/telegram.svg';
 import emailIcon from '../../assets/email.png';
+import burgerIcon from '../../assets/burger.svg';
 
 const Header: React.FC = () => { 
     const telegram: string = '@v128s';
@@ -36,6 +37,9 @@ const Header: React.FC = () => {
                 <img src={telegramIcon} onClick={copyTelegtamToClipboard}></img>
                 <img src={emailIcon} onClick={copyEmailToClipboard}></img>
             </div>
+            <button className='header__menu'>
+                <img src={burgerIcon} alt="burger"/>
+            </button>
         </header>
     );
 }

@@ -118,16 +118,25 @@
 }
 
 @media (max-width: 400px) {
+    .stepper-container {
+        margin-top: 50px;
+    }
+
     .stepper-header {
-        justify-content: center;
+        position: absolute;
+        width: 100%;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        overflow-x: scroll;
+    }
+
+    .step-header__circle {
+        width: 21px;
+        height: 14px;
     }
 
     .step-header {
-        display: none;
-    }
-
-    .step-header.active {
-        display: flex;
+        font-size: 12px;
     }
 
     .btn {

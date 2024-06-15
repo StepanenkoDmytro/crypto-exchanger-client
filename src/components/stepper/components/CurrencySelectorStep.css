@@ -42,11 +42,14 @@
 }
 
 @media (max-width: 400px) {
-    .currency-wrapper {
-        flex-direction: column;
+    .currency-wrapper__btn-convert {
+        min-width: 24px;
+        height: 24px;
+        width: 24px;
+        margin: 0;
     }
 
-    .currency-wrapper__btn-convert {
-        align-self: center;
+    .currency-wrapper__btn-convert img {
+        width: 12px;
     }
 }

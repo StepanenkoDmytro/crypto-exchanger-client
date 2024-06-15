@@ -112,11 +112,16 @@
 
 @media (max-width: 400px) {
     .select-wrapper {
-        margin: 0;
+        padding: 10px 8px 9px;
+        font-size: 15px;
     }
 
-    .select {
-        margin-top: 20px;
-        width: 100%;
+    .select-wrapper__icon img {
+        max-width: 16px;
+        height: 16px;
+    }
+
+    .select-wrapper__icon {
+        margin-inline: 8px;
     }
 }

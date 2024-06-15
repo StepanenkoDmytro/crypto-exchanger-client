@@ -32,6 +32,23 @@
 
 @media (max-width: 400px) {
     .input-wrapper {
-        width: inherit;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: normal;
+        height: 43px;
+        width: 120px;
+    }
+
+    .input-element {
+        font-size: 15px;
+        margin-top: auto;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .input-label {
+        font-size: 10px;
+        margin: 0;
     }
 }

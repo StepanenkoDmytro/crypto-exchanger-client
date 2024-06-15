@@ -45,3 +45,24 @@
     margin-right: 5px;
     width: 30px;
 }
+
+.header__menu {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .header {
+        justify-content: space-between;
+        height: 20px;
+    }
+
+    .header__wrapper,
+    .header__contacts {
+        display: none;
+    }
+
+    .header__menu {
+        display: block;
+        width: 30px;
+    }
+}
