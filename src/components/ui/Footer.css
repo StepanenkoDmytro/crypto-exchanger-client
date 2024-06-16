@@ -86,13 +86,23 @@
 }
 
 @media (max-width: 767px) {
+    .footer {
+        margin-top: 30px;
+    }
+
+    .footer__contacts {
+        margin-bottom: 10px;
+    }
+
     .footer-links-container {
         flex-direction: column;
+        margin-bottom: 0;
     }
 
     .footer-links {
         position: relative;
         margin-bottom: 20px;
+        padding-inline: 20px;
     }
 
     .footer-links__title {
@@ -124,6 +134,7 @@
 
     .footer-links__accordion-content {
         display: none;
+        font-size: 18px;
     }
 
     .show {

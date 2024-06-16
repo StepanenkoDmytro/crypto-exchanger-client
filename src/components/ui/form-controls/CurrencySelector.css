@@ -111,9 +111,15 @@
 }
 
 @media (max-width: 400px) {
+    .select {
+        width: 40%;
+    }
+
     .select-wrapper {
-        padding: 10px 8px 9px;
+        padding: 9px 8px 9px;
         font-size: 15px;
+        border-radius: 0px 12px 12px 0px;
+        margin-left: 1px;
     }
 
     .select-wrapper__icon img {
@@ -122,6 +128,6 @@
     }
 
     .select-wrapper__icon {
-        margin-inline: 8px;
+        margin-inline: 0px 8px;
     }
 }

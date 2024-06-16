@@ -62,3 +62,46 @@
     width: 65%;
     font-size: 16px;
 }
+
+@media (max-width: 400px) {
+    .exchange-details {
+        padding-inline: 15px;
+        margin-top: 10px;
+    }
+
+    .exchange-details__icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .exchange-details__icon img {
+        width: 15px;
+    }
+
+    .exchange-details__primary-text {
+        font-size: 20px;
+    }
+
+    .exchange-details__text {
+        font-size: 14px;
+    }
+
+    .exchange-details__text-primary {
+        font-size: 16px;
+    }
+
+    .exchange-details__content {
+        display: flex;
+        align-self: center;
+    }
+
+    .exchange-details__content-value {
+        margin-left: 5px;
+    }
+
+    .exchange-details__presentation {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+    }
+}

@@ -57,6 +57,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
             <div className='exchange-details__input'>
                 <Input type={'text'}
                     label={'Enter the wallet address'}
+                    placeholder={'0x'}
                     value={recipientAddress}
                     onInput={handleRecipientAddressChange}/>
             </div>

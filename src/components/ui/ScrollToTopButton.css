@@ -1,7 +1,7 @@
 .scroll-to-top {
     position: fixed;
     bottom: 50px;
-    right: 50px;
+    right: 35px;
     padding: 10px 15px;
     font-size: 18px;
     background-color: var(--primary);
@@ -27,7 +27,7 @@
 .scroll-arrow-container {
     width: 20px;
     height: 20px;
-    padding: 3px 0;
+    padding: 15px 10px;
     cursor: pointer;
 }
 

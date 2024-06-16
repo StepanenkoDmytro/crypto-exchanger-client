@@ -9,7 +9,7 @@ const ThirdStep: React.FC = () => {
         <div className='step-box'>
             <div className='step-item'>
             <div className='step-item__line prev-line'><img src={connectLinePNG} alt="step-line-png"/></div>
-                <div><img src={cloudPNG} alt="step-png"/></div>
+                <div className='step-item__img'><img src={cloudPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 3</p>
                     <p className='step-item__content-title'>Send</p>

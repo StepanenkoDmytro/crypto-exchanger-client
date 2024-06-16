@@ -63,7 +63,6 @@
 .step-item__content-desc {
     letter-spacing: -.1px;
     padding: 0 50px;
-    text-transform: capitalize;
     color: var(--gray);
 }
 
@@ -109,6 +108,11 @@
     .stepper-animation .stepper-container {
         height: 210px;
         width: 100%;
+    }
+
+    .step-item__last-icon img {
+        width: 40px;
+        padding: 5px;
     }
 
     .step-item__content-title {

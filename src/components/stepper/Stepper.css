@@ -117,16 +117,55 @@
     color: var(--onsurface);
 }
 
+.mobile {
+    display: none;
+}
+
+.btn-arrow-containter {
+    position: relative;
+    width: 15px;
+    height: 25px;
+}
+
+.btn-arrow-up {
+    border-top: 2px solid var(--gray);
+    transform: rotate(160deg);
+    position: relative;
+    top: 9px;
+}
+
+.btn-arrow-down {
+    border-bottom: 2px solid var(--gray);
+    position: relative;
+    transform: rotate(200deg);
+    top: 12px;
+}
+
 @media (max-width: 400px) {
+    .btn {
+        margin-right: 20px;
+        margin-top: 15px;
+        padding-inline: 60px;
+    }
+
+    .btn-danger {
+        display: none;
+        padding: 10px 25px;
+        margin-right: 0px;
+    }
+
+    .mobile {
+        display: block;
+    }
     .stepper-container {
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
     .stepper-header {
         position: absolute;
         width: 90%;
         padding-left: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         overflow-x: scroll;
     }
 
@@ -137,9 +176,5 @@
 
     .step-header {
         font-size: 12px;
-    }
-
-    .btn {
-        margin-right: 20px;
     }
 }
