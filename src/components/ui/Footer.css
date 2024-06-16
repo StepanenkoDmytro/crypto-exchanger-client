@@ -137,6 +137,11 @@
         font-size: 18px;
     }
 
+    .footer-privacy { 
+        text-align: center;
+        margin-left: 0;
+    }
+
     .show {
         display: block;
         padding-inline: 20px;

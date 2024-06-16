@@ -44,6 +44,7 @@
 @media (max-width: 400px) {
     .currency-box {
         padding-inline: 15px;
+        margin-top: 15px;
     }
 
     .currency-wrapper .input-wrapper {

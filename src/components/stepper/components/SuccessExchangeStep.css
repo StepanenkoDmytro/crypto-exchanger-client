@@ -68,3 +68,26 @@
     font-weight: 600;
     color: var(--onsurface);
 }
+
+@media (max-width: 400px) {
+    .success {
+        margin-top: 15px;
+    }
+
+    .success__info {
+        border: none;
+        padding: 0 20px;
+        margin-bottom: 0;
+    }
+
+    .success__text {
+        padding-inline: 10px;
+    }
+
+    .success__info--text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+}
