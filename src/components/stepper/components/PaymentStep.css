@@ -57,3 +57,48 @@
     cursor: pointer;
     align-self: flex-start;
 }
+
+@media (max-width: 400px) {
+    .payment__info {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .payment__title {
+        text-align: center;
+        margin: 20px 0 5px;
+    }
+
+    .payment__info .payment__info--text {
+        display: none;
+    }
+
+    .payment__details {
+        flex-direction: column;
+        padding-inline: 15px;
+    }
+
+    .payment__details .payment__info--text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #qr-code {
+        display: none;
+    }
+
+    .payment__details--copy-btn {
+        align-self: center;
+        display: flex;
+        align-items: center;
+        background-color: #c5cadb;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .payment__details--recipient {
+        padding: 10px 5px;
+    }
+}

@@ -109,3 +109,25 @@
     background: #fff;
     border-radius: 50%;
 }
+
+@media (max-width: 400px) {
+    .select {
+        width: 40%;
+    }
+
+    .select-wrapper {
+        padding: 9px 8px 9px;
+        font-size: 15px;
+        border-radius: 0px 12px 12px 0px;
+        margin-left: 1px;
+    }
+
+    .select-wrapper__icon img {
+        max-width: 16px;
+        height: 16px;
+    }
+
+    .select-wrapper__icon {
+        margin-inline: 0px 8px;
+    }
+}

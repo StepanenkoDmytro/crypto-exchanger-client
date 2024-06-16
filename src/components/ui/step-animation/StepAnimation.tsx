@@ -20,7 +20,7 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
     const [prevActiveStep, setprevActiveStep] = useState<number>(0);
 
     useEffect(() => {
-        if(propActiveStep !== prevActiveStep) {
+        if(propActiveStep !== prevActiveStep && propActiveStep <= steps.length) {
             setActiveStep(propActiveStep);
             setprevActiveStep(propActiveStep);
         } 
@@ -28,29 +28,34 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
     }, [propActiveStep, activeStep]);
 
     const handlePrevClick = () => {
-        setActiveStep(prevStep => prevStep === 1 ? steps.length : prevStep - 1);
+        setActiveStep(prevStep => prevStep !== 1 ? prevStep - 1 : prevStep);
         
     };
 
     const handleNextClick = () => {
-        setActiveStep(prevStep => prevStep === steps.length ? 1 : prevStep + 1);
+        setActiveStep(prevStep => prevStep !== steps.length ? prevStep + 1 : prevStep);
     };
 
     return (
         <div className='stepper-animation'>
-            <div className='arrow-container left' onClick={handlePrevClick}>
-                <div className='arrow-up'></div>
-                <div className='arrow-down'></div>
-            </div>
+            {activeStep > 1 &&
+                <div className='arrow-container left' onClick={handlePrevClick}>
+                    <div className='arrow-up'></div>
+                    <div className='arrow-down'></div>
+                </div>
+            }
+            
             <div className='stepper-container'>
                 <div className="step-content">
                     {steps.find(step => step.order === activeStep)?.content}
                 </div>
             </div>
-            <div className='arrow-container' onClick={handleNextClick}>
-                <div className='arrow-up'></div>
-                <div className='arrow-down'></div>
-            </div>
+            {activeStep < steps.length &&
+                <div className='arrow-container' onClick={handleNextClick}>
+                    <div className='arrow-up'></div>
+                    <div className='arrow-down'></div>
+                </div>
+            }
         </div>
     );
 }

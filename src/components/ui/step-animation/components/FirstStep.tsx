@@ -9,7 +9,7 @@ const FirstStep: React.FC = () => {
     return (
         <div className='step-box'>
             <div className='step-item'>
-                <div><img src={exchangePNG} alt="step-png"/></div>
+                <div className='step-item__img'><img src={exchangePNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 1</p>
                     <p className='step-item__content-title'>Choose</p>
@@ -19,7 +19,7 @@ const FirstStep: React.FC = () => {
             </div>
 
             <div className='step-item'>
-                <div><img src={walletPNG} alt="step-png"/></div>
+                <div className='step-item__img'><img src={walletPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 2</p>
                     <p className='step-item__content-title'>Enter</p>

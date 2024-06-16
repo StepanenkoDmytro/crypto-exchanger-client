@@ -17,13 +17,15 @@
     height: 100px;
 }
 
-.kucoin {
-    transform: scale(2.3);
-}
-
 @media (max-width: 1500px) {
     .partners--logo img {
         width: 180px;
         height: 70px;
+    }
+}
+
+@media (max-width: 400px) {
+    .partners {
+        justify-content: center;
     }
 }

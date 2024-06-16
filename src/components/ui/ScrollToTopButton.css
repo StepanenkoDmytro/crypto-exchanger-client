@@ -1,7 +1,7 @@
 .scroll-to-top {
     position: fixed;
     bottom: 50px;
-    right: 50px;
+    right: 35px;
     padding: 10px 15px;
     font-size: 18px;
     background-color: var(--primary);
@@ -27,22 +27,24 @@
 .scroll-arrow-container {
     width: 20px;
     height: 20px;
-    padding: 3px 0;
+    padding: 15px 10px;
     cursor: pointer;
 }
 
-.scroll-arrow-up {
-    border: 1px solid var(--onsurface);
-    transform: rotate(50deg);
+.scroll-arrow-up,
+.scroll-arrow-down {
     position: relative;
+    border: 1px solid var(--onsurface);
+}
+
+.scroll-arrow-up {
+    transform: rotate(50deg);
     left: 7px;
     top: 8px;
 }
 
 .scroll-arrow-down {
-    border: 1px solid var(--onsurface);
     transform: rotate(310deg);
-    position: relative;
-    left: -6px;
-    top: -8px;
+    left: -5px;
+    top: 6px;
 }

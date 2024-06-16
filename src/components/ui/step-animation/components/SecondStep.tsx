@@ -9,7 +9,7 @@ const SecondStep: React.FC = () => {
         <div className='step-box'>
             <div className='step-item'>
             <div className='step-item__line prev-line'><img src={connectLinePNG} alt="step-line-png"/></div>
-                <div><img src={walletPNG} alt="step-png"/></div>
+                <div className='step-item__img'><img src={walletPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 2</p>
                     <p className='step-item__content-title'>Enter</p>
@@ -19,7 +19,7 @@ const SecondStep: React.FC = () => {
             </div>
 
             <div className='step-item'>
-                <div><img src={cloudPNG} alt="step-png"/></div>
+                <div className='step-item__img'><img src={cloudPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
                     <p className='step-item__content-number'>Step 3</p>
                     <p className='step-item__content-title'>Send</p>
