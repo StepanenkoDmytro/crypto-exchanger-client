@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Stepper from "./stepper/Stepper";
+import Stepper from './stepper/Stepper'
 import ExchangeDetailsStep from "./stepper/components/ExchangeDetailsStep";
 import PaymentStep from "./stepper/components/PaymentStep";
 import CurrencySelectorStep from "./stepper/components/CurrencySelectorStep";
