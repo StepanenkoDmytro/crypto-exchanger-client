@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="footer">
+        <footer className="footer" id='contacts'>
             {/* <div className='container'> */}
                 <div className='footer-links-container'>
                     <div className='footer-links'>

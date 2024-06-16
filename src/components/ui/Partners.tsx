@@ -1,12 +1,11 @@
 import './Partners.css';
 import binanceIcon from '../../assets/partners/binance.svg';
 import okxIcon from '../../assets/partners/okx.svg';
-// import kucoinIcon from '../../assets/partners/kucoin3.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
 
 const Partners: React.FC = () => { 
     return (
-        <section className='container border'>
+        <section className='container border' id='partenrs'>
             <h1 className='container__title'>Partners</h1>
             <p className='container__desc'>We are proud to collaborate with leading players in the crypto industry who help us ensure the reliability and innovation of our services. Here are some of our partners:</p>
             <section className="partners">

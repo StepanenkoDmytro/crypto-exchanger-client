@@ -50,6 +50,31 @@
     display: none;
 }
 
+.header__expanded-menu {
+    position: absolute;
+    background-color: var(--bg1);
+    width: 100%;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+}
+
+.header__expanded-menu--list {
+    margin: 0;
+    padding-inline: 0;
+    color: var(--gray);
+}
+
+.header__expanded-menu--list li {
+    border-bottom: 1px solid var(--bg);
+    padding: 15px;
+}
+
+.header__expanded-menu--list li:active {
+    background-color: var(--gray);
+    color: var(--bg1);
+}
+
 @media (max-width: 400px) {
     .header {
         justify-content: space-between;

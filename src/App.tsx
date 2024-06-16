@@ -15,9 +15,9 @@ function App() {
 			<Header/>
 			<main className='main'>
 				<Exchanger />
-					<Trusty />
-					<Coins />
-					<Partners />
+				<Trusty />
+				<Coins />
+				<Partners />
 			</main>
 			<Footer/>
 			<ScrollToTopButton />

@@ -7,7 +7,7 @@ import successIcon from '../../assets/circle-success.svg';
 
 const Trusty: React.FC = () => { 
     return (
-        <section className='container border'>
+        <section className='container border' id='trusty'>
             <h1 className='container__title'>We Are The Most Trusted Cryptocurrency Platform.</h1>
             <p className='container__desc'>We believe Cryptolly is here to stay — and that a future worth building is one which opens its doors and invites everyone in.</p>
             <div className='card-container'>
