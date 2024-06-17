@@ -1,8 +1,8 @@
 {
   "header": {
-    "exchanger": "Обменник",
+    "exchanger": "Обмен",
     "advantages": "Преимущества",
-    "supportedCoins": "Поддерживаемые монеты",
+    "supportedCoins": "Монеты",
     "partners": "Партнеры",
     "contacts": "Контакты"
   },
@@ -45,11 +45,13 @@
     "exchangeDetails": {
       "title": "Подтвердите информацию",
       "textPartOne": "Вы собираетесь получить",
-      "textPartTwo": "для банка Bitcloud.",
+      "textPartTwo": "на ваш кошелек:",
       "pay": "Оплата",
       "get": "Получение",
-      "for": "Через",
-      "label": "Введите адрес кошелька"
+      "for": "Сервис",
+      "labelPartOne": "Ваш ",
+      "labelPartTwo": " кошелек:",
+      "placeholder": "Введите адрес"
     },
     "payment": {
       "title": "Ожидаем вашего депозита",

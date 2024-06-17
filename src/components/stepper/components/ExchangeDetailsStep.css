@@ -11,6 +11,7 @@
 
 .exchange-details__text {
     color: var(--gray);
+    margin-bottom: 12px;
 }
 
 .exchange-details__text-primary {

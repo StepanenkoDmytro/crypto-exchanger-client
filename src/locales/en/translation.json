@@ -45,11 +45,13 @@
     "exchangeDetails": {
       "title": "Confirm information",
       "textPartOne": "You are about to receive",
-      "textPartTwo": "for Bitcloud bank.",
+      "textPartTwo": "on your wallet:",
       "pay": "Pay",
       "get": "Get",
-      "for": "For",
-      "label": "Enter the wallet address"
+      "for": "Service",
+      "labelPartOne": "Your ",
+      "labelPartTwo": " wallet:",
+      "placeholder": "Enter address"
     },
     "payment": {
       "title": "Await your deposit",

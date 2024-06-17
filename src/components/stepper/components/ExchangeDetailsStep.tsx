@@ -10,6 +10,7 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
     const [recipientAddress, setRecipientAddress] = useState<string>('');
 
     useEffect(() => {
+        console.log(props);
         updateFormData();
     }, [recipientAddress]);
 
@@ -26,7 +27,6 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
     return (
         <div className="exchange-details">
             <p className="exchange-details__primary-text">{t('exchanger.exchangeDetails.title')}</p>
-            <p className="exchange-details__text">{t('exchanger.exchangeDetails.textPartOne')} <span className='exchange-details__text-primary'>{props.form.currencyFrom.amount} {props.form.currencyFrom.name}</span> {t('exchanger.exchangeDetails.textPartTwo')}</p>
             <ul className="exchange-details__presentation">
                 <li>
                     <div className="exchange-details__icon">
@@ -56,10 +56,12 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                     </div>
                 </li>
             </ul>
+
+            <p className="exchange-details__text">{t('exchanger.exchangeDetails.textPartOne')} <span className='exchange-details__text-primary'>{props.form.currencyFrom.amount} {props.form.currencyFrom.name}</span> {t('exchanger.exchangeDetails.textPartTwo')}</p>
             <div className='exchange-details__input'>
                 <Input type={'text'}
-                    label={t('exchanger.exchangeDetails.label')}
-                    placeholder={'0x'}
+                    label={`${t('exchanger.exchangeDetails.labelPartOne')}${props.form.currencyTo.name}${t('exchanger.exchangeDetails.labelPartTwo')}`}
+                    placeholder={t('exchanger.exchangeDetails.placeholder')}
                     value={recipientAddress}
                     onInput={handleRecipientAddressChange}/>
             </div>

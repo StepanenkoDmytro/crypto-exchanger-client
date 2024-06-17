@@ -43,8 +43,6 @@
 
 .card-item__text {
     letter-spacing: -.1px;
-    /* padding: 0 50px; */
-    text-transform: capitalize;
     color: var(--gray);
 }
 

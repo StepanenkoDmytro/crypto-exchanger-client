@@ -53,7 +53,7 @@ const PaymentStep: React.FC<any> = (props) => {
                 <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
                 <div className='payment__details--recipient'>
                     <div id="qr-code"></div>
-                    <div className='payment__details--address'>
+                    <div className='payment__details--address' onClick={copyToClipboard}>
                         <p>{recipient}</p>
                     </div>
                     <button className='payment__details--copy-btn' onClick={copyToClipboard}>
