@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ApprovedCurrenciesList } from '../../domain/models';
+import { useTranslation } from 'react-i18next';
 import './Coins.css';
 
 const Coins: React.FC = () => { 
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState<boolean>(true);
 
   const displayedCoins = showAll ? ApprovedCurrenciesList : ApprovedCurrenciesList.slice(0, 6);
@@ -28,8 +30,8 @@ const Coins: React.FC = () => {
 
   return (
     <section className='container border' id='coins'>
-      <h1 className='container__title'>Supported Coins</h1>
-      <p className='container__desc'>We support 21 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Cryptolly to discover and invest in your preferred coins</p>
+      <h1 className='container__title'>{t('supportedCoins.title')}</h1>
+      <p className='container__desc'>{t('supportedCoins.desc')}</p>
       
       <div className='coin-grid'>
         {displayedCoins.map((coin, index) => (

@@ -1,46 +1,42 @@
 import successIcon from '../../../assets/success.svg';
 import './SuccessExchangeStep.css';
+import { useTranslation } from 'react-i18next';
 
 const SuccessExchangeStep: React.FC<any> = (props) => { 
+    const { t } = useTranslation();
     return (
     <div className="success">
         <div className='success__title'>
-            <h4>Success</h4>
+            <h4>{t('exchanger.success.title')}</h4>
             <div className="success__title--icon">
                 <img src={successIcon} alt="svg"/>
             </div>
         </div>
         <div className='success__text'>
-            <p className='success__text--primary'>Expect ETH in your wallet.</p> 
-            <p>Usually, funds arrive within 15 minutes. If not, please contact us.</p>
+            <p className='success__text--primary'>{t('exchanger.success.expectPartOne')} ETH {t('exchanger.success.expectPartTwo')}</p> 
+            <p>{t('exchanger.success.desc')}</p>
         </div>
         <ul className='success__info'>
             <li>
-                <p className='success__info--desc'>Status</p>
-                <p className='success__info--text'>Completed</p>
+                <p className='success__info--desc'>{t('exchanger.success.status')}</p>
+                <p className='success__info--text'>{t('exchanger.success.completed')}</p>
             </li>
             <li>
-                <p className='success__info--desc'>
-                    Send deposit:
-                </p>
+                <p className='success__info--desc'>{t('exchanger.success.send')}</p>
                 <p className='success__info--text'>
                     {props.form.currencyFrom.amount}
                     {props.form.currencyFrom.symbol}
                 </p>
             </li>
             <li>
-                <p className='success__info--desc'>
-                    You get:
-                </p>
+                <p className='success__info--desc'>{t('exchanger.success.get')}</p>
                 <p className='success__info--text'>
                     {props.form.currencyTo.amount}
                     {props.form.currencyTo.symbol}
                 </p>
             </li>
             <li>
-                <p className='success__info--desc'>
-                    Recipient address:
-                </p>
+                <p className='success__info--desc'>{t('exchanger.success.recipient')}</p>
                 <p className='success__info--text'>
                     {props.form.recipientAddress}
                 </p>

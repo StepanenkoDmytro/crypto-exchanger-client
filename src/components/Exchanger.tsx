@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Stepper from "./stepper/Stepper";
+import { useTranslation } from 'react-i18next';
+import Stepper from './stepper/Stepper'
 import ExchangeDetailsStep from "./stepper/components/ExchangeDetailsStep";
 import PaymentStep from "./stepper/components/PaymentStep";
 import CurrencySelectorStep from "./stepper/components/CurrencySelectorStep";
@@ -9,6 +10,7 @@ import ApiService from '../services/ApiService';
 import StepAnimation from "./ui/step-animation/StepAnimation";
 
 const Exchanger: React.FC<any> = () => {
+	const { t } = useTranslation();
     const [formValue, setFormValue] = useState({});
 	const [isError, setIsError] = useState(false);
 	const [activeStep, setActiveStep] = useState(1);
@@ -41,10 +43,10 @@ const Exchanger: React.FC<any> = () => {
 	};
 
     const steps = [
-		{order: 1, title: 'Select currency', content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
-		{order: 2, title: 'Payment Details', content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
-		{order: 3, title: 'Confirm Payment', content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
-		{order: 4, title: 'Complete Payment', content: <SuccessExchangeStep form={formValue}/>},
+		{order: 1, title: `${t('exchanger.head.selectCurr')}`, content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
+		{order: 2, title: `${t('exchanger.head.paymentDetails')}`, content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
+		{order: 3, title: `${t('exchanger.head.confirmPayment')}`, content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
+		{order: 4, title: `${t('exchanger.head.complitePayment')}`, content: <SuccessExchangeStep form={formValue}/>},
 	];
 
 	useEffect(() => {}, [retryTrigger]);

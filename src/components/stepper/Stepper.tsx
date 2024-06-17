@@ -1,6 +1,7 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import successIcon from '../../assets/success.svg';
 import './Stepper.css';
+import { useTranslation } from 'react-i18next';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
 	<div className={`step ${isActive ? 'active' : ''}`}>
@@ -9,6 +10,7 @@ const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }
 );
 
 const Stepper = (props: any) => {
+	const { t } = useTranslation();
 	const { activeStep, onActiveStepChange } = props;
 
 	const totalSteps = 4;
@@ -59,7 +61,7 @@ const Stepper = (props: any) => {
 							<div className="step-actions">
 								{step.order > 1 && 
 									<>
-										<button className="btn btn-danger" onClick={goBack}>Prev</button>
+										<button className="btn btn-danger" onClick={goBack}>{t('exchanger.prev')}</button>
 										<button className="btn btn-danger mobile" onClick={goBack}>
 											<div className='btn-arrow-containter'>
 												<div className='btn-arrow-up'></div>
@@ -68,8 +70,8 @@ const Stepper = (props: any) => {
 										</button>
 									</>
 								}
-								{(step.order < props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={goNext}>Next</button>}
-								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>Exchange</button>}
+								{(step.order < props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={goNext}>{t('exchanger.next')}</button>}
+								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>{t('exchanger.exchange')}</button>}
 						
 							</div>
 						}
@@ -81,3 +83,4 @@ const Stepper = (props: any) => {
 };
 
 export default Stepper;
+
