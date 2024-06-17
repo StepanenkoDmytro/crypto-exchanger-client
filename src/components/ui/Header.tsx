@@ -50,7 +50,6 @@ const Header: React.FC = () => {
     };
 
     const handleClickOutside = (event: any) => {
-        console.log(headerRef.current);
         if (
             headerRef.current &&
             !headerRef.current.contains(event.target)
@@ -76,13 +75,12 @@ const Header: React.FC = () => {
                     </ul>
                 </nav>
             </div>
-            <div className='header__contacts'>
+            {/* <div className='header__contacts'>
                 <img src={telegramIcon} onClick={copyTelegtamToClipboard}></img>
                 <img src={emailIcon} onClick={copyEmailToClipboard}></img>
-            </div>
+            </div> */}
             <LanguageSwitcher />
             <button className='header__menu' onClick={toggleExpandedMenu}>
-                {/* {isOpenExpandedMenu} */}
                 <img src={burgerIcon} alt="burger"/>
             </button>
             

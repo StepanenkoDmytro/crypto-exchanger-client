@@ -119,6 +119,12 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     const handleChangeCurrencyTo = (currency: IConvert) => {
         handleSetCurrencyTo(currency);
     }
+
+    const handleSwapCurrencies = () => {
+        const tmpCurr = currencyFrom;
+        setCurrencyFrom(currencyTo);
+        setCurrencyTo(tmpCurr);
+    }
     
     return (
         <div className="currency-box">
@@ -132,7 +138,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
                 <CurrencySelector activeCurrency={currencyFrom} onChange={handleChangeCurrencyFrom}/>
             </div>
 
-            <div className="currency-wrapper__btn-convert">
+            <div className="currency-wrapper__btn-convert" onClick={handleSwapCurrencies}>
                 <img src={echangeIcon} alt="svg" />
             </div>
 
