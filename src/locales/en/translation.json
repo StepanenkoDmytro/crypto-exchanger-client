@@ -67,5 +67,42 @@
       "get": "You get:",
       "recipient": "Recipient address:"
     }
+  },
+  "advantages": {
+    "title": "We Are The Most Trusted Cryptocurrency Platform.",
+    "desc": "We believe Cryptolly is here to stay — and that a future worth building is one which opens its doors and invites everyone in.",
+    "privacy": {
+      "title": "Privacy",
+      "primary": "Sign-up is not required",
+      "desc": "SimpleSwap provides cryptocurrency exchange without registration."
+    },
+    "choice": {
+      "title": "Wide choice",
+      "primary": "21 cryptocurrencies",
+      "desc": "Hundreds of crypto and fiat currencies are available for exchange."
+    },
+    "support": {
+      "title": "24/7 support",
+      "primary": "You won’t be left alone",
+      "desc": "Our support team is easy to reach and ready to answer your questions."
+    },
+    "safety": {
+      "title": "Safety",
+      "primary": "Non-custodial",
+      "desc": "Crypto is sent directly to your wallet, we don’t store it on our service."
+    }
+  },
+  "supportedCoins": {
+    "title": "Supported Coins",
+    "desc": "We support 21 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Cryptolly to discover and invest in your preferred coins."
+  },
+  "partners": {
+    "title": "Partners",
+    "desc": "We are proud to collaborate with leading players in the crypto industry who help us ensure the reliability and innovation of our services. Here are some of our partners:"
+  },
+  "footer": {
+    "company": "Company & Team",
+    "pairs": "Exchange Pairs",
+    "coins": "Supported Coins"
   }
 }

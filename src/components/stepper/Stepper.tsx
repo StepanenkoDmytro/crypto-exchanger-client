@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import successIcon from '../../assets/success.svg';
 import './Stepper.css';
 import { useTranslation } from 'react-i18next';

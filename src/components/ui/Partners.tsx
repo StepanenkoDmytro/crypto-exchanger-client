@@ -2,12 +2,14 @@ import './Partners.css';
 import binanceIcon from '../../assets/partners/binance.svg';
 import okxIcon from '../../assets/partners/okx.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
+import { useTranslation } from 'react-i18next';
 
 const Partners: React.FC = () => { 
+    const { t } = useTranslation();
     return (
         <section className='container border' id='partenrs'>
-            <h1 className='container__title'>Partners</h1>
-            <p className='container__desc'>We are proud to collaborate with leading players in the crypto industry who help us ensure the reliability and innovation of our services. Here are some of our partners:</p>
+            <h1 className='container__title'>{t('partners.title')}</h1>
+            <p className='container__desc'>{t('partners.desc')}</p>
             <section className="partners">
                 
                 <div className='partners--logo'>
