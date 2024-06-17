@@ -61,7 +61,7 @@ const Stepper = (props: any) => {
 							<div className="step-actions">
 								{step.order > 1 && 
 									<>
-										<button className="btn btn-danger" onClick={goBack}>Prev</button>
+										<button className="btn btn-danger" onClick={goBack}>{t('exchanger.prev')}</button>
 										<button className="btn btn-danger mobile" onClick={goBack}>
 											<div className='btn-arrow-containter'>
 												<div className='btn-arrow-up'></div>
@@ -71,7 +71,7 @@ const Stepper = (props: any) => {
 									</>
 								}
 								{(step.order < props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={goNext}>{t('exchanger.next')}</button>}
-								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>Exchange</button>}
+								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>{t('exchanger.exchange')}</button>}
 						
 							</div>
 						}

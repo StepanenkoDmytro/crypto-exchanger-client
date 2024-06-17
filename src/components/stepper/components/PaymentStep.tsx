@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './PaymentStep.css';
 import copySvg from '../../../assets/copy.svg';
 
@@ -9,6 +10,7 @@ declare global {
 }
 
 const PaymentStep: React.FC<any> = (props) => {
+    const { t } = useTranslation();
     const [recipient, setRecipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
    
     useEffect(() => {
@@ -36,9 +38,9 @@ const PaymentStep: React.FC<any> = (props) => {
 
     return (
         <div className='payment'>
-            <h1 className="payment__title">Await your deposit</h1>
+            <h1 className="payment__title">{t('exchanger.payment.title')}</h1>
             <div className='payment__info'>
-                <div className='payment__info--text'>Send deposit:</div>
+                <div className='payment__info--text'>{t('exchanger.payment.sendText')}</div>
                 <div className='payment__info--currency'>
                     <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
                     <p>
@@ -48,7 +50,7 @@ const PaymentStep: React.FC<any> = (props) => {
                 </div>
             </div>
             <div className='payment__details'>
-                <div className='payment__info--text'>Deposit address:</div>
+                <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
                 <div className='payment__details--recipient'>
                     <div id="qr-code"></div>
                     <div className='payment__details--address'>

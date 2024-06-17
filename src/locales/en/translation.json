@@ -1,5 +1,71 @@
 {
-    "exchanger": {
-      "next": "Next"
+  "header": {
+    "exchanger": "Exchanger",
+    "advantages": "Advantages",
+    "supportedCoins": "Supported coins",
+    "partners": "Partners",
+    "contacts": "Contacts"
+  },
+  "exchanger": {
+    "next": "Next",
+    "prev": "Prev",
+    "exchange": "Exchange",
+    "explaneHeader": {
+      "stepOne": {
+        "step": "Step 1",
+        "title": "Choose",
+        "desc": "Select currencies you want to swap and click the exchange button."
+      },
+      "stepTwo": {
+        "step": "Step 2",
+        "title": "Enter",
+        "desc": "The currency you want to receive will be sent to this address after the exchange."
+      },
+      "stepThree": {
+        "step": "Step 3",
+        "title": "Send",
+        "desc": "To continue, send the indicated amount of coins to the deposit address."
+      },
+      "stepFour": {
+        "step": "Step 4",
+        "title": "That’s all",
+        "desc": "The exchange status “Finished” means that the swap process is over."
+      }
+    },
+    "head": {
+      "selectCurr": "Select currency",
+      "paymentDetails": "Payment details",
+      "confirmPayment": "Confirm payment",
+      "complitePayment": "Complete payment"
+    },
+    "currSelect": {
+      "labelSend": "Amount to send",
+      "labelReceive": "Amount to receive"
+    },
+    "exchangeDetails": {
+      "title": "Confirm information",
+      "textPartOne": "You are about to receive",
+      "textPartTwo": "for Bitcloud bank.",
+      "pay": "Pay",
+      "get": "Get",
+      "for": "For",
+      "label": "Enter the wallet address"
+    },
+    "payment": {
+      "title": "Await your deposit",
+      "sendText": "Send deposit:",
+      "depositText": "Deposit address:"
+    },
+    "success": {
+      "title": "Success",
+      "expectPartOne": "Expect",
+      "expectPartTwo": "in your wallet.",
+      "desc": "Usually, funds arrive within 15 minutes. If not, please contact us.",
+      "status": "Status",
+      "completed": "Completed",
+      "send": "Send deposit:",
+      "get": "You get:",
+      "recipient": "Recipient address:"
     }
+  }
 }

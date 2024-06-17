@@ -5,9 +5,11 @@ import Input from '../../ui/form-controls/Input';
 import ApiService from '../../../services/ApiService';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from '../../../domain/models';
 import CurrencySelector from '../../ui/form-controls/CurrencySelector';
+import { useTranslation } from 'react-i18next';
 
 
 const CurrencySelectorStep: React.FC<any> = (props) => { 
+    const { t } = useTranslation();
     const apiService = new ApiService();
     const [currencyFrom, setCurrencyFrom] = useState<IConvert>(defaultCurrencyFrom);
     const [currencyTo, setCurrencyTo] = useState<IConvert>(defaultCurrencyTo);
@@ -131,7 +133,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             <div className="currency-wrapper">
                 
                 <Input type={'text'}
-					   label={'Amount to send'}
+					   label={t('exchanger.currSelect.labelSend')}
 					   value={amountFrom}
 					   onInput={handleAmountChange}/>
 
@@ -145,7 +147,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             <div className="currency-wrapper">
                 
                 <Input type={'number'}
-                    label={'Amount to receive'}
+                    label={t('exchanger.currSelect.labelReceive')}
                     value={amonutTo}
                     readonly/>
                     

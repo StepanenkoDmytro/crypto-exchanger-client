@@ -1,19 +1,19 @@
 import '../StepAnimation.css';
-import cloudPNG from '../../../../assets/step-animation/Cloud.png';
 import exchangePNG from '../../../../assets/step-animation/Comparison.png';
 import walletPNG from '../../../../assets/step-animation/Wallet.png';
 import connectLinePNG from '../../../../assets/step-animation/connect-line.png';
+import { useTranslation } from 'react-i18next';
 
 const FirstStep: React.FC = () => { 
-
+    const { t } = useTranslation();
     return (
         <div className='step-box'>
             <div className='step-item'>
                 <div className='step-item__img'><img src={exchangePNG} alt="step-png"/></div>
                 <div className='step-item__content'>
-                    <p className='step-item__content-number'>Step 1</p>
-                    <p className='step-item__content-title'>Choose</p>
-                    <p className='step-item__content-desc'>Select currencies you want to swap and click the Exchange button.</p>
+                    <p className='step-item__content-number'>{t('exchanger.explaneHeader.stepOne.step')}</p>
+                    <p className='step-item__content-title'>{t('exchanger.explaneHeader.stepOne.title')}</p>
+                    <p className='step-item__content-desc'>{t('exchanger.explaneHeader.stepOne.desc')}</p>
                 </div>
                 <div className='step-item__line'><img src={connectLinePNG} alt="step-line-png"/></div>
             </div>
@@ -21,9 +21,9 @@ const FirstStep: React.FC = () => {
             <div className='step-item'>
                 <div className='step-item__img'><img src={walletPNG} alt="step-png"/></div>
                 <div className='step-item__content'>
-                    <p className='step-item__content-number'>Step 2</p>
-                    <p className='step-item__content-title'>Enter</p>
-                    <p className='step-item__content-desc'>The currency you want to receive will be sent to this address after the exchange.</p>
+                    <p className='step-item__content-number'>{t('exchanger.explaneHeader.stepTwo.step')}</p>
+                    <p className='step-item__content-title'>{t('exchanger.explaneHeader.stepTwo.title')}</p>
+                    <p className='step-item__content-desc'>{t('exchanger.explaneHeader.stepTwo.desc')}</p>
                 </div>
                 <div className='step-item__line'><img src={connectLinePNG} alt="step-line-png"/></div>
             </div>
