@@ -121,6 +121,11 @@
     display: none;
 }
 
+.btn-next:disabled {
+    opacity: 0.5;
+    color: var(--gray);
+}
+
 .btn-arrow-containter {
     position: relative;
     width: 15px;

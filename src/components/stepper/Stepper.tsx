@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import successIcon from '../../assets/success.svg';
 import './Stepper.css';
 import { useTranslation } from 'react-i18next';
+import cryptoAddressService from './service/CryptoAddressService';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
 	<div className={`step ${isActive ? 'active' : ''}`}>
@@ -70,7 +71,9 @@ const Stepper = (props: any) => {
 										</button>
 									</>
 								}
-								{(step.order < props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={goNext}>{t('exchanger.next')}</button>}
+								{(step.order < props.steps.length - 1) && 
+									<button className="btn btn-next ms-2" onClick={goNext} disabled={step.order === 2 && !cryptoAddressService.isCorrectWallet()}>{t('exchanger.next')}</button>
+								}
 								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>{t('exchanger.exchange')}</button>}
 						
 							</div>
