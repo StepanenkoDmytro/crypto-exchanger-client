@@ -126,26 +126,6 @@
     color: var(--gray);
 }
 
-.btn-arrow-containter {
-    position: relative;
-    width: 15px;
-    height: 25px;
-}
-
-.btn-arrow-up {
-    border-top: 2px solid var(--gray);
-    transform: rotate(160deg);
-    position: relative;
-    top: 9px;
-}
-
-.btn-arrow-down {
-    border-bottom: 2px solid var(--gray);
-    position: relative;
-    transform: rotate(200deg);
-    top: 12px;
-}
-
 @media (max-width: 400px) {
     .btn {
         margin-right: 20px;

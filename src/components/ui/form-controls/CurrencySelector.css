@@ -31,13 +31,6 @@
 
 .select-wrapper__arrow {
     margin-left: auto;
-    background-image: url(../../../assets/arrow.svg);
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
-    width: 25px;
-    height: 25px;
 }
 
 .select__options {

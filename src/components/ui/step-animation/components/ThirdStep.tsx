@@ -1,6 +1,5 @@
 import '../StepAnimation.css';
 import cloudPNG from '../../../../assets/step-animation/Cloud.png';
-import connectLinePNG from '../../../../assets/step-animation/connect-line.png';
 import successPNG from '../../../../assets/step-animation/Success.png';
 import { useTranslation } from 'react-i18next';
 

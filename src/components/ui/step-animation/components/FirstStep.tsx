@@ -1,7 +1,6 @@
 import '../StepAnimation.css';
 import exchangePNG from '../../../../assets/step-animation/Comparison.png';
 import walletPNG from '../../../../assets/step-animation/Wallet.png';
-import connectLinePNG from '../../../../assets/step-animation/connect-line.png';
 import { useTranslation } from 'react-i18next';
 
 const FirstStep: React.FC = () => { 

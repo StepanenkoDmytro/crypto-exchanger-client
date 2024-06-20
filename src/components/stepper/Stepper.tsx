@@ -3,6 +3,7 @@ import successIcon from '../../assets/success.svg';
 import './Stepper.css';
 import { useTranslation } from 'react-i18next';
 import cryptoAddressService from './service/CryptoAddressService';
+import Arrow from '../ui/form-controls/Arrow';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
 	<div className={`step ${isActive ? 'active' : ''}`}>
@@ -64,10 +65,7 @@ const Stepper = (props: any) => {
 									<>
 										<button className="btn btn-danger" onClick={goBack}>{t('exchanger.prev')}</button>
 										<button className="btn btn-danger mobile" onClick={goBack}>
-											<div className='btn-arrow-containter'>
-												<div className='btn-arrow-up'></div>
-												<div className='btn-arrow-down'></div>
-											</div>
+											<Arrow direction='left' color='var(--surface)' width={20}/>
 										</button>
 									</>
 								}

@@ -132,29 +132,8 @@
     z-index: 2;
 }
 
-.left {
-    transform: rotate(180deg);
-}
-
 .prev-line {
     left: 50px;
-}
-
-.arrow-container {
-    width: 30px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.arrow-up {
-    border: 1px solid var(--line);
-    transform: rotate(35deg);
-}
-
-.arrow-down {
-    margin-top: 15px;
-    border: 1px solid var(--line);
-    transform: rotate(325deg);
 }
 
 @media (max-width: 400px) {
@@ -183,9 +162,5 @@
 
     .step-item__line-box {
         display: none;
-    }
-
-    .arrow-down {
-        margin-top: 10px;
     }
 }
