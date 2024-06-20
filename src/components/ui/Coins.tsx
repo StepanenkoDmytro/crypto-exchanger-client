@@ -22,6 +22,12 @@ const Coins: React.FC = () => {
       setShowAll(prevShowAll => !prevShowAll);
   };
 
+  const handleRedirect = (coinId: string) => {
+    return () => {
+      window.location.href = `https://coinmarketcap.com/currencies/${coinId}`;
+    };
+  }
+
   const updateIsMobile = () => {
     if(window.innerWidth < 800) {
       setShowAll(false); 
@@ -35,7 +41,7 @@ const Coins: React.FC = () => {
       
       <div className='coin-grid'>
         {displayedCoins.map((coin, index) => (
-          <div key={index} className="coin-card">
+          <div key={index} className="coin-card" onClick={handleRedirect(coin.id)}>
             <img src={coin.icon} alt={coin.name} className="coin-image" />
             <div className="coin-details">
               <p>{coin.name}</p>
