@@ -8,10 +8,16 @@ import SuccessExchangeStep from "./stepper/components/SuccessExchangeStep";
 import Error from './ui/error/Error';
 import ApiService from '../services/ApiService';
 import StepAnimation from "./ui/step-animation/StepAnimation";
+import { IConvert } from "../domain/models";
 
-const Exchanger: React.FC<any> = () => {
+interface ExchangerProps {
+    currencyFrom: IConvert;
+    currencyTo: IConvert;
+}
+
+const Exchanger: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
 	const { t } = useTranslation();
-    const [formValue, setFormValue] = useState({});
+    const [formValue, setFormValue] = useState({currencyFrom, currencyTo});
 	const [isError, setIsError] = useState(false);
 	const [activeStep, setActiveStep] = useState(1);
 	const [retryTrigger, setRetryTrigger] = useState(0);
@@ -38,18 +44,24 @@ const Exchanger: React.FC<any> = () => {
 		setFormValue({...formValue, ...data});
 	}
 
+	const handleCoinsChange = (data: { currencyFrom: IConvert; currencyTo: IConvert }) => {
+        setFormValue({...formValue, ...data});
+    }
+
 	const handleActiveStepChange = (stepOrder: number) => {
 		setActiveStep(stepOrder);
 	};
 
     const steps = [
-		{order: 1, title: `${t('exchanger.head.selectCurr')}`, content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => updateForm(data)} key={retryTrigger} onError={() => setIsError(true)}/>},
+		{order: 1, title: `${t('exchanger.head.selectCurr')}`, content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => handleCoinsChange(data)} retryTrigger={retryTrigger} onError={() => setIsError(true)}/>},
 		{order: 2, title: `${t('exchanger.head.paymentDetails')}`, content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
 		{order: 3, title: `${t('exchanger.head.confirmPayment')}`, content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
 		{order: 4, title: `${t('exchanger.head.complitePayment')}`, content: <SuccessExchangeStep form={formValue}/>},
 	];
 
-	useEffect(() => {}, [retryTrigger]);
+	useEffect(() => {
+		handleCoinsChange({currencyFrom, currencyTo});
+	}, [retryTrigger, currencyFrom, currencyTo]);
     
     return (
 		<>

@@ -7,8 +7,17 @@ import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from '../../../domai
 import CurrencySelector from '../../ui/form-controls/CurrencySelector';
 import { useTranslation } from 'react-i18next';
 
+interface CurrencySelectorStepProps {
+    form: {
+        currencyFrom: IConvert;
+        currencyTo: IConvert;
+    };
+    onCoinsChanged: (data: { currencyFrom: IConvert; currencyTo: IConvert }) => void;
+    onError: () => void;
+    retryTrigger: number;
+}
 
-const CurrencySelectorStep: React.FC<any> = (props) => { 
+const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoinsChanged, onError, retryTrigger }) => {
     const { t } = useTranslation();
     const apiService = new ApiService();
     const [currencyFrom, setCurrencyFrom] = useState<IConvert>(defaultCurrencyFrom);
@@ -19,19 +28,26 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
     useEffect(() => {
         handleSetCurrencyFrom(defaultCurrencyFrom);
         handleSetCurrencyTo(defaultCurrencyTo);
-        convertCurrency();
     }, []);
+
+    useEffect(() => {
+        if(form.currencyFrom.id !== currencyFrom.id || form.currencyTo.id !== currencyTo.id) {
+            handleSetCurrencyFrom(form.currencyFrom);
+            handleSetCurrencyTo(form.currencyTo);
+            convertCurrency();
+        }
+    }, [form.currencyFrom, form.currencyTo]);
 
     useEffect(() => {
         updateFormData();
         convertCurrency();
-    }, [currencyFrom, currencyTo, amountFrom, amonutTo, props.retryTrigger]);
+    }, [currencyFrom, currencyTo, amountFrom, amonutTo, retryTrigger]);
 
     const updateFormData = () => {
         currencyFrom.amount = amountFrom;
         currencyTo.amount = amonutTo;
 
-        props.onCoinsChanged({
+        onCoinsChanged({
             currencyFrom: currencyFrom,
             currencyTo: currencyTo,
         });
@@ -49,7 +65,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
         try {
             const currencyFromInfo = await apiService.getCoinPrice(currency.id);
             if (!currencyFromInfo) {
-                props.onError();
+                onError();
                 return;
             }
 
@@ -59,7 +75,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             }));
         } catch (error) {
             console.error('Failed to fetch crypto price for currencyFrom:', error);
-            props.onError();
+            onError();
         }
     };
 
@@ -67,7 +83,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
         try {
             const currencyToInfo = await apiService.getCoinPrice(currency.id);
             if (!currencyToInfo) {
-                props.onError();
+                onError();
                 return;
             }
 
@@ -77,7 +93,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             }));
         } catch (error) {
             console.error('Failed to fetch crypto price for currencyTo:', error);
-            props.onError();
+            onError();
         }
     };
 
@@ -87,7 +103,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
             const currencyToInfo = await apiService.getCoinPrice(currencyTo.id);
             
             if(!currencyFromInfo || !currencyToInfo) {
-                props.onError();
+                onError();
                 return;
             }
 
@@ -103,7 +119,7 @@ const CurrencySelectorStep: React.FC<any> = (props) => {
 
         } catch (error) {
             console.error('Failed to fetch crypto prices:', error);
-            props.onError();
+            onError();
         }
     }
 

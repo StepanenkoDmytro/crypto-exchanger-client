@@ -2,13 +2,26 @@ import './Footer.css';
 import telegramIcon from '../../assets/telegram-footer.png';
 import emailIcon from '../../assets/email-footer.png';
 import { useTranslation } from 'react-i18next';
-import { ApprovedCurrenciesList } from '../../domain/models';
+import { ApprovedCurrenciesList, IConvert } from '../../domain/models';
 
-const Footer: React.FC = () => { 
+interface FooterProps {
+    onCurrencyChange: (currencyFrom: IConvert, currencyTo: IConvert) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => { 
     const { t } = useTranslation();
     const telegram: string = '@v128s';
     const email: string = 'v128s@gmail.com';
     const displayedCoins = ApprovedCurrenciesList.slice(0, 6);
+
+    const handleClick = (newCurrencyFromId: string, newCurrencyToId: string) => {
+        const newCurrencyFrom: IConvert | undefined = ApprovedCurrenciesList.find(coin => coin.id === newCurrencyFromId);
+        const newCurrencyTo: IConvert | undefined =  ApprovedCurrenciesList.find(coin => coin.id === newCurrencyToId);
+        if(newCurrencyFrom && newCurrencyTo) {
+            onCurrencyChange(newCurrencyFrom, newCurrencyTo);
+            scrollToSection('exchanger');
+        }
+    };
 
     const copyTelegtamToClipboard = () => {
         navigator.clipboard.writeText(telegram);
@@ -84,12 +97,12 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                     <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item'>BTC to ETH</div>
-                        <div className='footer-links__item'>ETH to BTC</div>
-                        <div className='footer-links__item'>BTC to XMR</div>
-                        <div className='footer-links__item'>ETH to SOL</div>
-                        <div className='footer-links__item'>SOL to ETH</div>
-                        <div className='footer-links__item'>XMR to BTC</div>
+                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>BTC to ETH</div>
+                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>ETH to BTC</div>
+                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>BTC to XMR</div>
+                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'solana')}>ETH to SOL</div>
+                        <div className='footer-links__item' onClick={() => handleClick('solana', 'ethereum')}>SOL to ETH</div>
+                        <div className='footer-links__item' onClick={() => handleClick('monero', 'bitcoin')}>XMR to BTC</div>
                     </div>
                 </div>
                 <div className='footer-links'>
