@@ -20,7 +20,6 @@ class CryptoAddressService {
     };
 
     isCorrectWallet(): boolean {
-        console.log(this.isWallet);
         return this.isWallet;
     }
 

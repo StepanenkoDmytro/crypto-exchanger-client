@@ -22,10 +22,7 @@ type InputProps = {
     hasError,
     readonly = false,
   }: InputProps) {
-  
-    useEffect(() => {
-      console.log(hasError)
-    }, [])
+    
     return (
       <>
         <div className={`input-wrapper ${hasError ? "input-error" : ""}`}>

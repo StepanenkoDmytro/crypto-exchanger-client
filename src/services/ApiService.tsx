@@ -6,7 +6,6 @@ class ApiService {
     async submitExchangeData(form: any) {
 		const apiEndpoint = '/api/v1/exchange/submit';
 		const url = this.API_BASE_URL + apiEndpoint;
-        console.log(form);
 		return fetch(url, {
 			method: 'POST',
             headers: {

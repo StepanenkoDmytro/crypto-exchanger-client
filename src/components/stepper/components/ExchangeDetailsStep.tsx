@@ -24,7 +24,6 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
 
     const handleRecipientAddressChange = (event : string) => {
         const isValid = cryptoAddressService.isValidAddress(props.form.currencyTo.id, event);
-        console.log(isValid);
         setIsCorrectWallet(!isValid);
         setRecipientAddress(event);
     };
