@@ -3,6 +3,7 @@ import './StepAnimation.css';
 import FirstStep from './components/FirstStep';
 import SecondStep from './components/SecondStep';
 import ThirdStep from './components/ThirdStep';
+import Arrow from '../form-controls/Arrow';
 
 
 interface StepAnimationProps {
@@ -39,10 +40,7 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
     return (
         <div className='stepper-animation'>
             {activeStep > 1 &&
-                <div className='arrow-container left' onClick={handlePrevClick}>
-                    <div className='arrow-up'></div>
-                    <div className='arrow-down'></div>
-                </div>
+                <div onClick={handlePrevClick}><Arrow direction='left' /></div>
             }
             
             <div className='stepper-container'>
@@ -51,10 +49,7 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
                 </div>
             </div>
             {activeStep < steps.length &&
-                <div className='arrow-container' onClick={handleNextClick}>
-                    <div className='arrow-up'></div>
-                    <div className='arrow-down'></div>
-                </div>
+                <div onClick={handleNextClick}><Arrow direction='right'/></div>
             }
         </div>
     );

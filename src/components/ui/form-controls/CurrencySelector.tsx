@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ApprovedCurrenciesList, IConvert } from "../../../domain/models";
-import successIcon from '../../../assets/success.svg';
 import './CurrencySelector.css';
+import Arrow from "./Arrow";
 
 type CurrencySelectorProps = {
     activeCurrency: IConvert;
@@ -46,7 +46,7 @@ export default function CurrencySelector({activeCurrency, onChange}: CurrencySel
                     <img alt="btc" src={`https://cryptologos.cc/logos/thumbs/${activeCurrency.id}.png`}/>
                 </div>
                 <span>{activeCurrency.symbol}</span>
-                <div className="select-wrapper__arrow"></div>
+                <div className="select-wrapper__arrow"><Arrow direction="down" color="var(--surface)" width={10}/></div>
             </div>
 
             <div className={`select__options ${isDropdownExpanded ? 'visible' : ''}`}>

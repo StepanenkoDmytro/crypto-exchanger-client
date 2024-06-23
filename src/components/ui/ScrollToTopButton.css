@@ -25,26 +25,6 @@
 }
 
 .scroll-arrow-container {
-    width: 20px;
-    height: 20px;
     padding: 15px 10px;
     cursor: pointer;
-}
-
-.scroll-arrow-up,
-.scroll-arrow-down {
-    position: relative;
-    border: 1px solid var(--onsurface);
-}
-
-.scroll-arrow-up {
-    transform: rotate(50deg);
-    left: 7px;
-    top: 8px;
-}
-
-.scroll-arrow-down {
-    transform: rotate(310deg);
-    left: -5px;
-    top: 6px;
 }

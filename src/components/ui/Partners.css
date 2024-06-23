@@ -12,6 +12,10 @@
     background-color: var(--bg1);
 }
 
+.partners--logo:hover {
+    transform: scale(1.02);
+}
+
 .partners--logo img {
     width: 240px;
     height: 100px;

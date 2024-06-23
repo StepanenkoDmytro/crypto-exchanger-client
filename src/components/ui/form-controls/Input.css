@@ -21,13 +21,17 @@
 .input-element {
     outline: none;
     width: 40%;
-    background: var(--bg1);
+    background: transparent;
     border: none;
     padding: 0;
     color: var(--onsurface);
     font-weight: 700;
     font-size: 20px;
     text-align: right;
+}
+
+.input-error {
+    background: var(--danger);
 }
 
 @media (max-width: 400px) {

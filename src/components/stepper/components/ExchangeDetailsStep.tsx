@@ -4,15 +4,17 @@ import walletIcon from '../../../assets/wallet.svg';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Input from '../../ui/form-controls/Input';
+import cryptoAddressService from '../service/CryptoAddressService';
 
 const ExchangeDetailsStep: React.FC<any> = (props) => { 
     const { t } = useTranslation();
+    // const cryptoAddressService = new CryptoAddressService();
     const [recipientAddress, setRecipientAddress] = useState<string>('');
+    const [isCorrectWallet, setIsCorrectWallet] = useState<boolean | null>(null);
 
     useEffect(() => {
-        console.log(props);
         updateFormData();
-    }, [recipientAddress]);
+    }, [recipientAddress, isCorrectWallet]);
 
     const updateFormData = () => {
         props.onDetailsChange({
@@ -21,6 +23,8 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
     };
 
     const handleRecipientAddressChange = (event : string) => {
+        const isValid = cryptoAddressService.isValidAddress(props.form.currencyTo.id, event);
+        setIsCorrectWallet(!isValid);
         setRecipientAddress(event);
     };
 
@@ -59,11 +63,13 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
 
             <p className="exchange-details__text">{t('exchanger.exchangeDetails.textPartOne')} <span className='exchange-details__text-primary'>{props.form.currencyFrom.amount} {props.form.currencyFrom.name}</span> {t('exchanger.exchangeDetails.textPartTwo')}</p>
             <div className='exchange-details__input'>
-                <Input type={'text'}
+                <Input 
+                    type={'text'}
                     label={`${t('exchanger.exchangeDetails.labelPartOne')}${props.form.currencyTo.name}${t('exchanger.exchangeDetails.labelPartTwo')}`}
                     placeholder={t('exchanger.exchangeDetails.placeholder')}
                     value={recipientAddress}
-                    onInput={handleRecipientAddressChange}/>
+                    onInput={handleRecipientAddressChange}
+                    hasError={!!isCorrectWallet}/>
             </div>
         </div>
     );

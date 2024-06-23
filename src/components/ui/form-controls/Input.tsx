@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './Input.css';
 
 type InputProps = {
@@ -7,6 +8,7 @@ type InputProps = {
     placeholder?: string;
     width?: string;
     onInput?: (value: any) => void;
+    hasError?: boolean;
     readonly?: boolean;
   };
   
@@ -17,15 +19,16 @@ type InputProps = {
     placeholder,
     width,
     onInput,
+    hasError,
     readonly = false,
   }: InputProps) {
-  
+    
     return (
       <>
-        <div className="input-wrapper">
+        <div className={`input-wrapper ${hasError ? "input-error" : ""}`}>
           {label && <div className="input-label">{label}</div>}
           <input
-            className="input-element"
+            className='input-element'
             style={{ width: width }}
             type={type}
             value={value}

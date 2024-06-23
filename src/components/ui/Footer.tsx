@@ -2,11 +2,26 @@ import './Footer.css';
 import telegramIcon from '../../assets/telegram-footer.png';
 import emailIcon from '../../assets/email-footer.png';
 import { useTranslation } from 'react-i18next';
+import { ApprovedCurrenciesList, IConvert } from '../../domain/models';
 
-const Footer: React.FC = () => { 
+interface FooterProps {
+    onCurrencyChange: (currencyFrom: IConvert, currencyTo: IConvert) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => { 
     const { t } = useTranslation();
     const telegram: string = '@v128s';
     const email: string = 'v128s@gmail.com';
+    const displayedCoins = ApprovedCurrenciesList.slice(0, 6);
+
+    const handleClick = (newCurrencyFromId: string, newCurrencyToId: string) => {
+        const newCurrencyFrom: IConvert | undefined = ApprovedCurrenciesList.find(coin => coin.id === newCurrencyFromId);
+        const newCurrencyTo: IConvert | undefined =  ApprovedCurrenciesList.find(coin => coin.id === newCurrencyToId);
+        if(newCurrencyFrom && newCurrencyTo) {
+            onCurrencyChange(newCurrencyFrom, newCurrencyTo);
+            scrollToSection('exchanger');
+        }
+    };
 
     const copyTelegtamToClipboard = () => {
         navigator.clipboard.writeText(telegram);
@@ -29,6 +44,19 @@ const Footer: React.FC = () => {
         }
     };
 
+    const handleRedirect = (coinId: string) => {
+        return () => {
+          window.location.href = `https://coinmarketcap.com/currencies/${coinId}`;
+        };
+    }
+
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <footer className="footer" id='contacts'>
             <div className='footer-links-container'>
@@ -41,7 +69,10 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                     <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item'>How it Works</div>
+                        <div className='footer-links__item' onClick={() => scrollToSection('exchanger')}>Exchanger</div>
+                        <div className='footer-links__item' onClick={() => scrollToSection('advantages')}>Advantages</div>
+                        <div className='footer-links__item' onClick={() => scrollToSection('coins')}>Supported coins</div>
+                        <div className='footer-links__item' onClick={() => scrollToSection('partners')}>Partners</div>
                         <div className='footer-links__item'>Supported Coins</div>
                         
                         <div className='footer-links__item--contacts'>
@@ -66,12 +97,12 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                     <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item'>BTC to ETH</div>
-                        <div className='footer-links__item'>ETH to BTC</div>
-                        <div className='footer-links__item'>BTC to XMR</div>
-                        <div className='footer-links__item'>ETH to SOL</div>
-                        <div className='footer-links__item'>SOL to ETH</div>
-                        <div className='footer-links__item'>XMR to BTC</div>
+                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>BTC to ETH</div>
+                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>ETH to BTC</div>
+                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>BTC to XMR</div>
+                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'solana')}>ETH to SOL</div>
+                        <div className='footer-links__item' onClick={() => handleClick('solana', 'ethereum')}>SOL to ETH</div>
+                        <div className='footer-links__item' onClick={() => handleClick('monero', 'bitcoin')}>XMR to BTC</div>
                     </div>
                 </div>
                 <div className='footer-links'>
@@ -84,12 +115,10 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item'>Bitcoin</div>
-                        <div className='footer-links__item'>Ethereum</div>
-                        <div className='footer-links__item'>Cardano</div>
-                        <div className='footer-links__item'>Ripple</div>
-                        <div className='footer-links__item'>Cosmos</div>
-                        <div className='footer-links__item'>Solana</div>
+                        {displayedCoins.map((coin, index) => (
+                            <div key={index} className='footer-links__item' onClick={handleRedirect(coin.id)}>{coin.name}</div>
+                        ))}
+                        <div className='footer-links__item' onClick={() => scrollToSection('coins')}>All Coins</div>
                     </div>
                 </div>
             </div>

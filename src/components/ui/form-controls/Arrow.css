@@ -1,0 +1,32 @@
+.arr-container {
+    position: relative;
+    width: var(--arrow-width);
+    height: var(--arrow-height);
+    cursor: pointer;
+}
+
+.arr-direction__left {
+    transform: rotate(180deg);
+}
+
+.arr-direction__up {
+    transform: rotate(270deg);
+}
+
+.arr-direction__down {
+    transform: rotate(90deg);
+}
+
+.arr-up {
+    position: relative;
+    top: 25%;
+    border-top: 2px solid var(--arrow-color);
+    transform: rotate(var(--arrow-angle));
+}
+
+.arr-down {
+    position: relative;
+    top: 70%;
+    border-bottom: 2px solid var(--arrow-color);
+    transform: rotate(calc(360deg - var(--arrow-angle)));
+}

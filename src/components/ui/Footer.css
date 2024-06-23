@@ -23,6 +23,7 @@
 .footer-links__item {
     margin-bottom: 10px;
     text-align: left;
+    cursor: pointer;
 }
 
 .footer-privacy {
