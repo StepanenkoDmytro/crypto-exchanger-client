@@ -8,6 +8,7 @@ import Coins from './components/ui/Coins';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import { useEffect, useState } from 'react';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from './domain/models';
+import Announcement from './components/ui/Announcement';
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
 			<Header/>
 			<main className='main'>
 				<Exchanger currencyFrom={currencyFrom} currencyTo={currencyTo} />
-				<Trusty />
+				<Announcement />
 				<Coins />
+				<Trusty />
 				<Partners />
 			</main>
 			<Footer onCurrencyChange={handleCurrencyChange} />
