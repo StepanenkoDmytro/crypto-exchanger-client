@@ -9,6 +9,7 @@ import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import { useEffect, useState } from 'react';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from './domain/models';
 import Announcement from './components/ui/Announcement';
+import Contacts from './components/ui/Contacts';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 				<Coins />
 				<Trusty />
 				<Partners />
+				<Contacts />
 			</main>
 			<Footer onCurrencyChange={handleCurrencyChange} />
 			<ScrollToTopButton />

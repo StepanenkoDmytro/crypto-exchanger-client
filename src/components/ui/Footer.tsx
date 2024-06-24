@@ -10,8 +10,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => { 
     const { t } = useTranslation();
-    const telegram: string = '@v128s';
-    const email: string = 'v128s@gmail.com';
+    
     const displayedCoins = ApprovedCurrenciesList.slice(0, 6);
 
     const handleClick = (newCurrencyFromId: string, newCurrencyToId: string) => {
@@ -21,14 +20,6 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
             onCurrencyChange(newCurrencyFrom, newCurrencyTo);
             scrollToSection('exchanger');
         }
-    };
-
-    const copyTelegtamToClipboard = () => {
-        navigator.clipboard.writeText(telegram);
-    };
-
-    const copyEmailToClipboard = () => {
-        navigator.clipboard.writeText(email);
     };
 
     const toggleAccordion = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
@@ -74,18 +65,6 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
                         <div className='footer-links__item' onClick={() => scrollToSection('coins')}>Supported coins</div>
                         <div className='footer-links__item' onClick={() => scrollToSection('partners')}>Partners</div>
                         <div className='footer-links__item'>Supported Coins</div>
-                        
-                        <div className='footer-links__item--contacts'>
-                            <div className='footer-links__item'>Contacts:</div>
-                            <div className='footer__contacts'>
-                                <img className='footer__contacts-telegram' src={telegramIcon} onClick={copyTelegtamToClipboard}></img>
-                                <p>{telegram}</p>
-                            </div>
-                            <div className='footer__contacts'>
-                                <img src={emailIcon} onClick={copyEmailToClipboard}></img>
-                                <p>{email}</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className='footer-links'>
