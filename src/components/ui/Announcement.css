@@ -1,3 +1,12 @@
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
 .announcement-container {
     font-size: 18px;
     color: var(--gray);
@@ -28,6 +37,16 @@
     justify-content: center;
 }
 
+.announcement__desc p {
+    margin-bottom: 20px;
+}
+
+.announcement__desc span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--onsurface);
+}
+
 .announcement__desc-title {
     color: var(--onsurface);
     font-size: 22px;
@@ -35,22 +54,15 @@
     margin-bottom: 20px;
 }
 
-.announcement__end {
-    text-align: center;
-}
-
 .announcement__contect {
     display: flex;
-    font-size: 16px;
-    text-align: center;
     align-items: center;
-}
-
-.announcement__contect span {
-    font-size: 18px;
-    font-weight: 600;
 }
 
 .announcement__contect img {
     width: 200px;
+    height: auto;
+    animation: spin 10s linear infinite; 
+    display: block; 
+    margin: 0 auto;
 }
