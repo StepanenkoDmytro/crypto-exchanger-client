@@ -1,15 +1,12 @@
 import './App.css';
 import Header from './components/ui/Header';
 import Footer from './components/ui/Footer';
-import Partners from './components/ui/Partners';
-import Exchanger from './components/Exchanger';
-import Trusty from './components/ui/Trusty';
-import Coins from './components/ui/Coins';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import { useEffect, useState } from 'react';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from './domain/models';
-import Announcement from './components/ui/Announcement';
-import Contacts from './components/ui/Contacts';
+import Landing from './components/landing/Landing';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Documents from './components/documents/Documents';
 
 
 function App() {
@@ -24,19 +21,15 @@ function App() {
 	useEffect(() => {}, [currencyFrom, currencyTo]);
 	
 	return (
-		<>
+		<Router>
 			<Header/>
-			<main className='main'>
-				<Exchanger currencyFrom={currencyFrom} currencyTo={currencyTo} />
-				<Announcement />
-				<Coins />
-				<Trusty />
-				<Partners />
-				<Contacts />
-			</main>
+			<Routes>
+				<Route path="/" element={<Landing />} />
+				<Route path="/documents" element={<Documents />} />
+			</Routes>
 			<Footer onCurrencyChange={handleCurrencyChange} />
 			<ScrollToTopButton />
-		</>
+		</Router>
 	);
 }
 

@@ -1,6 +1,4 @@
 import './Footer.css';
-import telegramIcon from '../../assets/telegram-footer.png';
-import emailIcon from '../../assets/email-footer.png';
 import { useTranslation } from 'react-i18next';
 import { ApprovedCurrenciesList, IConvert } from '../../domain/models';
 
@@ -50,58 +48,75 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
 
     return (
         <footer className="footer" id='contacts'>
-            <div className='footer-links-container'>
-                <div className='footer-links'>
-                    <div className='footer-links__title' onClick={toggleAccordion}>
-                        <p>{t('footer.company')}</p>
-                        <div className='footer-arrow-container'>
-                            <div className='footer-arrow-up'></div>
-                            <div className='footer-arrow-down'></div>
+            <section className='container'>
+                <div className='footer-links-container'>
+                    <div className='footer-links'>
+                        <div className='footer-links__title' onClick={toggleAccordion}>
+                            <p>{t('footer.company')}</p>
+                            <div className='footer-arrow-container'>
+                                <div className='footer-arrow-up'></div>
+                                <div className='footer-arrow-down'></div>
+                            </div>
+                        </div>
+                        <div className='footer-links__accordion-content'>
+                            <div className='footer-links__item' onClick={() => scrollToSection('exchanger')}>Exchanger</div>
+                            <div className='footer-links__item' onClick={() => scrollToSection('advantages')}>Advantages</div>
+                            <div className='footer-links__item' onClick={() => scrollToSection('coins')}>Supported coins</div>
+                            <div className='footer-links__item' onClick={() => scrollToSection('partners')}>Partners</div>
+                            <div className='footer-links__item'>Supported Coins</div>
                         </div>
                     </div>
-                    <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item' onClick={() => scrollToSection('exchanger')}>Exchanger</div>
-                        <div className='footer-links__item' onClick={() => scrollToSection('advantages')}>Advantages</div>
-                        <div className='footer-links__item' onClick={() => scrollToSection('coins')}>Supported coins</div>
-                        <div className='footer-links__item' onClick={() => scrollToSection('partners')}>Partners</div>
-                        <div className='footer-links__item'>Supported Coins</div>
-                    </div>
-                </div>
-                <div className='footer-links'>
-                    <div className='footer-links__title' onClick={toggleAccordion}>
-                        <p>{t('footer.pairs')}</p>
-                        <div className='footer-arrow-container'>
-                            <div className='footer-arrow-up'></div>
-                            <div className='footer-arrow-down'></div>
+                    <div className='footer-links'>
+                        <div className='footer-links__title' onClick={toggleAccordion}>
+                            <p>{t('footer.pairs')}</p>
+                            <div className='footer-arrow-container'>
+                                <div className='footer-arrow-up'></div>
+                                <div className='footer-arrow-down'></div>
+                            </div>
+                        </div>
+                        <div className='footer-links__accordion-content'>
+                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>BTC to ETH</div>
+                            <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>ETH to BTC</div>
+                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>BTC to XMR</div>
+                            <div className='footer-links__item' onClick={() => handleClick('ethereum', 'solana')}>ETH to SOL</div>
+                            <div className='footer-links__item' onClick={() => handleClick('solana', 'ethereum')}>SOL to ETH</div>
+                            <div className='footer-links__item' onClick={() => handleClick('monero', 'bitcoin')}>XMR to BTC</div>
                         </div>
                     </div>
-                    <div className='footer-links__accordion-content'>
-                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>BTC to ETH</div>
-                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>ETH to BTC</div>
-                        <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>BTC to XMR</div>
-                        <div className='footer-links__item' onClick={() => handleClick('ethereum', 'solana')}>ETH to SOL</div>
-                        <div className='footer-links__item' onClick={() => handleClick('solana', 'ethereum')}>SOL to ETH</div>
-                        <div className='footer-links__item' onClick={() => handleClick('monero', 'bitcoin')}>XMR to BTC</div>
-                    </div>
-                </div>
-                <div className='footer-links'>
-                    <div className='footer-links__title' onClick={toggleAccordion}>
-                        <p>{t('footer.coins')}</p>
-                        <div className='footer-arrow-container'>
-                            <div className='footer-arrow-up'></div>
-                            <div className='footer-arrow-down'></div>
+                    <div className='footer-links'>
+                        <div className='footer-links__title' onClick={toggleAccordion}>
+                            <p>{t('footer.coins')}</p>
+                            <div className='footer-arrow-container'>
+                                <div className='footer-arrow-up'></div>
+                                <div className='footer-arrow-down'></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className='footer-links__accordion-content'>
-                        {displayedCoins.map((coin, index) => (
-                            <div key={index} className='footer-links__item' onClick={handleRedirect(coin.id)}>{coin.name}</div>
-                        ))}
-                        <div className='footer-links__item' onClick={() => scrollToSection('coins')}>All Coins</div>
+                        <div className='footer-links__accordion-content'>
+                            {displayedCoins.map((coin, index) => (
+                                <div key={index} className='footer-links__item' onClick={handleRedirect(coin.id)}>{coin.name}</div>
+                            ))}
+                            <div className='footer-links__item' onClick={() => scrollToSection('coins')}>All Coins</div>
+                        </div>
+                    </div>
+                    <div className='footer-links'>
+                        <div className='footer-links__title' onClick={toggleAccordion}>
+                            <p>LEGAL DOCUMENTS</p>
+                            <div className='footer-arrow-container'>
+                                <div className='footer-arrow-up'></div>
+                                <div className='footer-arrow-down'></div>
+                            </div>
+                        </div>
+
+                        <div className='footer-links__accordion-content'>
+                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>Terms of Service</div>
+                            <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>Privacy Policy</div>
+                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>AML/KYC</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p className='footer-privacy'>©2024 All Rights Reserved. Terms Of Service | Privacy Terms</p>
+            </section>
+            <p className='footer-privacy'>©2024 All Rights Reserved.</p>
         </footer>
     );
 }
