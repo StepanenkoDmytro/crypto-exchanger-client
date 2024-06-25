@@ -7,27 +7,26 @@ import Contacts from '../ui/Contacts';
 import Partners from '../ui/Partners';
 import Trusty from '../ui/Trusty';
 
+interface ExchangerProps {
+    currencyFrom: IConvert;
+    currencyTo: IConvert;
+}
 
-function Landing() {
-	const [currencyFrom, setCurrencyFrom] = useState<IConvert>(defaultCurrencyFrom);
-    const [currencyTo, setCurrencyTo] = useState<IConvert>(defaultCurrencyTo);
 
-    const handleCurrencyChange = (newCurrencyFrom: IConvert, newCurrencyTo: IConvert) => {
-        setCurrencyFrom(newCurrencyFrom);
-        setCurrencyTo(newCurrencyTo);
-    };
+const Landing: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
+
 
 	useEffect(() => {}, [currencyFrom, currencyTo]);
 	
 	return (
-        <main className='main'>
+        <>
             <Exchanger currencyFrom={currencyFrom} currencyTo={currencyTo} />
             <Announcement />
             <Coins />
             <Trusty />
             <Partners />
             <Contacts />
-        </main>
+        </>
 	);
 }
 

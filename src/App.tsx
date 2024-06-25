@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from './domain/models';
 import Landing from './components/landing/Landing';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Documents from './components/documents/Documents';
+import Terms from './components/documents/Terms';
+import Privacy from './components/documents/Privacy';
+import AmlKyc from './components/documents/AmlKyc';
 
 
 function App() {
@@ -23,10 +25,14 @@ function App() {
 	return (
 		<Router>
 			<Header/>
-			<Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="/documents" element={<Documents />} />
-			</Routes>
+			<main className='main' >
+				<Routes>
+					<Route path="/" element={<Landing  currencyFrom={currencyFrom} currencyTo={currencyTo}/>} />
+					<Route path="/documents/terms" element={<Terms />} />
+					<Route path="/documents/privacy" element={<Privacy />} />
+					<Route path="/documents/aml-kyc" element={<AmlKyc />} />
+				</Routes>
+			</main>
 			<Footer onCurrencyChange={handleCurrencyChange} />
 			<ScrollToTopButton />
 		</Router>
