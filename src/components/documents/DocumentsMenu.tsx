@@ -5,7 +5,7 @@ const DocumentMenu: React.FC = () => {
   return (
     <section className='documents-menu'>
         <nav className='documents-menu__nav'>
-            <h1>LEGAL DOCUMENTS</h1>
+            <h1 className='documents-menu__title'>LEGAL DOCUMENTS</h1>
             <ul>
                 <li><Link to="/documents/terms">Terms of Service</Link></li>
                 <li><Link to="/documents/privacy">Privacy Policy</Link></li>
