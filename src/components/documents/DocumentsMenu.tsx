@@ -11,9 +11,9 @@ const DocumentMenu: React.FC = () => {
         <nav className='documents-menu__nav'>
             <h1 className='documents-menu__title'>LEGAL DOCUMENTS</h1>
             <ul>
-                <li><Link to="/documents/terms" className={`documents-menu__nav-link ${isActive('/documents/terms') ? 'documents-menu__nav-active' : ''}`}>Terms of Service</Link></li>
-                <li><Link to="/documents/privacy" className={`documents-menu__nav-link ${isActive('/documents/privacy') ? 'documents-menu__nav-active' : ''}`}>Privacy Policy</Link></li>
-                <li><Link to="/documents/aml-kyc" className={`documents-menu__nav-link ${isActive('/documents/aml-kyc') ? 'documents-menu__nav-active' : ''}`}>AML/KYC</Link></li>
+                <li className={`documents-menu__nav-link ${isActive('/documents/terms') ? 'documents-menu__nav-active' : ''}`}><Link to="/documents/terms">Terms of Service</Link></li>
+                <li className={`documents-menu__nav-link ${isActive('/documents/privacy') ? 'documents-menu__nav-active' : ''}`}><Link to="/documents/privacy">Privacy Policy</Link></li>
+                <li className={`documents-menu__nav-link ${isActive('/documents/aml-kyc') ? 'documents-menu__nav-active' : ''}`}><Link to="/documents/aml-kyc">AML/KYC</Link></li>
             </ul>
         </nav>
     </section>

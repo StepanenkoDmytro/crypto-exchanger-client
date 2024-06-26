@@ -15,7 +15,7 @@ const Contacts: React.FC = () => {
     };
   
   return (
-    <section className='container border'>
+    <section className='container border' id='contacts'>
         <h1 className='container__title'>Contacts</h1>
         <div className='contacts__box'>
             <div className='contacts__desc'>

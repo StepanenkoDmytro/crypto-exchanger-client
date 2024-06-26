@@ -20,7 +20,6 @@
 
 .announcement__box {
     display: flex;
-    
 }
 
 .announcement__contect {
@@ -65,4 +64,18 @@
     animation: spin 10s linear infinite; 
     display: block; 
     margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .announcement-container {
+        margin: 20px 0;
+    }
+
+    .announcement__box {
+        flex-direction: column;
+    }
+
+    .announcement__contect img {
+        width: 100px;
+    }
 }

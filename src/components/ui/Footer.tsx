@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
     };
 
     return (
-        <footer className="footer" id='contacts'>
+        <footer className="footer">
             <section className='container'>
                 <div className='footer-links-container'>
                     <div className='footer-links'>
@@ -61,10 +61,10 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
                         </div>
                         <div className='footer-links__accordion-content'>
                             <div className='footer-links__item' onClick={() => scrollToSection('exchanger')}>Exchanger</div>
-                            <div className='footer-links__item' onClick={() => scrollToSection('advantages')}>Advantages</div>
                             <div className='footer-links__item' onClick={() => scrollToSection('coins')}>Supported coins</div>
+                            <div className='footer-links__item' onClick={() => scrollToSection('advantages')}>Advantages</div>
                             <div className='footer-links__item' onClick={() => scrollToSection('partners')}>Partners</div>
-                            <div className='footer-links__item'>Supported Coins</div>
+                            <div className='footer-links__item' onClick={() => scrollToSection('contacts')}>Contacts</div>
                         </div>
                     </div>
                     <div className='footer-links'>
@@ -116,8 +116,9 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
                         </div>
                     </div>
                 </div>
+                <p className='footer-privacy'>©2024 All Rights Reserved.</p>
             </section>
-            <p className='footer-privacy'>©2024 All Rights Reserved.</p>
+            
         </footer>
     );
 }

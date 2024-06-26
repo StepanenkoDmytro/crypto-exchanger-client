@@ -28,3 +28,22 @@
 .contacts__contact-item img {
     margin-right: 10px;
 }
+
+@media (max-width: 767px) {
+    .contacts__box {
+        flex-direction: column;
+    }
+
+    .contacts__container {
+        margin-top: 15px;
+        margin-right: 0;
+    }
+
+    .contacts__contact-item {
+        font-size: 18px;
+    }
+
+    .contacts__contact-item img {
+        width: 40px;
+    }
+}
