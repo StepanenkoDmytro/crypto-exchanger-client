@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './PaymentStep.css';
 import copySvg from '../../../assets/copy.svg';
+import Countdown from '../../ui/form-controls/Countdown';
 
 declare global {
     interface Window {
@@ -49,6 +50,7 @@ const PaymentStep: React.FC<any> = (props) => {
                     </p>
                 </div>
             </div>
+            <Countdown duration={300} />
             <div className='payment__details'>
                 <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
                 <div className='payment__details--recipient'>

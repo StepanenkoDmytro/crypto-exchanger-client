@@ -1,0 +1,34 @@
+/* Countdown.css */
+.countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .timer {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #333;
+    animation: pulse 1s infinite;
+  }
+  
+  .progress-ring {
+    transform: rotate(-90deg); /* Повертаємо на 90 градусів, щоб починати прогрес з верху */
+  }
+  
+  .progress-ring__circle {
+    transition: stroke-dashoffset 1s linear;
+  }
+  
+  /* Анімація пульсації тексту */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
