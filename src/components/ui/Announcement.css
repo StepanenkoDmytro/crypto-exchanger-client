@@ -10,7 +10,7 @@
 .announcement-container {
     font-size: 18px;
     color: var(--gray);
-    padding: 20px;
+    padding: 20px 40px;
     border-radius: 50px;
     border: 1px solid rgb(54 54 54);
     border-left: none;

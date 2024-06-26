@@ -1,6 +1,7 @@
 import './Footer.css';
 import { useTranslation } from 'react-i18next';
 import { ApprovedCurrenciesList, IConvert } from '../../domain/models';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     onCurrencyChange: (currencyFrom: IConvert, currencyTo: IConvert) => void;
@@ -33,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
         }
     };
 
-    const handleRedirect = (coinId: string) => {
+    const handleRedirectCoin = (coinId: string) => {
         return () => {
           window.location.href = `https://coinmarketcap.com/currencies/${coinId}`;
         };
@@ -94,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
 
                         <div className='footer-links__accordion-content'>
                             {displayedCoins.map((coin, index) => (
-                                <div key={index} className='footer-links__item' onClick={handleRedirect(coin.id)}>{coin.name}</div>
+                                <div key={index} className='footer-links__item' onClick={handleRedirectCoin(coin.id)}>{coin.name}</div>
                             ))}
                             <div className='footer-links__item' onClick={() => scrollToSection('coins')}>All Coins</div>
                         </div>
@@ -109,9 +110,9 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
                         </div>
 
                         <div className='footer-links__accordion-content'>
-                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'ethereum')}>Terms of Service</div>
-                            <div className='footer-links__item' onClick={() => handleClick('ethereum', 'bitcoin')}>Privacy Policy</div>
-                            <div className='footer-links__item' onClick={() => handleClick('bitcoin', 'monero')}>AML/KYC</div>
+                            <Link to="/documents/terms" className='footer-links__item'>Terms of Service</Link>
+                            <Link to="/documents/privacy" className='footer-links__item'>Privacy Policy</Link>
+                            <Link to="/documents/aml-kyc" className='footer-links__item'>AML/KYC</Link>
                         </div>
                     </div>
                 </div>

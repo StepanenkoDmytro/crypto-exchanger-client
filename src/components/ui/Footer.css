@@ -24,6 +24,9 @@
     margin-bottom: 10px;
     text-align: left;
     cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    display: block;
 }
 
 .footer-privacy {

@@ -10,7 +10,7 @@ function Privacy() {
         ));
     };
     return (
-        <section className='documents'>
+        <section className='documents container'>
             <DocumentMenu />  
             <section className='document'>
                 <p className='document__primary-title'>{t('privacy.title')}</p>
