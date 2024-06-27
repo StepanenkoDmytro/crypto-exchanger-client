@@ -13,18 +13,23 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
     const [isCorrectWallet, setIsCorrectWallet] = useState<boolean | null>(null);
 
     useEffect(() => {
+        props.onDisabledBtnChange(true);
+    }, [])
+
+    useEffect(() => {
         updateFormData();
-    }, [recipientAddress, isCorrectWallet]);
+    }, [recipientAddress]);
 
     const updateFormData = () => {
         props.onDetailsChange({
             recipientAddress: recipientAddress
-        })
+        });
     };
 
     const handleRecipientAddressChange = (event : string) => {
         const isValid = cryptoAddressService.isValidAddress(props.form.currencyTo.id, event);
         setIsCorrectWallet(!isValid);
+        props.onDisabledBtnChange(!isValid);
         setRecipientAddress(event);
     };
 

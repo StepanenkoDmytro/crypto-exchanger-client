@@ -13,11 +13,12 @@ interface CurrencySelectorStepProps {
         currencyTo: IConvert;
     };
     onCoinsChanged: (data: { currencyFrom: IConvert; currencyTo: IConvert }) => void;
+    onDisabledBtnChange: (isValid: boolean) => void;
     onError: () => void;
     retryTrigger: number;
 }
 
-const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoinsChanged, onError, retryTrigger }) => {
+const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoinsChanged, onError, retryTrigger, onDisabledBtnChange }) => {
     const { t } = useTranslation();
     const apiService = new ApiService();
     const [currencyFrom, setCurrencyFrom] = useState<IConvert>(defaultCurrencyFrom);
@@ -28,6 +29,7 @@ const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoi
     useEffect(() => {
         handleSetCurrencyFrom(defaultCurrencyFrom);
         handleSetCurrencyTo(defaultCurrencyTo);
+        onDisabledBtnChange(false);
     }, []);
 
     useEffect(() => {

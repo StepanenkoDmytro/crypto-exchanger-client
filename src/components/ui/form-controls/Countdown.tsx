@@ -4,9 +4,10 @@ import './Countdown.css';
 interface CountdownProps {
   duration: number; 
   size?: number;
+  onTimeUpdate?: (timeLeft: number) => void;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ duration, size = 60 }) => {
+const Countdown: React.FC<CountdownProps> = ({ duration, size = 60, onTimeUpdate }) => {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
@@ -18,6 +19,12 @@ const Countdown: React.FC<CountdownProps> = ({ duration, size = 60 }) => {
 
     return () => clearInterval(intervalId);
   }, [timeLeft]);
+
+  useEffect(() => {
+    if (onTimeUpdate) {
+      onTimeUpdate(timeLeft);
+    }
+  }, [timeLeft, onTimeUpdate]);
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
