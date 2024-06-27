@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './PaymentStep.css';
 import copySvg from '../../../assets/copy.svg';
+import Countdown from '../../ui/form-controls/Countdown';
 
 declare global {
     interface Window {
@@ -11,11 +12,17 @@ declare global {
 
 const PaymentStep: React.FC<any> = (props) => {
     const { t } = useTranslation();
-    const [recipient, setRecipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
+    const [recipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
+    const [countdown] = useState<number>(300);
+    const [timeLeft, setTimeLeft] = useState<number>(300);
+
+    useEffect(() => {
+        props.onDisabledBtnChange(true);
+    }, []);
    
     useEffect(() => {
         const qrCodeElement = document.getElementById('qr-code');
-        console.log(props);
+        
         if (window.QRCode && qrCodeElement && !qrCodeElement.innerHTML) {
             const computedStyles = getComputedStyle(document.documentElement);
             const colorDark = computedStyles.getPropertyValue('--surface');
@@ -30,7 +37,15 @@ const PaymentStep: React.FC<any> = (props) => {
                 correctLevel: window.QRCode.CorrectLevel.H
             });
         }
-   }, []);
+
+        handleSubmit();
+   }, [timeLeft]);
+
+   const handleSubmit = () => {
+    if(countdown - timeLeft === 60) {
+        props.onDisabledBtnChange(false);
+    }
+   }
 
     const copyToClipboard = () => {
       navigator.clipboard.writeText(recipient);
@@ -48,6 +63,7 @@ const PaymentStep: React.FC<any> = (props) => {
                         {props.form.currencyFrom.name}
                     </p>
                 </div>
+                <div className='payment__info--countdown'><Countdown duration={countdown} onTimeUpdate={(timeLeft) => setTimeLeft(timeLeft)}/></div>
             </div>
             <div className='payment__details'>
                 <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>

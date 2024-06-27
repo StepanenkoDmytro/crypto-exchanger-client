@@ -70,9 +70,9 @@ const Stepper = (props: any) => {
 									</>
 								}
 								{(step.order < props.steps.length - 1) && 
-									<button className="btn btn-next ms-2" onClick={goNext} disabled={step.order === 2 && !cryptoAddressService.isCorrectWallet()}>{t('exchanger.next')}</button>
+									<button className="btn btn-next ms-2" onClick={goNext} disabled={props.stepValidity}>{t('exchanger.next')}</button>
 								}
-								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm}>{t('exchanger.exchange')}</button>}
+								{(step.order === props.steps.length - 1) && <button className="btn btn-next ms-2" onClick={handleConfirm} disabled={props.stepValidity}>{t('exchanger.exchange')}</button>}
 						
 							</div>
 						}

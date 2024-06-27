@@ -20,6 +20,7 @@ const Exchanger: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
     const [formValue, setFormValue] = useState({currencyFrom, currencyTo});
 	const [isError, setIsError] = useState(false);
 	const [activeStep, setActiveStep] = useState(1);
+	const [isDisabledNextBtn, setIsDisabledNextBtn] = useState<boolean>(false);
 	const [retryTrigger, setRetryTrigger] = useState(0);
 
     const handleConfirm = async () => {
@@ -52,10 +53,14 @@ const Exchanger: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
 		setActiveStep(stepOrder);
 	};
 
+	const handleDisabledNextBtn = (isValid: boolean, timeout: number = 0) => {
+		setIsDisabledNextBtn(isValid);
+	};
+
     const steps = [
-		{order: 1, title: `${t('exchanger.head.selectCurr')}`, content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => handleCoinsChange(data)} retryTrigger={retryTrigger} onError={() => setIsError(true)}/>},
-		{order: 2, title: `${t('exchanger.head.paymentDetails')}`, content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} />},
-		{order: 3, title: `${t('exchanger.head.confirmPayment')}`, content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)} />},
+		{order: 1, title: `${t('exchanger.head.selectCurr')}`, content: <CurrencySelectorStep  form={formValue}  onCoinsChanged={(data: any) => handleCoinsChange(data)} retryTrigger={retryTrigger} onError={() => setIsError(true)} onDisabledBtnChange={(isValid: boolean) => handleDisabledNextBtn(isValid)}/>},
+		{order: 2, title: `${t('exchanger.head.paymentDetails')}`, content: <ExchangeDetailsStep  form={formValue} onDetailsChange={(data: any) => updateForm(data)} onDisabledBtnChange={(isValid: boolean) => handleDisabledNextBtn(isValid)}/>},
+		{order: 3, title: `${t('exchanger.head.confirmPayment')}`, content: <PaymentStep form={formValue} onPaymentChange={(data: any) => updateForm(data)}  onDisabledBtnChange={(isValid: boolean) => handleDisabledNextBtn(isValid)}/>},
 		{order: 4, title: `${t('exchanger.head.complitePayment')}`, content: <SuccessExchangeStep form={formValue}/>},
 	];
 
@@ -67,7 +72,7 @@ const Exchanger: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
 		<>
 			<section className="container" id='exchanger'>
 				<StepAnimation activeStep={activeStep} />
-				<Stepper steps={steps} activeStep={activeStep} onActiveStepChange={handleActiveStepChange} onConfirm={handleConfirm}/>
+				<Stepper steps={steps} activeStep={activeStep} onActiveStepChange={handleActiveStepChange} onConfirm={handleConfirm} stepValidity={isDisabledNextBtn}/>
 			</section>
 			{/* {isError
 				? <Error onRetry={handleOnRetry} />

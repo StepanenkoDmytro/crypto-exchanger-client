@@ -10,7 +10,7 @@
 
 .footer-links-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 30px;
 }
 
@@ -24,12 +24,15 @@
     margin-bottom: 10px;
     text-align: left;
     cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    display: block;
 }
 
 .footer-privacy {
     font-size: 12px;
     text-align: left;
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 .footer-links__item--contacts {
@@ -86,9 +89,17 @@
     top: 6px;
 }
 
+.footer .container {
+    padding-bottom: 0;
+}
+
 @media (max-width: 767px) {
     .footer {
         margin-top: 30px;
+    }
+
+    .footer .container {
+        width: 100%;
     }
 
     .footer__contacts {
