@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Countdown.css';
 
 interface CountdownProps {
-  duration: number; // тривалість у секундах
+  duration: number; 
+  size?: number;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ duration }) => {
+const Countdown: React.FC<CountdownProps> = ({ duration, size = 60 }) => {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
@@ -24,26 +25,25 @@ const Countdown: React.FC<CountdownProps> = ({ duration }) => {
     return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
   };
 
-  // Визначення довжини периметра кола
-  const circumference = 2 * Math.PI * 45;
-  // Обчислення прогресу
+  const radius = size / 2 - 4; 
+  const circumference = 2 * Math.PI * radius; 
   const progress = (timeLeft / duration) * circumference;
 
   return (
-    <div className="countdown">
-      <svg className="progress-ring" width="120" height="120">
+    <div className="countdown" style={{ width: size, height: size }}>
+      <svg className="progress-ring" width={size} height={size}>
         <circle
           className="progress-ring__circle"
-          stroke="white"
+          stroke="var(--line)"
           strokeWidth="4"
           fill="transparent"
-          r="45"
-          cx="60"
-          cy="60"
+          r={radius}
+          cx={size / 2}
+          cy={size / 2}
           style={{ strokeDasharray: `${circumference} ${circumference}`, strokeDashoffset: circumference - progress }}
         />
       </svg>
-      <div className="timer">{formatTime(timeLeft)}</div>
+      <div className="timer" style={{ fontSize: size / 4 }}>{formatTime(timeLeft)}</div>
     </div>
   );
 }

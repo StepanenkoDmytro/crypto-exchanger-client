@@ -49,8 +49,8 @@ const PaymentStep: React.FC<any> = (props) => {
                         {props.form.currencyFrom.name}
                     </p>
                 </div>
+                <div className='payment__info--countdown'><Countdown duration={300} /></div>
             </div>
-            <Countdown duration={300} />
             <div className='payment__details'>
                 <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
                 <div className='payment__details--recipient'>

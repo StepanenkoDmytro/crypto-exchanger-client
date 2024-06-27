@@ -58,6 +58,12 @@
     align-self: flex-start;
 }
 
+.payment__info--countdown {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+}
+
 @media (max-width: 400px) {
     .payment__info {
         align-items: center;
@@ -83,6 +89,17 @@
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
+    }
+
+    .payment__info--currency {
+        margin-right: auto;
+        margin-left: 15px;
+    }
+
+    .payment__info--countdown {
+        position: absolute;
+        right: 10px;
+        top: 90px;
     }
 
     #qr-code {
