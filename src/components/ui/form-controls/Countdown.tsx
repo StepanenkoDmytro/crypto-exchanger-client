@@ -37,7 +37,7 @@ const Countdown: React.FC<CountdownProps> = ({ duration, size = 60, onTimeUpdate
   const progress = (timeLeft / duration) * circumference;
 
   return (
-    <div className="countdown" style={{ width: size, height: size }}>
+    <div className={`countdown ${timeLeft === 0 ? 'end' : ''}`} style={{ width: size, height: size }}>
       <svg className="progress-ring" width={size} height={size}>
         <circle
           className="progress-ring__circle"

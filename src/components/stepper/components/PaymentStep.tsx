@@ -12,7 +12,7 @@ declare global {
 
 const PaymentStep: React.FC<any> = (props) => {
     const { t } = useTranslation();
-    const [recipient] = useState<string>('0x7e75dbd8fd65104d41d49c278e4ed3d47e4dc8fb');
+    const [recipient] = useState<string>(props.form.currencyFrom.walletAddress);
     const [countdown] = useState<number>(300);
     const [timeLeft, setTimeLeft] = useState<number>(300);
 
