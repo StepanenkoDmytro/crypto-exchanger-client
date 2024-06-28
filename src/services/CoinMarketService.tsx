@@ -9,7 +9,6 @@ class CoinMarketService {
         if (!response.ok) {
             throw new Error('Failed to fetch crypto prices');
         }
-        // console.log(response.json());
         return response.json();
     }
 }

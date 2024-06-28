@@ -1,29 +1,41 @@
 class TelegramService {
-    DOMAIN = 'http://45.77.60.247';
-	PORT = '8080'
-	API_BASE_URL = `${this.DOMAIN}:${this.PORT}`;
+    TELEGRAM_BOT_TOKEN: string = '6683722555:AAFA3vNfl4WB1_xYvv23xTx7J2nnbkaBUEo';
+    TELEGRAM_CHAT_ID = '-4251473965';
+    TELEGRAM_SUBMIT_BOT_API_URL = `https://api.telegram.org/bot${this.TELEGRAM_BOT_TOKEN}/sendMessage`;
+    
+    async submitExchangeData(exchangeRequest: any) {
+        const messageText = this.buildMessage(exchangeRequest);
+        const url = this.TELEGRAM_SUBMIT_BOT_API_URL + `?chat_id=${this.TELEGRAM_CHAT_ID}`;
 
-    async submitExchangeData(form: any) {
-		const apiEndpoint = '/api/v1/exchange/submit';
-		const url = this.API_BASE_URL + apiEndpoint;
-		return fetch(url, {
-			method: 'POST',
+        const response = await fetch(url, {
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-			body: JSON.stringify(form),
-		}).then( response => response.json() );
-	}
+            body: JSON.stringify(
+                {text: messageText}
+            ),
+        });
 
-    async getCoinPrice(coinId: string) {
-        const apiEndpoint = `/api/v1/crypto/by-id?ticker=${coinId}`;
-        const url = this.API_BASE_URL + apiEndpoint;
-        
-        const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Failed to fetch crypto prices');
+            throw new Error('Failed to send message');
         }
+
         return response.json();
+    }
+
+    private buildMessage(form: any): string {
+        const { currencyFrom, currencyTo, recipientAddress } = form;
+
+        return `Exchange request received:\n\n` +
+            `Converted Currency:\n` +
+            `Amount: ${currencyFrom.amount}\n` +
+            `Name: ${currencyFrom.name}\n\n` +
+            `Currency To Convert:\n` +
+            `Amount: ${currencyTo.amount}\n` +
+            `Name: ${currencyTo.name}\n` +
+            `Symbol: ${currencyTo.symbol}\n\n` +
+            `Recipient Address: ${recipientAddress}`;
     }
 }
 
