@@ -6,9 +6,8 @@ class CryptoAddressService {
     private isWallet = false;
     private coinRegexMap: CoinRegexMap = {
         'bitcoin': [
-            /^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/, 
-            /^bc1[q|p][a-z0-9]{38}$/, 
-            /^bc1[q|p][a-z0-9]{58}$/, 
+            /^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$/,
+            /^bc1[q|p][a-z0-9]{38,58}$/,
         ],
         'ethereum': [
             /^0x[a-fA-F0-9]{40}$/,
@@ -16,7 +15,7 @@ class CryptoAddressService {
         'litecoin': [
             /^[LM3][a-km-zA-HJ-NP-Z1-9]{26,33}$/,
         ],
-        // Додайте інші монети за необхідності
+        
     };
 
     isCorrectWallet(): boolean {
