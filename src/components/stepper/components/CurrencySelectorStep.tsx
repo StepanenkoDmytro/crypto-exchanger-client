@@ -2,7 +2,7 @@ import './CurrencySelectorStep.css';
 import { useState, useEffect } from 'react';
 import echangeIcon from '../../../assets/echange.svg';
 import Input from '../../ui/form-controls/Input';
-import ApiService from '../../../services/ApiService';
+import apiService from '../../../services/ApiService';
 import { IConvert, defaultCurrencyFrom, defaultCurrencyTo } from '../../../domain/models';
 import CurrencySelector from '../../ui/form-controls/CurrencySelector';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +20,6 @@ interface CurrencySelectorStepProps {
 
 const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoinsChanged, onError, retryTrigger, onDisabledBtnChange }) => {
     const { t } = useTranslation();
-    const apiService = new ApiService();
     const [currencyFrom, setCurrencyFrom] = useState<IConvert>(defaultCurrencyFrom);
     const [currencyTo, setCurrencyTo] = useState<IConvert>(defaultCurrencyTo);
     const [amountFrom, setAmountFrom] = useState<number | string>(0.1);
@@ -66,6 +65,7 @@ const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoi
     const handleSetCurrencyFrom = async (currency: IConvert) => {
         try {
             const currencyFromInfo = await apiService.getCoinPrice(currency.id);
+            console.log(currencyFromInfo.data);
             if (!currencyFromInfo) {
                 onError();
                 return;
@@ -73,7 +73,7 @@ const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoi
 
             setCurrencyFrom(prevState => ({
                 ...currency,
-                price: currencyFromInfo.price,
+                price: currencyFromInfo.data.priceUsd,
             }));
         } catch (error) {
             console.error('Failed to fetch crypto price for currencyFrom:', error);
@@ -91,7 +91,7 @@ const CurrencySelectorStep: React.FC<CurrencySelectorStepProps> = ({ form, onCoi
 
             setCurrencyTo(prevState => ({
                 ...currency,
-                price: currencyToInfo.price,
+                price: currencyToInfo.data.priceUsd,
             }));
         } catch (error) {
             console.error('Failed to fetch crypto price for currencyTo:', error);

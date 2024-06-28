@@ -6,7 +6,7 @@ import PaymentStep from "./stepper/components/PaymentStep";
 import CurrencySelectorStep from "./stepper/components/CurrencySelectorStep";
 import SuccessExchangeStep from "./stepper/components/SuccessExchangeStep";
 import Error from './ui/error/Error';
-import ApiService from '../services/ApiService';
+import apiService from '../services/ApiService';
 import StepAnimation from "./ui/step-animation/StepAnimation";
 import { IConvert } from "../domain/models";
 
@@ -24,7 +24,7 @@ const Exchanger: React.FC<ExchangerProps> = ({ currencyFrom, currencyTo }) => {
 	const [retryTrigger, setRetryTrigger] = useState(0);
 
     const handleConfirm = async () => {
-		const apiService = new ApiService();
+		// const apiService = new ApiService();
 		try {
 			await apiService.submitExchangeData(formValue);
 			// setIsError(true);
