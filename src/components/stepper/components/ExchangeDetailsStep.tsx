@@ -8,7 +8,7 @@ import cryptoAddressService from '../service/CryptoAddressService';
 
 const ExchangeDetailsStep: React.FC<any> = (props) => { 
     const { t } = useTranslation();
-    // const cryptoAddressService = new CryptoAddressService();
+    
     const [recipientAddress, setRecipientAddress] = useState<string>('');
     const [isCorrectWallet, setIsCorrectWallet] = useState<boolean | null>(null);
 

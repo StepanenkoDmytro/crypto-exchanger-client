@@ -20,6 +20,10 @@
   .progress-ring__circle {
     transition: stroke-dashoffset 1s linear;
   }
+
+  .end {
+    display: none;
+  }
   
   /* Анімація пульсації тексту */
   @keyframes pulse {

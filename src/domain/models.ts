@@ -5,6 +5,7 @@
     symbol: string;
     amount: number | string;
     icon: string;
+    walletAddress: string;
 }
 
 export const defaultCurrencyFrom: IConvert = {
@@ -13,7 +14,8 @@ export const defaultCurrencyFrom: IConvert = {
     price: null,
     symbol: "BTC",
     amount: 0,
-    icon: ''
+    icon: '',
+    walletAddress: 'bc1qn296e6h2eugrd8f37tnf8w07f3k92enkv2hme2'
 }
 
 export const defaultCurrencyTo: IConvert = {
@@ -22,7 +24,8 @@ export const defaultCurrencyTo: IConvert = {
     price: null,
     symbol: "ETH",
     amount: 0,
-    icon: ''
+    icon: '',
+    walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
 }
 
 export const ApprovedCurrenciesList: IConvert[] = [
@@ -32,7 +35,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BTC",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'bc1qn296e6h2eugrd8f37tnf8w07f3k92enkv2hme2'
     },
     {
         id: "ethereum",
@@ -40,7 +44,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ETH",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
     },
     {
         id: "binance-coin",
@@ -48,7 +53,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BNB",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
     },
     {
         id: "xrp",
@@ -56,7 +62,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XRP",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'rfqYZm8VUJirksR3TDWtbW7bpdfL6ervqQ'
     },
     {
         id: "cardano",
@@ -64,7 +71,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ADA",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'addr1qyduyq3sx5q98nfypch4gykl6v690c0y5gq748wl0hyuadtwt97n6dwh8wphx5usxrs86xdnqut00ztn37qdhh6fg5msczxhfx'
     },
     {
         id: "solana",
@@ -72,7 +80,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "SOL",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'AEGaS7YeUzDmTCNufRnMgU9qB5XhPsr5qHiKjvevtAEN'
     },
     {
         id: "monero",
@@ -80,7 +89,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XMR",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: ''
     },
     {
         id: "tether",
@@ -88,7 +98,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "USDT",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'TVgSQmGmkrafPZmfwBDZ3oWsdaNEbid1vT'
     },
     {
         id: "usd-coin",
@@ -96,7 +107,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "USDC",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: ''
     },
     {
         id: "bitcoin-cash",
@@ -104,7 +116,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "BCH",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'qrcgxd6s5ghy842mqvj7cv4yznm90v7pxujdwpnzc5'
     },
     {
         id: "ethereum-classic",
@@ -112,7 +125,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ETC",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '0xc085cB8680D7D41d570C2Fdc1EF70f0a5033a3F3'
     },
     {
         id: "shiba-inu",
@@ -120,7 +134,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "SHIB",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'AEGaS7YeUzDmTCNufRnMgU9qB5XhPsr5qHiKjvevtAEN'
     },
     {
         id: "dogecoin",
@@ -128,7 +143,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "DOGE",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'DE6kioYYYoJ1SZZUU4575bUxTXkGag1rcw'
     },
     {
         id: "polkadot",
@@ -136,7 +152,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "DOT",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '1Lm32AiBnjoTn3mL3QmfNCx7At4i6NGmpSwZRm9ucMsZ2yY'
     },
     {
         id: "litecoin",
@@ -144,7 +161,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "LTC",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'ltc1qcg7zpvu7fxn7u3ejttqv3k5plkssg66hku55qf'
     },
     {
         id: "cosmos",
@@ -152,7 +170,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "ATOM",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'cosmos1r28t5fs78p32qyp5lvpryrqh5865qywasv8s68'
     },
     {
         id: "avalanche",
@@ -160,7 +179,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "AVAX",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
     },
     {
         id: "eos",
@@ -168,7 +188,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "EOS",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: ''
     },
     {
         id: "stellar",
@@ -176,7 +197,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "XLM",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: 'GA5KXZ2WRNEMSRKP7LCJGPZDRJSYQW4PDSAYV7UMJJGIATWAIVBE77RT'
     },
     {
         id: "chainlink",
@@ -184,7 +206,8 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "LINK",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: ''
     },
     {
         id: "vechain",
@@ -192,8 +215,45 @@ export const ApprovedCurrenciesList: IConvert[] = [
         price: null,
         symbol: "VET",
         amount: 0,
-        icon: ''
+        icon: '',
+        walletAddress: '0x1c1a0B4E772b74E43Ea84DA9ef359aE49B7f054e'
     },
+    {
+        id: "tron",
+        name: "TRON",
+        price: null,
+        symbol: "TRX",
+        amount: 0,
+        icon: '',
+        walletAddress: 'TVgSQmGmkrafPZmfwBDZ3oWsdaNEbid1vT'
+    },
+    {
+        id: "polygon",
+        name: "Polygon",
+        price: null,
+        symbol: "MATIC",
+        amount: 0,
+        icon: '',
+        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
+    },
+    {
+        id: "zcash",
+        name: "Zcash",
+        price: null,
+        symbol: "ZEC",
+        amount: 0,
+        icon: '',
+        walletAddress: 't1XX2Po2qMn7kQFkAfhYEXavbuoePuUDu8y'
+    },
+    {
+        id: "dash",
+        name: "Dash",
+        price: null,
+        symbol: "DASH",
+        amount: 0,
+        icon: '',
+        walletAddress: 'XtyU1ff4PUEEBhArY787umT6kddWt1GaJp'
+    }
 ];
 
 ApprovedCurrenciesList.map(coin => {

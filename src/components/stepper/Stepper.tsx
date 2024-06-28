@@ -2,7 +2,6 @@ import { ReactNode, useEffect } from 'react';
 import successIcon from '../../assets/success.svg';
 import './Stepper.css';
 import { useTranslation } from 'react-i18next';
-import cryptoAddressService from './service/CryptoAddressService';
 import Arrow from '../ui/form-controls/Arrow';
 
 const Step = ({ children, isActive }: { children: ReactNode, isActive: boolean }) => (
