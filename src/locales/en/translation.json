@@ -73,9 +73,20 @@
       "recipient": "Recipient address:"
     }
   },
+  "announcement": {
+    "title": "Don’t Miss Out",
+    "secondTitle": "New Coins Coming Soon to Rocky Finance!",
+    "descFirst": "Stay one step ahead with RockyFinance! New coins are coming soon to our platform:",
+    "descSecond": "- this is a cryptocurrency trading app, an exchange within the Telegram messenger. It operates on a hybrid CeDeFi model.",
+    "coin": "Blum"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "desc": "We are always ready to help! If you have any questions, suggestions, or need assistance, please contact us using the following information."
+  },
   "advantages": {
     "title": "We Are The Most Trusted Cryptocurrency Platform.",
-    "desc": "We believe Cryptolly is here to stay — and that a future worth building is one which opens its doors and invites everyone in.",
+    "desc": "We believe Rocky Finance is here to stay — and that a future worth building is one which opens its doors and invites everyone in.",
     "privacy": {
       "title": "Privacy",
       "primary": "Sign-up is not required",
@@ -99,7 +110,7 @@
   },
   "supportedCoins": {
     "title": "Supported Coins",
-    "desc": "We support 21 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Cryptolly to discover and invest in your preferred coins."
+    "desc": "We support 21 distinctive cryptocurrencies, providing you with a broad spectrum of digital asset choices. Join Rocky Finance to discover and invest in your preferred coins."
   },
   "partners": {
     "title": "Partners",
