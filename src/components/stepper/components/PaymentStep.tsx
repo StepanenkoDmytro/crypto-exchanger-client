@@ -18,8 +18,8 @@ const PaymentStep: React.FC<any> = (props) => {
     const [countdown] = useState<number>(300);
     const [timeLeft, setTimeLeft] = useState<number>(300);
 
-    const telegram: string = '@v128s';
-    const email: string = 'v128s@gmail.com';
+    const telegram: string = '@usdt_trc_20';
+    const email: string = 'supportrockychange@gmail.com';
 
     const copyTelegtamToClipboard = () => {
         navigator.clipboard.writeText(telegram);

@@ -3,8 +3,8 @@ import telegramIcon from '../../assets/telegram-footer.png';
 import emailIcon from '../../assets/email-footer.png';
 
 const Contacts: React.FC = () => { 
-    const telegram: string = '@v128s';
-    const email: string = 'v128s@gmail.com';
+    const telegram: string = '@usdt_trc_20';
+    const email: string = 'supportrockychange@gmail.com';
 
     const copyTelegtamToClipboard = () => {
         navigator.clipboard.writeText(telegram);

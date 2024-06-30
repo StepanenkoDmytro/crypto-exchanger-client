@@ -57,7 +57,8 @@ export default function CurrencySelector({activeCurrency, onChange}: CurrencySel
                             <div className='select__options__icon'>
                                 <img src={currency.icon} alt="icon" />
                             </div>
-                            <span>{currency.name}</span>
+                            <span className="select__options__name">{currency.name}</span>
+                            <span className="select__options__id">{currency.symbol}</span>
                             {activeCurrency.id === currency.id  &&
                                 <div className="selected-cur--active">
                                     <div className="selected-cur--dot"></div>

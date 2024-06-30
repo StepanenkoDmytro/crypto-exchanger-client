@@ -6,8 +6,6 @@ import LanguageSwitcher from '../LanguageSwitcher';
 
 const Header: React.FC = () => { 
     const { t } = useTranslation();
-    const telegram: string = '@v128s';
-    const email: string = 'v128s@gmail.com';
 
     const [isOpenExpandedMenu, setIsOpenExpandedMenu] = useState<boolean>(false);
     const headerRef = useRef<HTMLDivElement>(null);
@@ -26,14 +24,6 @@ const Header: React.FC = () => {
     
     const handleLogoClick = () => {
         window.location.href = '/';
-    };
-
-    const copyTelegtamToClipboard = () => {
-        navigator.clipboard.writeText(telegram);
-    };
-
-    const copyEmailToClipboard = () => {
-        navigator.clipboard.writeText(email);
     };
 
     const toggleExpandedMenu = () => {
@@ -75,10 +65,6 @@ const Header: React.FC = () => {
                     </ul>
                 </nav>
             </div>
-            {/* <div className='header__contacts'>
-                <img src={telegramIcon} onClick={copyTelegtamToClipboard}></img>
-                <img src={emailIcon} onClick={copyEmailToClipboard}></img>
-            </div> */}
             <LanguageSwitcher />
             <button className='header__menu' onClick={toggleExpandedMenu}>
                 <img src={burgerIcon} alt="burger"/>

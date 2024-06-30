@@ -108,6 +108,10 @@
     left: 0px;
 }
 
+.step-item__last-icon .step-item_circle-left {
+    display: none;
+}
+
 .prev-line .step-item__line {
     width: 150px;
 }
@@ -138,11 +142,15 @@
 
 @media (max-width: 400px) {
     .stepper-animation {
-        margin-top: 20px;
+        margin-top: 10px;
+    }
+
+    .step-item {
+        flex: 1;
     }
 
     .stepper-animation .stepper-container {
-        height: 210px;
+        height: 290px;
         width: 100%;
     }
 
@@ -153,11 +161,12 @@
 
     .step-item__content-title {
         margin-bottom: 5px;
+        font-size: 13px;
     }
 
     .step-item__content-desc {
         padding: 0;
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .step-item__img img {
