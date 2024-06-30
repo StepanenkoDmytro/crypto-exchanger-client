@@ -41,7 +41,7 @@ const Countdown: React.FC<CountdownProps> = ({ duration, size = 60, onTimeUpdate
       <svg className="progress-ring" width={size} height={size}>
         <circle
           className="progress-ring__circle"
-          stroke="var(--line)"
+          stroke="var(--primary)"
           strokeWidth="4"
           fill="transparent"
           r={radius}

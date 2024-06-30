@@ -137,6 +137,10 @@
 }
 
 @media (max-width: 400px) {
+    .stepper-animation {
+        margin-top: 20px;
+    }
+
     .stepper-animation .stepper-container {
         height: 210px;
         width: 100%;

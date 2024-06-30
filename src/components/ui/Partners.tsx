@@ -2,6 +2,7 @@ import './Partners.css';
 import binanceIcon from '../../assets/partners/binance.svg';
 import okxIcon from '../../assets/partners/okx.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
+import trustWalletIcon from '../../assets/partners/trust_wallet.png'
 import { useTranslation } from 'react-i18next';
 
 const Partners: React.FC = () => { 
@@ -21,7 +22,7 @@ const Partners: React.FC = () => {
                 </div>
 
                 <div className='partners--logo'>
-                    <img src='https://assets.staticimg.com/g-biz/externals/2022-06-01/9bfcd9feaf2b8bed.svg' alt='partners-logo'/>
+                    <img src={trustWalletIcon} alt='partners-logo'/>
                     
                 </div>
 
