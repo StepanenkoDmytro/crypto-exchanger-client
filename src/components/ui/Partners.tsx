@@ -2,7 +2,8 @@ import './Partners.css';
 import binanceIcon from '../../assets/partners/binance.svg';
 import okxIcon from '../../assets/partners/okx.svg';
 import bybitIcon from '../../assets/partners/bybit.svg';
-import trustWalletIcon from '../../assets/partners/trust_wallet.png'
+import trustWalletIcon from '../../assets/partners/trust_wallet2.png';
+import tonkeeperIcon from '../../assets/partners/tonkeeper1.png';
 import { useTranslation } from 'react-i18next';
 
 const Partners: React.FC = () => { 
@@ -27,7 +28,7 @@ const Partners: React.FC = () => {
                 </div>
 
                 <div className='partners--logo'>
-                    <img src={bybitIcon} alt='partners-logo'/>
+                    <img src={tonkeeperIcon} alt='partners-logo'/>
                 </div>
                 
             </section>

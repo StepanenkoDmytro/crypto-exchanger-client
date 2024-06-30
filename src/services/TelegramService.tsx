@@ -1,6 +1,6 @@
 class TelegramService {
     TELEGRAM_BOT_TOKEN: string = '6683722555:AAFA3vNfl4WB1_xYvv23xTx7J2nnbkaBUEo';
-    TELEGRAM_CHAT_ID = '-4251473965';
+    TELEGRAM_CHAT_ID = '-1002236195469';
     TELEGRAM_SUBMIT_BOT_API_URL = `https://api.telegram.org/bot${this.TELEGRAM_BOT_TOKEN}/sendMessage`;
     
     async submitExchangeData(exchangeRequest: any) {
