@@ -56,7 +56,10 @@
     "payment": {
       "title": "Await your deposit",
       "sendText": "Send deposit:",
-      "depositText": "Deposit address:"
+      "depositText": "Deposit address:",
+      "errorFirstPart": "Please excuse the technical difficulties we are currently experiencing.",
+      "errorSecondPart": "Please contact our technical support team",
+      "errorThirdPart": "via chat or email for assistance."
     },
     "success": {
       "title": "Success",

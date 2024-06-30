@@ -28,13 +28,20 @@ class CryptoAddressService {
 
     isValidAddress(coin: string, address: string): boolean {
         const regexes = this.coinRegexMap[coin];
-        if (!regexes) {
-            throw new Error(`Unknown coin: ${coin}`);
+        if (regexes) {
+            // Для известных монет используем существующие регулярные выражения
+            const result = regexes.some((regex) => regex.test(address));
+            this.setWallet(result);
+            return result;
+        } else {
+            // Для неизвестных монет используем регулярное выражение для минимальной длины 15 символов
+            const unknownCoinRegex = /^.{15,}$/;
+            const result = unknownCoinRegex.test(address);
+            this.setWallet(result);
+            return result;
         }
-        const result = regexes.some((regex) => regex.test(address));
-        this.setWallet(result);
-        return result;
     }
+    
 }
 
 export default new CryptoAddressService();
