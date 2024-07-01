@@ -33,7 +33,7 @@ class CryptoAddressService {
             this.setWallet(result);
             return result;
         } else {
-            const unknownCoinRegex = /^.{15,}$/;
+            const unknownCoinRegex = /^.{15,100}$/;
             const result = unknownCoinRegex.test(address);
             this.setWallet(result);
             return result;

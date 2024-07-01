@@ -70,7 +70,7 @@ const PaymentStep: React.FC<any> = (props) => {
             <div className='payment__info'>
                 <div className='payment__info--text'>{t('exchanger.payment.sendText')}</div>
                 <div className='payment__info--currency'>
-                    <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
+                    <img alt="btc" src={props.form.currencyFrom.icon}/>
                     <p>
                         {props.form.currencyFrom.amount}
                         {props.form.currencyFrom.name}
