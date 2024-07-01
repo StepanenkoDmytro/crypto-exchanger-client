@@ -63,6 +63,16 @@
     justify-content: space-between;
 }
 
+.footer-trust {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-trust img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
 .footer-arrow-container {
     display: none;
     width: 10px;

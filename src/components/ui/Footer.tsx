@@ -2,6 +2,8 @@ import './Footer.css';
 import { useTranslation } from 'react-i18next';
 import { ApprovedCurrenciesList, IConvert } from '../../domain/models';
 import { Link } from 'react-router-dom';
+import bestSnahge from '../../assets/BestChange.png';
+import trustPilot from '../../assets/trust-pilot.svg';
 
 interface FooterProps {
     onCurrencyChange: (currencyFrom: IConvert, currencyTo: IConvert) => void;
@@ -114,6 +116,10 @@ const Footer: React.FC<FooterProps> = ({ onCurrencyChange }) => {
                             <Link to="/documents/privacy" className='footer-links__item'>Privacy Policy</Link>
                             <Link to="/documents/aml-kyc" className='footer-links__item'>AML/KYC</Link>
                         </div>
+                    </div>
+                    <div className='footer-trust'>
+                        <img src={bestSnahge} alt="best"/>
+                        <img src={trustPilot} alt="best"/>
                     </div>
                 </div>
                 <p className='footer-privacy'>©2024 All Rights Reserved.</p>

@@ -19,6 +19,7 @@
 .partners--logo img {
     width: 240px;
     height: 100px;
+    object-fit: contain;
 }
 
 @media (max-width: 1500px) {

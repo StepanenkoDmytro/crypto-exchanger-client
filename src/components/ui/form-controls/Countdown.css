@@ -14,7 +14,7 @@
   }
   
   .progress-ring {
-    transform: rotate(-90deg); /* Повертаємо на 90 градусів, щоб починати прогрес з верху */
+    transform: rotate(-90deg); 
   }
   
   .progress-ring__circle {

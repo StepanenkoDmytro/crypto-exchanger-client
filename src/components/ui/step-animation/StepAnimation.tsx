@@ -16,6 +16,8 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
 		{order: 2, content: <SecondStep />},
 		{order: 3, content: <ThirdStep />},
 	];
+
+    const [isScreenSmall, setIsScreenSmall] = useState(window.innerWidth > 400);
     
     const [activeStep, setActiveStep] = useState<number>(propActiveStep);
     const [prevActiveStep, setprevActiveStep] = useState<number>(0);
@@ -25,8 +27,18 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
             setActiveStep(propActiveStep);
             setprevActiveStep(propActiveStep);
         } 
+
+        const handleResize = () => {
+            setIsScreenSmall(window.innerWidth < 400);
+          };
+      
+          window.addEventListener('resize', handleResize);
+      
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
         
-    }, [propActiveStep, activeStep]);
+    }, [propActiveStep, activeStep, window.innerWidth]);
 
     const handlePrevClick = () => {
         setActiveStep(prevStep => prevStep !== 1 ? prevStep - 1 : prevStep);
@@ -40,7 +52,13 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
     return (
         <div className='stepper-animation'>
             {activeStep > 1 &&
-                <div onClick={handlePrevClick}><Arrow direction='left' /></div>
+                <>
+                {isScreenSmall 
+                ? (<div onClick={handlePrevClick}><Arrow direction='left' /></div> )
+                :
+                (<div onClick={handlePrevClick}><Arrow width={15} direction='left' /></div>)
+                }
+                </>
             }
             
             <div className='stepper-container'>
@@ -49,7 +67,13 @@ const StepAnimation: React.FC<StepAnimationProps> = ({ activeStep: propActiveSte
                 </div>
             </div>
             {activeStep < steps.length &&
-                <div onClick={handleNextClick}><Arrow direction='right'/></div>
+                <>
+                {isScreenSmall 
+                    ? (<div onClick={handleNextClick}><Arrow direction='right' /></div> )
+                    :
+                    (<div onClick={handleNextClick}><Arrow width={15} direction='right' /></div>)
+                    }
+                </>
             }
         </div>
     );

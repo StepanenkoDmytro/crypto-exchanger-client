@@ -28,6 +28,7 @@
 .step-header {
     display: flex;
     align-items: center;
+    margin-left: 15px;
 }
 
 .step-header__circle {
@@ -93,12 +94,12 @@
 
 .step-actions {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn {
     border-radius: 90px;
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-top: 27px;
     margin-right: 4px;
     padding: 11px 71px;
@@ -115,6 +116,7 @@
 .btn-next {
     background: var(--primary);
     color: var(--onsurface);
+    margin-left: 10px;
 }
 
 .mobile {

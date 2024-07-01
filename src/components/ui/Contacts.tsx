@@ -1,10 +1,12 @@
 import './Contacts.css';
 import telegramIcon from '../../assets/telegram-footer.png';
 import emailIcon from '../../assets/email-footer.png';
+import { useTranslation } from 'react-i18next';
 
 const Contacts: React.FC = () => { 
-    const telegram: string = '@v128s';
-    const email: string = 'v128s@gmail.com';
+    const { t } = useTranslation();
+    const telegram: string = '@usdt_trc_20';
+    const email: string = 'supportrockychange@gmail.com';
 
     const copyTelegtamToClipboard = () => {
         navigator.clipboard.writeText(telegram);
@@ -16,10 +18,10 @@ const Contacts: React.FC = () => {
   
   return (
     <section className='container border' id='contacts'>
-        <h1 className='container__title'>Contacts</h1>
+        <h1 className='container__title'>{t('contacts.title')}</h1>
         <div className='contacts__box'>
             <div className='contacts__desc'>
-                <p>Мы всегда готовы помочь! Если у вас есть вопросы, предложения или нужна помощь, свяжитесь с нами, используя следующую информацию</p>
+                <p>{t('contacts.desc')}</p>
             </div>
             <div className='contacts__container'>
                 <div>

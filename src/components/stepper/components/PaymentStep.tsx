@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import './PaymentStep.css';
 import copySvg from '../../../assets/copy.svg';
 import Countdown from '../../ui/form-controls/Countdown';
+import telegramIcon from '../../../assets/telegram-footer.png';
+import emailIcon from '../../../assets/email-footer.png';
 
 declare global {
     interface Window {
@@ -15,6 +17,17 @@ const PaymentStep: React.FC<any> = (props) => {
     const [recipient] = useState<string>(props.form.currencyFrom.walletAddress);
     const [countdown] = useState<number>(300);
     const [timeLeft, setTimeLeft] = useState<number>(300);
+
+    const telegram: string = '@usdt_trc_20';
+    const email: string = 'supportrockychange@gmail.com';
+
+    const copyTelegtamToClipboard = () => {
+        navigator.clipboard.writeText(telegram);
+    };
+
+    const copyEmailToClipboard = () => {
+        navigator.clipboard.writeText(email);
+    };
 
     useEffect(() => {
         props.onDisabledBtnChange(true);
@@ -57,7 +70,7 @@ const PaymentStep: React.FC<any> = (props) => {
             <div className='payment__info'>
                 <div className='payment__info--text'>{t('exchanger.payment.sendText')}</div>
                 <div className='payment__info--currency'>
-                    <img alt="btc" src="https://static.simpleswap.io/images/currencies-logo/btc.svg"/>
+                    <img alt="btc" src={props.form.currencyFrom.icon}/>
                     <p>
                         {props.form.currencyFrom.amount}
                         {props.form.currencyFrom.name}
@@ -65,19 +78,41 @@ const PaymentStep: React.FC<any> = (props) => {
                 </div>
                 <div className='payment__info--countdown'><Countdown duration={countdown} onTimeUpdate={(timeLeft) => setTimeLeft(timeLeft)}/></div>
             </div>
-            <div className='payment__details'>
-                <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
-                <div className='payment__details--recipient'>
-                    <div id="qr-code"></div>
-                    <div className='payment__details--address' onClick={copyToClipboard}>
-                        <p>{recipient}</p>
+            {recipient.length > 0 
+                ? (<>
+                    <div className='payment__details'>
+                        <div className='payment__info--text'>{t('exchanger.payment.depositText')}</div>
+                        <div className='payment__details--recipient'>
+                            <div id="qr-code"></div>
+                            <div className='payment__details--address' onClick={copyToClipboard}>
+                                <p>{recipient}</p>
+                            </div>
+                            <button className='payment__details--copy-btn' onClick={copyToClipboard}>
+                                <img src={copySvg} alt="svg"/>
+                            </button>
+                        </div>
                     </div>
-                    <button className='payment__details--copy-btn' onClick={copyToClipboard}>
-                        <img src={copySvg} alt="svg"/>
-                    </button>
-                </div>
-            </div>
+                    </>) 
+                : (<div className='payment__details--recipient-error'>
+                    <div>
+                        <p>{t('exchanger.payment.errorFirstPart')}</p>
+                        <p>{t('exchanger.payment.errorSecondPart')}</p>
+                        <p>{t('exchanger.payment.errorThirdPart')}</p>
+                    </div>
+                    <div style={{marginTop: '15px'}}>
+                        <div className='payment__details--recipient-error__contact' onClick={copyTelegtamToClipboard}>
+                            <img src={telegramIcon}></img>
+                            <p>{telegram}</p>
+                        </div>
+                        <div className='payment__details--recipient-error__contact' onClick={copyEmailToClipboard}>
+                            <img src={emailIcon}></img>
+                            <p>{email}</p>
+                        </div>
+                    </div>
+                </div>)
+             }
         </div>
+        
     );
 }
 
