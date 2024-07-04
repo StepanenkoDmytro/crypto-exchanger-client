@@ -15,7 +15,7 @@ declare global {
 const PaymentStep: React.FC<any> = (props) => {
     const { t } = useTranslation();
     const [recipient] = useState<string>(props.form.currencyFrom.walletAddress);
-    const [countdown] = useState<number>(300);
+    const [countdown] = useState<number>(600);
     const [timeLeft, setTimeLeft] = useState<number>(300);
 
     const telegram: string = '@usdt_trc_20';
@@ -32,6 +32,8 @@ const PaymentStep: React.FC<any> = (props) => {
     useEffect(() => {
         props.onDisabledBtnChange(true);
     }, []);
+
+    
    
     useEffect(() => {
         const qrCodeElement = document.getElementById('qr-code');
