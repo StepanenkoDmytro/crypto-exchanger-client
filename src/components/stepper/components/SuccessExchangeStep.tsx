@@ -37,7 +37,7 @@ const SuccessExchangeStep: React.FC<any> = (props) => {
             </div>
         </div>
         <div className='success__text'>
-            <p className='success__text--primary'>{t('exchanger.success.expectPartOne')} ETH {t('exchanger.success.expectPartTwo')}</p> 
+            <p className='success__text--primary'>{t('exchanger.success.expectPartOne')} {props.form.currencyTo.symbol} {t('exchanger.success.expectPartTwo')}</p> 
             <p>{t('exchanger.success.desc')}</p>
         </div>
         <div className='success__countdown'>
@@ -52,14 +52,14 @@ const SuccessExchangeStep: React.FC<any> = (props) => {
                 <p className='success__info--desc'>{t('exchanger.success.send')}</p>
                 <p className='success__info--text'>
                     {props.form.currencyFrom.amount}
-                    {props.form.currencyFrom.symbol}
+                    <span>{props.form.currencyFrom.symbol}</span>
                 </p>
             </li>
             <li>
                 <p className='success__info--desc'>{t('exchanger.success.get')}</p>
                 <p className='success__info--text'>
-                    {props.form.currencyTo.amount}
-                    {props.form.currencyTo.symbol}
+                    <span className='success__info--text-curr'>{props.form.currencyTo.amount}</span>
+                    <span>{props.form.currencyTo.symbol}</span>
                 </p>
             </li>
             <li>
