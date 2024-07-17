@@ -14,7 +14,7 @@ export const defaultCurrencyFrom: IConvert = {
     price: null,
     symbol: "BTC",
     amount: 0,
-    icon: '',
+    icon: 'https://cryptologos.cc/logos/thumbs/bitcoin.png',
     walletAddress: 'bc1qn296e6h2eugrd8f37tnf8w07f3k92enkv2hme2'
 }
 
@@ -24,7 +24,7 @@ export const defaultCurrencyTo: IConvert = {
     price: null,
     symbol: "ETH",
     amount: 0,
-    icon: '',
+    icon: 'https://cryptologos.cc/logos/thumbs/ethereum.png',
     walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
 }
 

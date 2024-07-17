@@ -1,5 +1,7 @@
 .success {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .success__title {
@@ -69,7 +71,16 @@
     color: var(--onsurface);
 }
 
-@media (max-width: 400px) {
+.success__info--text span {
+    margin-left: 5px;
+}
+
+.success__countdown {
+    margin-top: 15px;
+    align-self: center;
+}
+
+@media only screen and (max-width: 420px) {
     .success {
         margin-top: 15px;
     }
@@ -85,9 +96,16 @@
     }
 
     .success__info--text {
+        display: flex;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 120px;
+    }
+
+    .success__info--text-curr {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }

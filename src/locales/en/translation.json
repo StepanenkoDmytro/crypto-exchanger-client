@@ -67,6 +67,7 @@
       "expectPartTwo": "in your wallet.",
       "desc": "Usually, funds arrive within 15 minutes. If not, please contact us.",
       "status": "Status",
+      "waiting": "In progress",
       "completed": "Completed",
       "send": "Send deposit:",
       "get": "You get:",

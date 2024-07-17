@@ -17,6 +17,10 @@ const Stepper = (props: any) => {
 	const totalSteps = 4;
 
 	const goNext = () => {
+		if (activeStep === 2) {
+			props.onConfirm();
+		}
+		
 		if (activeStep < totalSteps) {
 			onActiveStepChange(activeStep + 1);
 		}
@@ -29,7 +33,7 @@ const Stepper = (props: any) => {
 	};
 
 	const handleConfirm = async () => {
-        props.onConfirm();
+        // props.onConfirm();
         // if (success) {
             goNext();
         // }

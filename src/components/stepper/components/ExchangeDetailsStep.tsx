@@ -61,12 +61,12 @@ const ExchangeDetailsStep: React.FC<any> = (props) => {
                     </div>
                     <div className="exchange-details__content">
                         <p>{t('exchanger.exchangeDetails.for')}</p>
-                        <p className="exchange-details__content-value">Rockie</p>
+                        <p className="exchange-details__content-value">Rocky</p>
                     </div>
                 </li>
             </ul>
 
-            <p className="exchange-details__text">{t('exchanger.exchangeDetails.textPartOne')} <span className='exchange-details__text-primary'>{props.form.currencyFrom.amount} {props.form.currencyFrom.name}</span> {t('exchanger.exchangeDetails.textPartTwo')}</p>
+            <p className="exchange-details__text">{t('exchanger.exchangeDetails.textPartOne')} <span className='exchange-details__text-primary'>{props.form.currencyTo.amount} {props.form.currencyTo.name}</span> {t('exchanger.exchangeDetails.textPartTwo')}</p>
             <div className='exchange-details__input'>
                 <Input 
                     type={'text'}
