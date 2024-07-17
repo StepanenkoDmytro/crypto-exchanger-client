@@ -140,7 +140,7 @@
     left: 50px;
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .stepper-animation {
         margin-top: 10px;
     }

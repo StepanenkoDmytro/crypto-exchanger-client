@@ -76,7 +76,7 @@
     color: var(--bg1);
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .header {
         justify-content: space-between;
         height: 30px;

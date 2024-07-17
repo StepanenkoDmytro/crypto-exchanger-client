@@ -22,14 +22,14 @@
     object-fit: contain;
 }
 
-@media (max-width: 1500px) {
+@media only screen and (max-width: 1500px) {
     .partners--logo img {
         width: 180px;
         height: 70px;
     }
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .partners {
         justify-content: center;
         margin-bottom: 20px;

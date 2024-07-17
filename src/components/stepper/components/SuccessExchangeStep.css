@@ -80,7 +80,7 @@
     align-self: center;
 }
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     .success {
         margin-top: 15px;
     }
