@@ -36,7 +36,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "BTC",
         amount: 0,
         icon: '',
-        walletAddress: 'bc1qn296e6h2eugrd8f37tnf8w07f3k92enkv2hme2'
+        walletAddress: 'bc1qmfjhqshagupq3tkjahjzldj3fqt9slznjjx2qz'
     },
     {
         id: "ethereum",
@@ -45,7 +45,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "ETH",
         amount: 0,
         icon: '',
-        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
+        walletAddress: '0x7564DD34EE83AD2E09edAcD60Ea98191F8fCC237'
     },
     {
         id: "binance-coin",
@@ -54,7 +54,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "BNB",
         amount: 0,
         icon: '',
-        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
+        walletAddress: '0x7564DD34EE83AD2E09edAcD60Ea98191F8fCC237'
     },
     {
         id: "xrp",
@@ -63,7 +63,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "XRP",
         amount: 0,
         icon: '',
-        walletAddress: 'rfqYZm8VUJirksR3TDWtbW7bpdfL6ervqQ'
+        walletAddress: 'rJy5nHKMyqpGTzEpGDNhWY1KqDHx3uh4DQ'
     },
     {
         id: "cardano",
@@ -72,7 +72,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "ADA",
         amount: 0,
         icon: '',
-        walletAddress: 'addr1qyduyq3sx5q98nfypch4gykl6v690c0y5gq748wl0hyuadtwt97n6dwh8wphx5usxrs86xdnqut00ztn37qdhh6fg5msczxhfx'
+        walletAddress: 'addr1qyfc3ehph7rqquuwllcgqx5ps70c32r4zwr7hrluc8uss7ph3qtn3qu5cl76cketvcsjz8xhguj9am0gz8ncyam0ed5skww82q'
     },
     {
         id: "solana",
@@ -81,7 +81,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "SOL",
         amount: 0,
         icon: '',
-        walletAddress: 'AEGaS7YeUzDmTCNufRnMgU9qB5XhPsr5qHiKjvevtAEN'
+        walletAddress: 'DoZpmfb1oC3s8PDHuSAPJURFBQ4wAa7TuefDQ5FZTmd7'
     },
     {
         id: "monero",
@@ -99,7 +99,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "USDT",
         amount: 0,
         icon: '',
-        walletAddress: 'TVgSQmGmkrafPZmfwBDZ3oWsdaNEbid1vT'
+        walletAddress: 'TNNgFo2RyY9N5AR6335bHEaNvBCY6z9vvs'
     },
     {
         id: "usd-coin",
@@ -117,7 +117,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "BCH",
         amount: 0,
         icon: '',
-        walletAddress: 'qrcgxd6s5ghy842mqvj7cv4yznm90v7pxujdwpnzc5'
+        walletAddress: 'qz24fxrg9w83hzyl5e4jzyu4jwwakh2v2czlfvas9z'
     },
     {
         id: "ethereum-classic",
@@ -126,7 +126,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "ETC",
         amount: 0,
         icon: '',
-        walletAddress: '0xc085cB8680D7D41d570C2Fdc1EF70f0a5033a3F3'
+        walletAddress: '0xf219636Cf8cA590da44da78E962447b005026AbE'
     },
     {
         id: "shiba-inu",
@@ -135,7 +135,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "SHIB",
         amount: 0,
         icon: '',
-        walletAddress: 'AEGaS7YeUzDmTCNufRnMgU9qB5XhPsr5qHiKjvevtAEN'
+        walletAddress: '0x7564DD34EE83AD2E09edAcD60Ea98191F8fCC237'
     },
     {
         id: "dogecoin",
@@ -144,7 +144,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "DOGE",
         amount: 0,
         icon: '',
-        walletAddress: 'DE6kioYYYoJ1SZZUU4575bUxTXkGag1rcw'
+        walletAddress: 'DPJGf3vukm6UpmJq1uReTdYScY4SVkm5yq'
     },
     {
         id: "polkadot",
@@ -153,7 +153,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "DOT",
         amount: 0,
         icon: '',
-        walletAddress: '1Lm32AiBnjoTn3mL3QmfNCx7At4i6NGmpSwZRm9ucMsZ2yY'
+        walletAddress: '153MLZsHi53ZrB2Vodv3CjASAF9uVXKPHpUTnYjbpqiUzYia'
     },
     {
         id: "litecoin",
@@ -162,7 +162,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "LTC",
         amount: 0,
         icon: '',
-        walletAddress: 'ltc1qcg7zpvu7fxn7u3ejttqv3k5plkssg66hku55qf'
+        walletAddress: 'ltc1qx9ewa9q99zvzxqgvccq7xz969ytjs8p0257q9f'
     },
     {
         id: "cosmos",
@@ -171,7 +171,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "ATOM",
         amount: 0,
         icon: '',
-        walletAddress: 'cosmos1r28t5fs78p32qyp5lvpryrqh5865qywasv8s68'
+        walletAddress: 'cosmos1063fgm6zmzcwl227ehrhrnsu8qkqyfdwusk3tl'
     },
     {
         id: "avalanche",
@@ -180,7 +180,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "AVAX",
         amount: 0,
         icon: '',
-        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
+        walletAddress: '0x7564DD34EE83AD2E09edAcD60Ea98191F8fCC237'
     },
     {
         id: "eos",
@@ -198,7 +198,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "XLM",
         amount: 0,
         icon: '',
-        walletAddress: 'GA5KXZ2WRNEMSRKP7LCJGPZDRJSYQW4PDSAYV7UMJJGIATWAIVBE77RT'
+        walletAddress: 'GBU647C7GYMNJR53QJNVMNCO34TGE6QKUW6UDFLQDHN2C23WM6AGXUDV'
     },
     {
         id: "chainlink",
@@ -216,7 +216,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "VET",
         amount: 0,
         icon: '',
-        walletAddress: '0x1c1a0B4E772b74E43Ea84DA9ef359aE49B7f054e'
+        walletAddress: '0xb51c5a03E6eeaD5009C56Cbb1db48dAA89f58086'
     },
     {
         id: "tron",
@@ -225,7 +225,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "TRX",
         amount: 0,
         icon: '',
-        walletAddress: 'TVgSQmGmkrafPZmfwBDZ3oWsdaNEbid1vT'
+        walletAddress: 'TNNgFo2RyY9N5AR6335bHEaNvBCY6z9vvs'
     },
     {
         id: "polygon",
@@ -234,7 +234,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "MATIC",
         amount: 0,
         icon: '',
-        walletAddress: '0x360EAeC83708c105f22D519AADA03D2bc03FaaE1'
+        walletAddress: '0x7564DD34EE83AD2E09edAcD60Ea98191F8fCC237'
     },
     {
         id: "zcash",
@@ -243,7 +243,7 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "ZEC",
         amount: 0,
         icon: '',
-        walletAddress: 't1XX2Po2qMn7kQFkAfhYEXavbuoePuUDu8y'
+        walletAddress: 't1KLDq3BDgRQLqqD3g6PpoVfSyew4ido9Mh'
     },
     {
         id: "dash",
@@ -252,7 +252,16 @@ export const ApprovedCurrenciesList: IConvert[] = [
         symbol: "DASH",
         amount: 0,
         icon: '',
-        walletAddress: 'XtyU1ff4PUEEBhArY787umT6kddWt1GaJp'
+        walletAddress: 'XyqW4sYW3UXQoZPjEXrbnsvDtzMpyqLvKn'
+    },
+    {
+        id: "toncoin",
+        name: "TON",
+        price: null,
+        symbol: "toncoin",
+        amount: 0,
+        icon: '',
+        walletAddress: 'UQAhSyySx1fh2Iqq15fH_EXOIbDwsBBSSo2DOlxete8IySwx'
     }
 ];
 
